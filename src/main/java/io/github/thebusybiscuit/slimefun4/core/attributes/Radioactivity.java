@@ -69,7 +69,7 @@ public enum Radioactivity {
     }
 
     public @Nonnull String getLore() {
-        return ChatColor.GREEN + "\u2622" + ChatColor.GRAY + " Radiation level: " + color + toString().replace('_', ' ');
+        return ChatColor.GREEN + "\u2622" + ChatColor.GRAY + " Nível de Radiação: " + color + toString().replace('_', ' ');
     }
 
     /**

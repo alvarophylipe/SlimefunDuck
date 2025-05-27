@@ -41,7 +41,7 @@ public class MultiTool extends SlimefunItem implements Rechargeable {
     private final float capacity;
 
     private static final NamespacedKey key = new NamespacedKey(Slimefun.instance(), "multitool_mode");
-    private static final String LORE_PREFIX = ChatColors.color("&8\u21E8 &7Mode: ");
+    private static final String LORE_PREFIX = ChatColors.color("&8\u21E8 &7Modo: ");
     private static final Pattern REGEX = Pattern.compile(ChatColors.color("(&c&o)?" + LORE_PREFIX) + "(.+)");
 
     @ParametersAreNonnullByDefault

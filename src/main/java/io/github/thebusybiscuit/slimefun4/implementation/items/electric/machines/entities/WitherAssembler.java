@@ -63,9 +63,9 @@ public class WitherAssembler extends AbstractEntityAssembler<Wither> {
 
     @Override
     protected void constructMenu(BlockMenuPreset preset) {
-        preset.addItem(1, CustomItemStack.create(getHead(), "&7Wither Skeleton Skull Slot", "", "&fThis Slot accepts Wither Skeleton Skulls"), ChestMenuUtils.getEmptyClickHandler());
-        preset.addItem(7, CustomItemStack.create(getBody(), "&7Soul Sand Slot", "", "&fThis Slot accepts Soul Sand"), ChestMenuUtils.getEmptyClickHandler());
-        preset.addItem(13, CustomItemStack.create(Material.CLOCK, "&7Cooldown: &b30 Seconds", "", "&fThis Machine takes up to half a Minute to operate", "&fso give it some Time!"), ChestMenuUtils.getEmptyClickHandler());
+        preset.addItem(1, CustomItemStack.create(getHead(), "&7Slot de Cabeça de Wither Skeleton", "", "&fEste slot aceita cabeça de Wither Skeleton"), ChestMenuUtils.getEmptyClickHandler());
+        preset.addItem(7, CustomItemStack.create(getBody(), "&7Slot de Areia da Aula", "", "&fEste slot aceita Areia da Alma"), ChestMenuUtils.getEmptyClickHandler());
+        preset.addItem(13, CustomItemStack.create(Material.CLOCK, "&7Cooldown: &b30 segundos", "", "&fEsta máquina precisa de meio minuto para funcionar", "&fentão me der tempo!"), ChestMenuUtils.getEmptyClickHandler());
     }
 
     @Override

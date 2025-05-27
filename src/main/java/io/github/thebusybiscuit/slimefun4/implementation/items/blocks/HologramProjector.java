@@ -61,7 +61,7 @@ public class HologramProjector extends SlimefunItem implements HologramOwner {
             @Override
             public void onPlayerPlace(BlockPlaceEvent e) {
                 Block b = e.getBlockPlaced();
-                BlockStorage.addBlockInfo(b, "text", "Edit me via the Projector");
+                BlockStorage.addBlockInfo(b, "text", "Edite dentro do Projetor");
                 BlockStorage.addBlockInfo(b, OFFSET_PARAMETER, "0.5");
                 BlockStorage.addBlockInfo(b, "owner", e.getPlayer().getUniqueId().toString());
 
@@ -97,7 +97,7 @@ public class HologramProjector extends SlimefunItem implements HologramOwner {
     private void openEditor(@Nonnull Player p, @Nonnull Block projector) {
         ChestMenu menu = new ChestMenu(Slimefun.getLocalization().getMessage(p, "machines.HOLOGRAM_PROJECTOR.inventory-title"));
 
-        menu.addItem(0, CustomItemStack.create(Material.NAME_TAG, "&7Text &e(Click to edit)", "", "&f" + ChatColors.color(BlockStorage.getLocationInfo(projector.getLocation(), "text"))));
+        menu.addItem(0, CustomItemStack.create(Material.NAME_TAG, "&7Texto &e(Clique para editar)", "", "&f" + ChatColors.color(BlockStorage.getLocationInfo(projector.getLocation(), "text"))));
         menu.addMenuClickHandler(0, (pl, slot, item, action) -> {
             pl.closeInventory();
             Slimefun.getLocalization().sendMessage(pl, "machines.HOLOGRAM_PROJECTOR.enter-text", true);
