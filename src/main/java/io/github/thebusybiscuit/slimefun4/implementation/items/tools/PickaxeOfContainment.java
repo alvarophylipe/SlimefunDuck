@@ -65,18 +65,18 @@ public class PickaxeOfContainment extends SimpleSlimefunItem<ToolUseHandler> {
           If the spawner's BlockStorage has BlockInfo, then it's not a vanilla spawner
           and should not give a broken spawner but a repaired one instead.
          */
-        if (BlockStorage.hasBlockInfo(b)) {
-            spawner = (AbstractMonsterSpawner) SlimefunItems.REPAIRED_SPAWNER.getItem();
-        } else {
-            spawner = (AbstractMonsterSpawner) SlimefunItems.BROKEN_SPAWNER.getItem();
-        }
+//        if (BlockStorage.hasBlockInfo(b)) {
+//            spawner = (AbstractMonsterSpawner) SlimefunItems.REPAIRED_SPAWNER.getItem();
+//        } else {
+//            spawner = (AbstractMonsterSpawner) SlimefunItems.BROKEN_SPAWNER.getItem();
+//        }
 
         BlockState state = PaperLib.getBlockState(b, false).getState();
 
-        if (state instanceof CreatureSpawner creatureSpawner) {
-            EntityType entityType = creatureSpawner.getSpawnedType();
-            return spawner.getItemForEntityType(entityType);
-        }
+//        if (state instanceof CreatureSpawner creatureSpawner) {
+//            EntityType entityType = creatureSpawner.getSpawnedType();
+//            return spawner.getItemForEntityType(entityType);
+//        }
 
         return new ItemStack(Material.SPAWNER);
     }

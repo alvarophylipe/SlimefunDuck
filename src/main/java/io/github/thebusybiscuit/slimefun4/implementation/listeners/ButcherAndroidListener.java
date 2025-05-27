@@ -41,30 +41,30 @@ public class ButcherAndroidListener implements Listener {
 
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onDeath(EntityDeathEvent e) {
-        if (e.getEntity().hasMetadata(METADATA_KEY)) {
-            AndroidInstance obj = (AndroidInstance) e.getEntity().getMetadata(METADATA_KEY).get(0).value();
-
-            Slimefun.runSync(() -> {
-                List<ItemStack> items = new ArrayList<>();
-
-                // Collect any nearby dropped items
-                for (Entity n : e.getEntity().getNearbyEntities(0.5D, 0.5D, 0.5D)) {
-                    if (n instanceof Item item && n.isValid() && !SlimefunUtils.hasNoPickupFlag(item)) {
-                        items.add(item.getItemStack());
-                        n.remove();
-                    }
-                }
-
-                addExtraDrops(items, e.getEntityType());
-
-                obj.getAndroid().addItems(obj.getBlock(), items.toArray(new ItemStack[0]));
-                ExperienceOrb exp = (ExperienceOrb) e.getEntity().getWorld().spawnEntity(e.getEntity().getLocation(), EntityType.EXPERIENCE_ORB);
-                exp.setExperience(1 + ThreadLocalRandom.current().nextInt(6));
-            }, 1L);
-
-            // Removing metadata to prevent memory leaks
-            e.getEntity().removeMetadata(METADATA_KEY, Slimefun.instance());
-        }
+//        if (e.getEntity().hasMetadata(METADATA_KEY)) {
+//            AndroidInstance obj = (AndroidInstance) e.getEntity().getMetadata(METADATA_KEY).get(0).value();
+//
+//            Slimefun.runSync(() -> {
+//                List<ItemStack> items = new ArrayList<>();
+//
+//                // Collect any nearby dropped items
+//                for (Entity n : e.getEntity().getNearbyEntities(0.5D, 0.5D, 0.5D)) {
+//                    if (n instanceof Item item && n.isValid() && !SlimefunUtils.hasNoPickupFlag(item)) {
+//                        items.add(item.getItemStack());
+//                        n.remove();
+//                    }
+//                }
+//
+//                addExtraDrops(items, e.getEntityType());
+//
+//                obj.getAndroid().addItems(obj.getBlock(), items.toArray(new ItemStack[0]));
+//                ExperienceOrb exp = (ExperienceOrb) e.getEntity().getWorld().spawnEntity(e.getEntity().getLocation(), EntityType.EXPERIENCE_ORB);
+//                exp.setExperience(1 + ThreadLocalRandom.current().nextInt(6));
+//            }, 1L);
+//
+//            // Removing metadata to prevent memory leaks
+//            e.getEntity().removeMetadata(METADATA_KEY, Slimefun.instance());
+//        }
     }
 
     /**

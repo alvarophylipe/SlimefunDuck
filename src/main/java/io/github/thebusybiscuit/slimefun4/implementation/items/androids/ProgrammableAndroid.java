@@ -1,15 +1,14 @@
 package io.github.thebusybiscuit.slimefun4.implementation.items.androids;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 import java.util.function.Predicate;
 import java.util.logging.Level;
 
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
+import io.github.thebusybiscuit.slimefun4.core.attributes.NotPlaceable;
 import org.apache.commons.lang.Validate;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -17,56 +16,38 @@ import org.bukkit.Material;
 import org.bukkit.Tag;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
-import org.bukkit.block.BlockState;
-import org.bukkit.block.Dispenser;
-import org.bukkit.block.data.BlockData;
-import org.bukkit.block.data.Rotatable;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
-import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
 
 import io.github.bakedlibs.dough.chat.ChatInput;
-import io.github.bakedlibs.dough.common.ChatColors;
 import io.github.bakedlibs.dough.common.CommonPatterns;
 import io.github.bakedlibs.dough.items.CustomItemStack;
 import io.github.bakedlibs.dough.items.ItemUtils;
-import io.github.bakedlibs.dough.skins.PlayerHead;
-import io.github.bakedlibs.dough.skins.PlayerSkin;
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
-import io.github.thebusybiscuit.slimefun4.core.attributes.RecipeDisplayItem;
-import io.github.thebusybiscuit.slimefun4.core.handlers.BlockBreakHandler;
 import io.github.thebusybiscuit.slimefun4.core.handlers.BlockPlaceHandler;
 import io.github.thebusybiscuit.slimefun4.core.services.sounds.SoundEffect;
 import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
 import io.github.thebusybiscuit.slimefun4.utils.HeadTexture;
-import io.github.thebusybiscuit.slimefun4.utils.NumberUtils;
 import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
-import io.papermc.lib.PaperLib;
 
-import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
 import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.MachineFuel;
-import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.interfaces.InventoryBlock;
-import me.mrCookieSlime.Slimefun.Objects.handlers.BlockTicker;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
-import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
-import me.mrCookieSlime.Slimefun.api.item_transport.ItemTransportFlow;
 
-public class ProgrammableAndroid extends SlimefunItem implements InventoryBlock, RecipeDisplayItem {
+public class ProgrammableAndroid extends SlimefunItem implements NotPlaceable {
 
-    private static final List<BlockFace> POSSIBLE_ROTATIONS = Arrays.asList(BlockFace.NORTH, BlockFace.EAST, BlockFace.SOUTH, BlockFace.WEST);
-    private static final int[] BORDER = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 18, 24, 25, 26, 27, 33, 35, 36, 42, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53 };
-    private static final int[] OUTPUT_BORDER = { 10, 11, 12, 13, 14, 19, 23, 28, 32, 37, 38, 39, 40, 41 };
+//    private static final List<BlockFace> POSSIBLE_ROTATIONS = Arrays.asList(BlockFace.NORTH, BlockFace.EAST, BlockFace.SOUTH, BlockFace.WEST);
+//    private static final int[] BORDER = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 18, 24, 25, 26, 27, 33, 35, 36, 42, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53 };
+//    private static final int[] OUTPUT_BORDER = { 10, 11, 12, 13, 14, 19, 23, 28, 32, 37, 38, 39, 40, 41 };
     private static final String DEFAULT_SCRIPT = "START-TURN_LEFT-REPEAT";
     private static final int MAX_SCRIPT_LENGTH = 54;
 
@@ -82,57 +63,57 @@ public class ProgrammableAndroid extends SlimefunItem implements InventoryBlock,
         texture = item.getSkullTexture().orElse(null);
         registerDefaultFuelTypes();
 
-        new BlockMenuPreset(getId(), "Programmable Android") {
+//        new BlockMenuPreset(getId(), "Programmable Android") {
+//
+//            @Override
+//            public void init() {
+//                constructMenu(this);
+//            }
+//
+//            @Override
+//            public boolean canOpen(Block b, Player p) {
+//                boolean open = p.getUniqueId().toString().equals(BlockStorage.getLocationInfo(b.getLocation(), "owner")) || p.hasPermission("slimefun.android.bypass");
+//
+//                if (!open) {
+//                    Slimefun.getLocalization().sendMessage(p, "inventory.no-access", true);
+//                }
+//
+//                return open;
+//            }
+//
+//            @Override
+//            public void newInstance(BlockMenu menu, Block b) {
+//                menu.replaceExistingItem(15, CustomItemStack.create(HeadTexture.SCRIPT_START.getAsItemStack(), "&aStart/Continue"));
+//                menu.addMenuClickHandler(15, (p, slot, item, action) -> {
+//                    Slimefun.getLocalization().sendMessage(p, "android.started", true);
+//                    BlockStorage.addBlockInfo(b, "paused", "false");
+//                    p.closeInventory();
+//                    return false;
+//                });
+//
+//                menu.replaceExistingItem(17, CustomItemStack.create(HeadTexture.SCRIPT_PAUSE.getAsItemStack(), "&4Pause"));
+//                menu.addMenuClickHandler(17, (p, slot, item, action) -> {
+//                    BlockStorage.addBlockInfo(b, "paused", "true");
+//                    Slimefun.getLocalization().sendMessage(p, "android.stopped", true);
+//                    return false;
+//                });
+//
+//                menu.replaceExistingItem(16, CustomItemStack.create(HeadTexture.ENERGY_REGULATOR.getAsItemStack(), "&bMemory Core", "", "&8\u21E8 &7Click to open the Script Editor"));
+//                menu.addMenuClickHandler(16, (p, slot, item, action) -> {
+//                    BlockStorage.addBlockInfo(b, "paused", "true");
+//                    Slimefun.getLocalization().sendMessage(p, "android.stopped", true);
+//                    openScriptEditor(p, b);
+//                    return false;
+//                });
+//            }
 
-            @Override
-            public void init() {
-                constructMenu(this);
-            }
+//            @Override
+//            public int[] getSlotsAccessedByItemTransport(ItemTransportFlow flow) {
+//                return new int[0];
+//            }
+//        };
 
-            @Override
-            public boolean canOpen(Block b, Player p) {
-                boolean open = p.getUniqueId().toString().equals(BlockStorage.getLocationInfo(b.getLocation(), "owner")) || p.hasPermission("slimefun.android.bypass");
-
-                if (!open) {
-                    Slimefun.getLocalization().sendMessage(p, "inventory.no-access", true);
-                }
-
-                return open;
-            }
-
-            @Override
-            public void newInstance(BlockMenu menu, Block b) {
-                menu.replaceExistingItem(15, CustomItemStack.create(HeadTexture.SCRIPT_START.getAsItemStack(), "&aStart/Continue"));
-                menu.addMenuClickHandler(15, (p, slot, item, action) -> {
-                    Slimefun.getLocalization().sendMessage(p, "android.started", true);
-                    BlockStorage.addBlockInfo(b, "paused", "false");
-                    p.closeInventory();
-                    return false;
-                });
-
-                menu.replaceExistingItem(17, CustomItemStack.create(HeadTexture.SCRIPT_PAUSE.getAsItemStack(), "&4Pause"));
-                menu.addMenuClickHandler(17, (p, slot, item, action) -> {
-                    BlockStorage.addBlockInfo(b, "paused", "true");
-                    Slimefun.getLocalization().sendMessage(p, "android.stopped", true);
-                    return false;
-                });
-
-                menu.replaceExistingItem(16, CustomItemStack.create(HeadTexture.ENERGY_REGULATOR.getAsItemStack(), "&bMemory Core", "", "&8\u21E8 &7Click to open the Script Editor"));
-                menu.addMenuClickHandler(16, (p, slot, item, action) -> {
-                    BlockStorage.addBlockInfo(b, "paused", "true");
-                    Slimefun.getLocalization().sendMessage(p, "android.stopped", true);
-                    openScriptEditor(p, b);
-                    return false;
-                });
-            }
-
-            @Override
-            public int[] getSlotsAccessedByItemTransport(ItemTransportFlow flow) {
-                return new int[0];
-            }
-        };
-
-        addItemHandler(onPlace(), onBreak());
+        addItemHandler(onPlace());
     }
 
     @Nonnull
@@ -141,51 +122,52 @@ public class ProgrammableAndroid extends SlimefunItem implements InventoryBlock,
 
             @Override
             public void onPlayerPlace(BlockPlaceEvent e) {
-                Player p = e.getPlayer();
-                Block b = e.getBlock();
-
-                BlockStorage.addBlockInfo(b, "owner", p.getUniqueId().toString());
-                BlockStorage.addBlockInfo(b, "script", DEFAULT_SCRIPT);
-                BlockStorage.addBlockInfo(b, "index", "0");
-                BlockStorage.addBlockInfo(b, "fuel", "0");
-                BlockStorage.addBlockInfo(b, "rotation", p.getFacing().getOppositeFace().toString());
-                BlockStorage.addBlockInfo(b, "paused", "true");
-
-                BlockData blockData = Material.PLAYER_HEAD.createBlockData(data -> {
-                    if (data instanceof Rotatable rotatable) {
-                        rotatable.setRotation(p.getFacing());
-                    }
-                });
-
-                b.setBlockData(blockData);
+                e.setCancelled(true);
+//                Player p = e.getPlayer();
+//                Block b = e.getBlock();
+//
+//                BlockStorage.addBlockInfo(b, "owner", p.getUniqueId().toString());
+//                BlockStorage.addBlockInfo(b, "script", DEFAULT_SCRIPT);
+//                BlockStorage.addBlockInfo(b, "index", "0");
+//                BlockStorage.addBlockInfo(b, "fuel", "0");
+//                BlockStorage.addBlockInfo(b, "rotation", p.getFacing().getOppositeFace().toString());
+//                BlockStorage.addBlockInfo(b, "paused", "true");
+//
+//                BlockData blockData = Material.PLAYER_HEAD.createBlockData(data -> {
+//                    if (data instanceof Rotatable rotatable) {
+//                        rotatable.setRotation(p.getFacing());
+//                    }
+//                });
+//
+//                b.setBlockData(blockData);
             }
         };
     }
 
-    @Nonnull
-    private BlockBreakHandler onBreak() {
-        return new BlockBreakHandler(false, false) {
+//    @Nonnull
+//    private BlockBreakHandler onBreak() {
+//        return new BlockBreakHandler(false, false) {
+//
+//            @Override
+//            public void onPlayerBreak(BlockBreakEvent e, ItemStack item, List<ItemStack> drops) {
+//                Block b = e.getBlock();
+//                String owner = BlockStorage.getLocationInfo(b.getLocation(), "owner");
 
-            @Override
-            public void onPlayerBreak(BlockBreakEvent e, ItemStack item, List<ItemStack> drops) {
-                Block b = e.getBlock();
-                String owner = BlockStorage.getLocationInfo(b.getLocation(), "owner");
+//                if (!e.getPlayer().hasPermission("slimefun.android.bypass") && !e.getPlayer().getUniqueId().toString().equals(owner)) {
+//                    // The Player is not allowed to break this android
+//                    e.setCancelled(true);
+//                    return;
+//                }
 
-                if (!e.getPlayer().hasPermission("slimefun.android.bypass") && !e.getPlayer().getUniqueId().toString().equals(owner)) {
-                    // The Player is not allowed to break this android
-                    e.setCancelled(true);
-                    return;
-                }
+//                BlockMenu inv = BlockStorage.getInventory(b);
 
-                BlockMenu inv = BlockStorage.getInventory(b);
-
-                if (inv != null) {
-                    inv.dropItems(b.getLocation(), 43);
-                    inv.dropItems(b.getLocation(), getOutputSlots());
-                }
-            }
-        };
-    }
+//                if (inv != null) {
+//                    inv.dropItems(b.getLocation(), 43);
+//                    inv.dropItems(b.getLocation(), getOutputSlots());
+//                }
+//            }
+//        };
+//    }
 
     /**
      * This returns the {@link AndroidType} that is associated with this {@link ProgrammableAndroid}.
@@ -215,20 +197,20 @@ public class ProgrammableAndroid extends SlimefunItem implements InventoryBlock,
     public void preRegister() {
         super.preRegister();
 
-        addItemHandler(new BlockTicker() {
-
-            @Override
-            public void tick(Block b, SlimefunItem item, Config data) {
-                if (b != null && data != null) {
-                    ProgrammableAndroid.this.tick(b, data);
-                }
-            }
-
-            @Override
-            public boolean isSynchronized() {
-                return true;
-            }
-        });
+//        addItemHandler(new BlockTicker() {
+//
+//            @Override
+//            public void tick(Block b, SlimefunItem item, Config data) {
+//                if (b != null && data != null) {
+//                    ProgrammableAndroid.this.tick(b, data);
+//                }
+//            }
+//
+//            @Override
+//            public boolean isSynchronized() {
+//                return true;
+//            }
+//        });
     }
 
     @ParametersAreNonnullByDefault
@@ -634,169 +616,169 @@ public class ProgrammableAndroid extends SlimefunItem implements InventoryBlock,
         fuelTypes.add(fuel);
     }
 
-    @Override
-    public String getLabelLocalPath() {
-        return "guide.tooltips.recipes.generator";
-    }
+//    @Override
+//    public String getLabelLocalPath() {
+//        return "guide.tooltips.recipes.generator";
+//    }
 
-    @Override
-    public List<ItemStack> getDisplayRecipes() {
-        List<ItemStack> list = new ArrayList<>();
+//    @Override
+//    public List<ItemStack> getDisplayRecipes() {
+//        List<ItemStack> list = new ArrayList<>();
+//
+//        for (MachineFuel fuel : fuelTypes) {
+//            ItemStack item = fuel.getInput().clone();
+//            ItemMeta im = item.getItemMeta();
+//            List<String> lore = new ArrayList<>();
+//            lore.add(ChatColors.color("&8\u21E8 &7Lasts " + NumberUtils.getTimeLeft(fuel.getTicks() / 2)));
+//            im.setLore(lore);
+//            item.setItemMeta(im);
+//            list.add(item);
+//        }
+//
+//        return list;
+//    }
 
-        for (MachineFuel fuel : fuelTypes) {
-            ItemStack item = fuel.getInput().clone();
-            ItemMeta im = item.getItemMeta();
-            List<String> lore = new ArrayList<>();
-            lore.add(ChatColors.color("&8\u21E8 &7Lasts " + NumberUtils.getTimeLeft(fuel.getTicks() / 2)));
-            im.setLore(lore);
-            item.setItemMeta(im);
-            list.add(item);
-        }
-
-        return list;
-    }
-
-    @Override
-    public int[] getInputSlots() {
-        return new int[0];
-    }
-
-    @Override
-    public int[] getOutputSlots() {
-        return new int[] { 20, 21, 22, 29, 30, 31 };
-    }
+//    @Override
+//    public int[] getInputSlots() {
+//        return new int[0];
+//    }
+//
+//    @Override
+//    public int[] getOutputSlots() {
+//        return new int[] { 20, 21, 22, 29, 30, 31 };
+//    }
 
     public int getTier() {
         return tier;
     }
 
-    protected void tick(Block b, Config data) {
-        if (b.getType() != Material.PLAYER_HEAD) {
-            // The Android was destroyed or moved.
-            return;
-        }
+//    protected void tick(Block b, Config data) {
+//        if (b.getType() != Material.PLAYER_HEAD) {
+//            // The Android was destroyed or moved.
+//            return;
+//        }
+//
+//        if ("false".equals(data.getString("paused"))) {
+//            BlockMenu menu = BlockStorage.getInventory(b);
+//
+//            String fuelData = data.getString("fuel");
+//            float fuel = fuelData == null ? 0 : Float.parseFloat(fuelData);
+//
+//            if (fuel < 0.001) {
+//                consumeFuel(b, menu);
+//            } else {
+//                String code = data.getString("script");
+//                String[] script = CommonPatterns.DASH.split(code == null ? DEFAULT_SCRIPT : code);
+//
+//                String indexData = data.getString("index");
+//                int index = (indexData == null ? 0 : Integer.parseInt(indexData)) + 1;
+//
+//                if (index >= script.length) {
+//                    index = 0;
+//                }
+//
+//                BlockStorage.addBlockInfo(b, "fuel", String.valueOf(fuel - 1));
+//                Instruction instruction = Instruction.getInstruction(script[index]);
+//
+//                if (instruction == null) {
+//                    Slimefun.instance().getLogger().log(Level.WARNING, "Failed to parse Android instruction: {0}, maybe your server is out of date?", script[index]);
+//                    return;
+//                }
+//
+//                executeInstruction(instruction, b, menu, data, index);
+//            }
+//        }
+//    }
 
-        if ("false".equals(data.getString("paused"))) {
-            BlockMenu menu = BlockStorage.getInventory(b);
+//    @ParametersAreNonnullByDefault
+//    private void executeInstruction(Instruction instruction, Block b, BlockMenu inv, Config data, int index) {
+//        if (getAndroidType().isType(instruction.getRequiredType())) {
+//            String rotationData = data.getString("rotation");
+//            BlockFace face = rotationData == null ? BlockFace.NORTH : BlockFace.valueOf(rotationData);
+//
+//            switch (instruction) {
+//                case START:
+//                case WAIT:
+//                    // We are "waiting" here, so we only move a step forward
+//                    BlockStorage.addBlockInfo(b, "index", String.valueOf(index));
+//                    break;
+//                case REPEAT:
+//                    // "repeat" just means, we reset our index
+//                    BlockStorage.addBlockInfo(b, "index", String.valueOf(0));
+//                    break;
+//                case CHOP_TREE:
+//                    // We only move to the next step if we finished chopping wood
+//                    if (chopTree(b, inv, face)) {
+//                        BlockStorage.addBlockInfo(b, "index", String.valueOf(index));
+//                    }
+//                    break;
+//                default:
+//                    // We set the index here in advance to fix moving android issues
+//                    BlockStorage.addBlockInfo(b, "index", String.valueOf(index));
+//                    instruction.execute(this, b, inv, face);
+//                    break;
+//            }
+//        }
+//    }
+//
+//    protected void rotate(Block b, BlockFace current, int mod) {
+//        int index = POSSIBLE_ROTATIONS.indexOf(current) + mod;
+//
+//        if (index == POSSIBLE_ROTATIONS.size()) {
+//            index = 0;
+//        } else if (index < 0) {
+//            index = POSSIBLE_ROTATIONS.size() - 1;
+//        }
+//
+//        BlockFace rotation = POSSIBLE_ROTATIONS.get(index);
+//
+//        BlockData blockData = Material.PLAYER_HEAD.createBlockData(data -> {
+//            if (data instanceof Rotatable rotatable) {
+//                rotatable.setRotation(rotation.getOppositeFace());
+//            }
+//        });
+//
+//        b.setBlockData(blockData);
+//        BlockStorage.addBlockInfo(b, "rotation", rotation.name());
+//    }
 
-            String fuelData = data.getString("fuel");
-            float fuel = fuelData == null ? 0 : Float.parseFloat(fuelData);
+//    protected void depositItems(BlockMenu menu, Block facedBlock) {
+//        if (facedBlock.getType() == Material.DISPENSER && BlockStorage.check(facedBlock, "ANDROID_INTERFACE_ITEMS")) {
+//            BlockState state = PaperLib.getBlockState(facedBlock, false).getState();
+//
+//            if (state instanceof Dispenser dispenser) {
+//                for (int slot : getOutputSlots()) {
+//                    ItemStack stack = menu.getItemInSlot(slot);
+//
+//                    if (stack != null) {
+//                        Optional<ItemStack> optional = dispenser.getInventory().addItem(stack).values().stream().findFirst();
+//
+//                        if (optional.isPresent()) {
+//                            menu.replaceExistingItem(slot, optional.get());
+//                        } else {
+//                            menu.replaceExistingItem(slot, null);
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//    }
 
-            if (fuel < 0.001) {
-                consumeFuel(b, menu);
-            } else {
-                String code = data.getString("script");
-                String[] script = CommonPatterns.DASH.split(code == null ? DEFAULT_SCRIPT : code);
-
-                String indexData = data.getString("index");
-                int index = (indexData == null ? 0 : Integer.parseInt(indexData)) + 1;
-
-                if (index >= script.length) {
-                    index = 0;
-                }
-
-                BlockStorage.addBlockInfo(b, "fuel", String.valueOf(fuel - 1));
-                Instruction instruction = Instruction.getInstruction(script[index]);
-
-                if (instruction == null) {
-                    Slimefun.instance().getLogger().log(Level.WARNING, "Failed to parse Android instruction: {0}, maybe your server is out of date?", script[index]);
-                    return;
-                }
-
-                executeInstruction(instruction, b, menu, data, index);
-            }
-        }
-    }
-
-    @ParametersAreNonnullByDefault
-    private void executeInstruction(Instruction instruction, Block b, BlockMenu inv, Config data, int index) {
-        if (getAndroidType().isType(instruction.getRequiredType())) {
-            String rotationData = data.getString("rotation");
-            BlockFace face = rotationData == null ? BlockFace.NORTH : BlockFace.valueOf(rotationData);
-
-            switch (instruction) {
-                case START:
-                case WAIT:
-                    // We are "waiting" here, so we only move a step forward
-                    BlockStorage.addBlockInfo(b, "index", String.valueOf(index));
-                    break;
-                case REPEAT:
-                    // "repeat" just means, we reset our index
-                    BlockStorage.addBlockInfo(b, "index", String.valueOf(0));
-                    break;
-                case CHOP_TREE:
-                    // We only move to the next step if we finished chopping wood
-                    if (chopTree(b, inv, face)) {
-                        BlockStorage.addBlockInfo(b, "index", String.valueOf(index));
-                    }
-                    break;
-                default:
-                    // We set the index here in advance to fix moving android issues
-                    BlockStorage.addBlockInfo(b, "index", String.valueOf(index));
-                    instruction.execute(this, b, inv, face);
-                    break;
-            }
-        }
-    }
-
-    protected void rotate(Block b, BlockFace current, int mod) {
-        int index = POSSIBLE_ROTATIONS.indexOf(current) + mod;
-
-        if (index == POSSIBLE_ROTATIONS.size()) {
-            index = 0;
-        } else if (index < 0) {
-            index = POSSIBLE_ROTATIONS.size() - 1;
-        }
-
-        BlockFace rotation = POSSIBLE_ROTATIONS.get(index);
-
-        BlockData blockData = Material.PLAYER_HEAD.createBlockData(data -> {
-            if (data instanceof Rotatable rotatable) {
-                rotatable.setRotation(rotation.getOppositeFace());
-            }
-        });
-
-        b.setBlockData(blockData);
-        BlockStorage.addBlockInfo(b, "rotation", rotation.name());
-    }
-
-    protected void depositItems(BlockMenu menu, Block facedBlock) {
-        if (facedBlock.getType() == Material.DISPENSER && BlockStorage.check(facedBlock, "ANDROID_INTERFACE_ITEMS")) {
-            BlockState state = PaperLib.getBlockState(facedBlock, false).getState();
-
-            if (state instanceof Dispenser dispenser) {
-                for (int slot : getOutputSlots()) {
-                    ItemStack stack = menu.getItemInSlot(slot);
-
-                    if (stack != null) {
-                        Optional<ItemStack> optional = dispenser.getInventory().addItem(stack).values().stream().findFirst();
-
-                        if (optional.isPresent()) {
-                            menu.replaceExistingItem(slot, optional.get());
-                        } else {
-                            menu.replaceExistingItem(slot, null);
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    protected void refuel(BlockMenu menu, Block facedBlock) {
-        if (facedBlock.getType() == Material.DISPENSER && BlockStorage.check(facedBlock, "ANDROID_INTERFACE_FUEL")) {
-            BlockState state = PaperLib.getBlockState(facedBlock, false).getState();
-
-            if (state instanceof Dispenser dispenser) {
-                for (int slot = 0; slot < 9; slot++) {
-                    ItemStack item = dispenser.getInventory().getItem(slot);
-
-                    if (item != null) {
-                        insertFuel(menu, dispenser.getInventory(), slot, menu.getItemInSlot(43), item);
-                    }
-                }
-            }
-        }
-    }
+//    protected void refuel(BlockMenu menu, Block facedBlock) {
+//        if (facedBlock.getType() == Material.DISPENSER && BlockStorage.check(facedBlock, "ANDROID_INTERFACE_FUEL")) {
+//            BlockState state = PaperLib.getBlockState(facedBlock, false).getState();
+//
+//            if (state instanceof Dispenser dispenser) {
+//                for (int slot = 0; slot < 9; slot++) {
+//                    ItemStack item = dispenser.getInventory().getItem(slot);
+//
+//                    if (item != null) {
+//                        insertFuel(menu, dispenser.getInventory(), slot, menu.getItemInSlot(43), item);
+//                    }
+//                }
+//            }
+//        }
+//    }
 
     private boolean insertFuel(BlockMenu menu, Inventory dispenser, int slot, ItemStack currentFuel, ItemStack newFuel) {
         if (currentFuel == null) {
@@ -818,80 +800,80 @@ public class ProgrammableAndroid extends SlimefunItem implements InventoryBlock,
         return false;
     }
 
-    @ParametersAreNonnullByDefault
-    private void consumeFuel(Block b, BlockMenu menu) {
-        ItemStack item = menu.getItemInSlot(43);
+//    @ParametersAreNonnullByDefault
+//    private void consumeFuel(Block b, BlockMenu menu) {
+//        ItemStack item = menu.getItemInSlot(43);
+//
+//        if (item != null && item.getType() != Material.AIR) {
+//            for (MachineFuel fuel : fuelTypes) {
+//                if (fuel.test(item)) {
+//                    menu.consumeItem(43);
+//
+//                    if (getFuelSource() == AndroidFuelSource.LIQUID) {
+//                        menu.pushItem(new ItemStack(Material.BUCKET), getOutputSlots());
+//                    }
+//
+//                    int fuelLevel = fuel.getTicks();
+//                    BlockStorage.addBlockInfo(b, "fuel", String.valueOf(fuelLevel));
+//                    break;
+//                }
+//            }
+//        }
+//    }
 
-        if (item != null && item.getType() != Material.AIR) {
-            for (MachineFuel fuel : fuelTypes) {
-                if (fuel.test(item)) {
-                    menu.consumeItem(43);
+//    private void constructMenu(@Nonnull BlockMenuPreset preset) {
+//        preset.drawBackground(BORDER);
+//        preset.drawBackground(ChestMenuUtils.getOutputSlotTexture(), OUTPUT_BORDER);
+//
+//        for (int i : getOutputSlots()) {
+//            preset.addMenuClickHandler(i, ChestMenuUtils.getDefaultOutputHandler());
+//        }
+//
+//        preset.addItem(34, getFuelSource().getItem(), ChestMenuUtils.getEmptyClickHandler());
+//    }
 
-                    if (getFuelSource() == AndroidFuelSource.LIQUID) {
-                        menu.pushItem(new ItemStack(Material.BUCKET), getOutputSlots());
-                    }
+//    @ParametersAreNonnullByDefault
+//    public void addItems(Block b, ItemStack... items) {
+//        Validate.notNull(b, "The Block cannot be null.");
+//
+//        BlockMenu inv = BlockStorage.getInventory(b);
+//
+//        if (inv != null) {
+//            for (ItemStack item : items) {
+//                inv.pushItem(item, getOutputSlots());
+//            }
+//        }
+//    }
 
-                    int fuelLevel = fuel.getTicks();
-                    BlockStorage.addBlockInfo(b, "fuel", String.valueOf(fuelLevel));
-                    break;
-                }
-            }
-        }
-    }
-
-    private void constructMenu(@Nonnull BlockMenuPreset preset) {
-        preset.drawBackground(BORDER);
-        preset.drawBackground(ChestMenuUtils.getOutputSlotTexture(), OUTPUT_BORDER);
-
-        for (int i : getOutputSlots()) {
-            preset.addMenuClickHandler(i, ChestMenuUtils.getDefaultOutputHandler());
-        }
-
-        preset.addItem(34, getFuelSource().getItem(), ChestMenuUtils.getEmptyClickHandler());
-    }
-
-    @ParametersAreNonnullByDefault
-    public void addItems(Block b, ItemStack... items) {
-        Validate.notNull(b, "The Block cannot be null.");
-
-        BlockMenu inv = BlockStorage.getInventory(b);
-
-        if (inv != null) {
-            for (ItemStack item : items) {
-                inv.pushItem(item, getOutputSlots());
-            }
-        }
-    }
-
-    @ParametersAreNonnullByDefault
-    protected void move(Block b, BlockFace face, Block block) {
-        if (block.getY() > block.getWorld().getMinHeight() && block.getY() < block.getWorld().getMaxHeight() && block.isEmpty()) {
-
-            if (!block.getWorld().getWorldBorder().isInside(block.getLocation())) {
-                return;
-            }
-
-            BlockData blockData = Material.PLAYER_HEAD.createBlockData(data -> {
-                if (data instanceof Rotatable rotatable) {
-                    rotatable.setRotation(face.getOppositeFace());
-                }
-            });
-
-            block.setBlockData(blockData);
-
-            Slimefun.runSync(() -> {
-                PlayerSkin skin = PlayerSkin.fromBase64(texture);
-                Material type = block.getType();
-                // Ensure that this Block is still a Player Head
-                if (type == Material.PLAYER_HEAD || type == Material.PLAYER_WALL_HEAD) {
-                    PlayerHead.setSkin(block, skin, true);
-                }
-            });
-
-            b.setType(Material.AIR);
-            BlockStorage.moveBlockInfo(b.getLocation(), block.getLocation());
-        }
-    }
+//    @ParametersAreNonnullByDefault
+//    protected void move(Block b, BlockFace face, Block block) {
+//        if (block.getY() > block.getWorld().getMinHeight() && block.getY() < block.getWorld().getMaxHeight() && block.isEmpty()) {
+//
+//            if (!block.getWorld().getWorldBorder().isInside(block.getLocation())) {
+//                return;
+//            }
+//
+//            BlockData blockData = Material.PLAYER_HEAD.createBlockData(data -> {
+//                if (data instanceof Rotatable rotatable) {
+//                    rotatable.setRotation(face.getOppositeFace());
+//                }
+//            });
+//
+//            block.setBlockData(blockData);
+//
+//            Slimefun.runSync(() -> {
+//                PlayerSkin skin = PlayerSkin.fromBase64(texture);
+//                Material type = block.getType();
+//                // Ensure that this Block is still a Player Head
+//                if (type == Material.PLAYER_HEAD || type == Material.PLAYER_WALL_HEAD) {
+//                    PlayerHead.setSkin(block, skin, true);
+//                }
+//            });
+//
+//            b.setType(Material.AIR);
+//            BlockStorage.moveBlockInfo(b.getLocation(), block.getLocation());
+//        }
+//    }
 
     protected void attack(Block b, BlockFace face, Predicate<LivingEntity> predicate) {
         throw new UnsupportedOperationException("Non-butcher Android tried to butcher!");

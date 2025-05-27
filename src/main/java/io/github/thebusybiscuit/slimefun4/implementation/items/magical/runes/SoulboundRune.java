@@ -98,7 +98,7 @@ public class SoulboundRune extends SimpleSlimefunItem<ItemDropHandler> {
                     } else {
                         Slimefun.getLocalization().sendMessage(p, "messages.soulbound-rune.fail", true);
                     }
-                }, 10L);
+                }, 5L);
             } else {
                 Slimefun.getLocalization().sendMessage(p, "messages.soulbound-rune.fail", true);
             }

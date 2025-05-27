@@ -7,6 +7,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 import org.apache.commons.lang.Validate;
 import org.bukkit.Location;
 import org.bukkit.block.Block;
+import org.bukkit.block.BlockFace;
 import org.bukkit.entity.Player;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.inventory.ItemStack;
@@ -80,6 +81,19 @@ abstract class AbstractCargoNode extends SimpleSlimefunItem<BlockPlaceHandler> i
                 // The owner and frequency are required by every node
                 BlockStorage.addBlockInfo(b, "owner", e.getPlayer().getUniqueId().toString());
                 BlockStorage.addBlockInfo(b, FREQUENCY, "0");
+
+                Block blockAgainst = e.getBlockAgainst();
+                BlockFace connFace = null;
+
+                if (blockAgainst != null) {
+                    connFace = b.getFace(blockAgainst);
+                }
+
+                if (connFace == null) {
+                    connFace = e.getPlayer().getFacing().getOppositeFace();
+                }
+
+                BlockStorage.addBlockInfo(b, "direction", connFace.name());
 
                 onPlace(e);
             }

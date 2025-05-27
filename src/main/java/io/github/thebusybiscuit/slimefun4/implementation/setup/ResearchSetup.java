@@ -87,7 +87,7 @@ public final class ResearchSetup {
         register("gold_carats", 54, "Pure Gold", 7, SlimefunItems.GOLD_4K, SlimefunItems.GOLD_6K, SlimefunItems.GOLD_8K, SlimefunItems.GOLD_10K, SlimefunItems.GOLD_12K, SlimefunItems.GOLD_14K, SlimefunItems.GOLD_16K, SlimefunItems.GOLD_18K, SlimefunItems.GOLD_20K, SlimefunItems.GOLD_22K, SlimefunItems.GOLD_24K);
         register("silicon", 55, "Silicon Valley", 12, SlimefunItems.SILICON, SlimefunItems.FERROSILICON);
         register("fire_staff", 56, "Fire Staff", 2, SlimefunItems.STAFF_FIRE);
-        register("smelters_pickaxe", 57, "Smelters Pickaxe", 17, SlimefunItems.SMELTERS_PICKAXE);
+//        register("smelters_pickaxe", 57, "Smelters Pickaxe", 17, SlimefunItems.SMELTERS_PICKAXE);
         register("common_talisman", 58, "Common Talisman", 14, SlimefunItems.COMMON_TALISMAN);
         register("anvil_talisman", 59, "Talisman of the Anvil", 18, SlimefunItems.TALISMAN_ANVIL);
         register("miner_talisman", 60, "Talisman of the Miner", 18, SlimefunItems.TALISMAN_MINER);
@@ -115,7 +115,7 @@ public final class ResearchSetup {
         register("first_aid", 86, "First Aid", 2, SlimefunItems.CLOTH, SlimefunItems.RAG, SlimefunItems.BANDAGE, SlimefunItems.SPLINT, SlimefunItems.TIN_CAN, SlimefunItems.VITAMINS, SlimefunItems.MEDICINE);
         register("gold_armor", 87, "Shiny Armor", 13, SlimefunItems.GOLDEN_HELMET_12K, SlimefunItems.GOLDEN_CHESTPLATE_12K, SlimefunItems.GOLDEN_LEGGINGS_12K, SlimefunItems.GOLDEN_BOOTS_12K);
         register("night_vision_googles", 89, "Night Vision Goggles", 10, SlimefunItems.NIGHT_VISION_GOGGLES);
-        register("pickaxe_of_containment", 90, "Pickaxe of Containment", 14, SlimefunItems.PICKAXE_OF_CONTAINMENT, SlimefunItems.BROKEN_SPAWNER);
+//        register("pickaxe_of_containment", 90, "Pickaxe of Containment", 14, SlimefunItems.PICKAXE_OF_CONTAINMENT, SlimefunItems.BROKEN_SPAWNER);
         register("table_saw", 92, "Table Saw", 4, SlimefunItems.TABLE_SAW);
         register("slime_steel_armor", 93, "Slimy Steel Armor", 27, SlimefunItems.SLIME_HELMET_STEEL, SlimefunItems.SLIME_CHESTPLATE_STEEL, SlimefunItems.SLIME_LEGGINGS_STEEL, SlimefunItems.SLIME_BOOTS_STEEL);
         register("blade_of_vampires", 94, "Blade of Vampires", 26, SlimefunItems.BLADE_OF_VAMPIRES);
@@ -147,7 +147,7 @@ public final class ResearchSetup {
         register("bound_tools", 126, "Soulbound Tools", 29, SlimefunItems.SOULBOUND_PICKAXE, SlimefunItems.SOULBOUND_AXE, SlimefunItems.SOULBOUND_SHOVEL, SlimefunItems.SOULBOUND_HOE);
         register("bound_armor", 127, "Soulbound Armor", 29, SlimefunItems.SOULBOUND_HELMET, SlimefunItems.SOULBOUND_CHESTPLATE, SlimefunItems.SOULBOUND_LEGGINGS, SlimefunItems.SOULBOUND_BOOTS);
         register("juicer", 129, "Delicious Drinks", 29, SlimefunItems.JUICER, SlimefunItems.APPLE_JUICE, SlimefunItems.MELON_JUICE, SlimefunItems.CARROT_JUICE, SlimefunItems.PUMPKIN_JUICE, SlimefunItems.SWEET_BERRY_JUICE, SlimefunItems.GLOW_BERRY_JUICE);
-        register("repaired_spawner", 130, "Repairing Spawners", 15, SlimefunItems.REPAIRED_SPAWNER);
+//        register("repaired_spawner", 130, "Repairing Spawners", 15, SlimefunItems.REPAIRED_SPAWNER);
         register("enhanced_furnace", 132, "Enhanced Furnace", 7, SlimefunItems.ENHANCED_FURNACE, SlimefunItems.ENHANCED_FURNACE_2);
         register("more_enhanced_furnaces", 133, "Better Furnaces", 18, SlimefunItems.ENHANCED_FURNACE_3, SlimefunItems.ENHANCED_FURNACE_4, SlimefunItems.ENHANCED_FURNACE_5, SlimefunItems.ENHANCED_FURNACE_6, SlimefunItems.ENHANCED_FURNACE_7);
         register("high_tier_enhanced_furnaces", 134, "High Tier Furnace", 29, SlimefunItems.ENHANCED_FURNACE_8, SlimefunItems.ENHANCED_FURNACE_9, SlimefunItems.ENHANCED_FURNACE_10, SlimefunItems.ENHANCED_FURNACE_11);
@@ -155,9 +155,9 @@ public final class ResearchSetup {
         register("carbonado_furnace", 136, "Carbonado Edged Furnace", 35, SlimefunItems.CARBONADO_EDGED_FURNACE);
         register("electric_motor", 137, "Heating up", 32, SlimefunItems.ELECTRO_MAGNET, SlimefunItems.ELECTRIC_MOTOR, SlimefunItems.HEATING_COIL);
         register("block_placer", 138, "Block Placer", 17, SlimefunItems.BLOCK_PLACER);
-        register("scroll_of_dimensional_teleposition", 142, "Turning things around", 38, SlimefunItems.SCROLL_OF_DIMENSIONAL_TELEPOSITION);
+//        register("scroll_of_dimensional_teleposition", 142, "Turning things around", 38, SlimefunItems.SCROLL_OF_DIMENSIONAL_TELEPOSITION);
         register("special_bows", 143, "Robin Hood", 22, SlimefunItems.EXPLOSIVE_BOW, SlimefunItems.ICY_BOW);
-        register("tome_of_knowledge_sharing", 144, "Sharing with friends", 30, SlimefunItems.TOME_OF_KNOWLEDGE_SHARING);
+//        register("tome_of_knowledge_sharing", 144, "Sharing with friends", 30, SlimefunItems.TOME_OF_KNOWLEDGE_SHARING);
         register("flask_of_knowledge", 145, "XP Storage", 13, SlimefunItems.FLASK_OF_KNOWLEDGE);
         register("hardened_glass", 146, "Withstanding Explosions", 15, SlimefunItems.REINFORCED_PLATE, SlimefunItems.HARDENED_GLASS);
         register("golden_apple_juice", 149, "Golden potion", 24, SlimefunItems.GOLDEN_APPLE_JUICE);

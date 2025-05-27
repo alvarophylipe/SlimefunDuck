@@ -54,7 +54,7 @@ public enum Instruction {
      */
     GO_FORWARD(AndroidType.NON_FIGHTER, HeadTexture.SCRIPT_FORWARD, (android, b, inv, face) -> {
         Block target = b.getRelative(face);
-        android.move(b, face, target);
+//        android.move(b, face, target);
     }),
 
     /**
@@ -62,7 +62,7 @@ public enum Instruction {
      */
     GO_UP(AndroidType.NON_FIGHTER, HeadTexture.SCRIPT_UP, (android, b, inv, face) -> {
         Block target = b.getRelative(BlockFace.UP);
-        android.move(b, face, target);
+//        android.move(b, face, target);
     }),
 
     /**
@@ -70,7 +70,7 @@ public enum Instruction {
      */
     GO_DOWN(AndroidType.NON_FIGHTER, HeadTexture.SCRIPT_DOWN, (android, b, inv, face) -> {
         Block target = b.getRelative(BlockFace.DOWN);
-        android.move(b, face, target);
+//        android.move(b, face, target);
     }),
 
     /**
@@ -78,7 +78,7 @@ public enum Instruction {
      */
     TURN_LEFT(AndroidType.NONE, HeadTexture.SCRIPT_LEFT, (android, b, inv, face) -> {
         int mod = -1;
-        android.rotate(b, face, mod);
+//        android.rotate(b, face, mod);
     }),
 
     /**
@@ -86,7 +86,7 @@ public enum Instruction {
      */
     TURN_RIGHT(AndroidType.NONE, HeadTexture.SCRIPT_RIGHT, (android, b, inv, face) -> {
         int mod = 1;
-        android.rotate(b, face, mod);
+//        android.rotate(b, face, mod);
     }),
 
     /**
@@ -233,7 +233,7 @@ public enum Instruction {
      */
     INTERFACE_ITEMS(AndroidType.NONE, HeadTexture.SCRIPT_PUSH_ITEMS, (android, b, inv, face) -> {
         Block target = b.getRelative(face);
-        android.depositItems(inv, target);
+//        android.depositItems(inv, target);
     }),
 
     /**
@@ -242,7 +242,7 @@ public enum Instruction {
      */
     INTERFACE_FUEL(AndroidType.NONE, HeadTexture.SCRIPT_PULL_FUEL, (android, b, inv, face) -> {
         Block target = b.getRelative(face);
-        android.refuel(inv, target);
+//        android.refuel(inv, target);
     });
 
     private static final Map<String, Instruction> nameLookup = new HashMap<>();

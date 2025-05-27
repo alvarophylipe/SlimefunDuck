@@ -316,14 +316,14 @@ public class AncientAltarListener implements Listener {
         ItemStackWrapper wrapper = ItemStackWrapper.wrap(catalyst);
         List<ItemStackWrapper> items = ItemStackWrapper.wrapList(inputs);
 
-        if (SlimefunUtils.isItemSimilar(wrapper, SlimefunItems.BROKEN_SPAWNER.item(), false, false)) {
-            if (!checkRecipe(SlimefunItems.BROKEN_SPAWNER.item(), items).isPresent()) {
-                return Optional.empty();
-            }
-
-            RepairedSpawner spawner = (RepairedSpawner) SlimefunItems.REPAIRED_SPAWNER.getItem();
-            return Optional.of(spawner.getItemForEntityType(spawner.getEntityType(wrapper).orElse(EntityType.PIG)));
-        }
+//        if (SlimefunUtils.isItemSimilar(wrapper, SlimefunItems.BROKEN_SPAWNER.item(), false, false)) {
+//            if (!checkRecipe(SlimefunItems.BROKEN_SPAWNER.item(), items).isPresent()) {
+//                return Optional.empty();
+//            }
+//
+//            RepairedSpawner spawner = (RepairedSpawner) SlimefunItems.REPAIRED_SPAWNER.getItem();
+//            return Optional.of(spawner.getItemForEntityType(spawner.getEntityType(wrapper).orElse(EntityType.PIG)));
+//        }
 
         return checkRecipe(wrapper, items);
     }

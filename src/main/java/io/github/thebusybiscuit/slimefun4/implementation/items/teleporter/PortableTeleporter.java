@@ -27,8 +27,8 @@ import io.github.thebusybiscuit.slimefun4.implementation.items.SimpleSlimefunIte
  */
 public class PortableTeleporter extends SimpleSlimefunItem<ItemUseHandler> implements Rechargeable {
 
-    private static final int CAPACITY = 50;
-    private static final int DEFAULT_COST = 10;
+    private static final int CAPACITY = 500;
+    private static final int DEFAULT_COST = 5;
 
     private final ItemSetting<Integer> cost = new IntRangeSetting(this, "teleportation-cost", 0, DEFAULT_COST, CAPACITY);
 

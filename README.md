@@ -76,11 +76,9 @@ Também estamos organizando um evento comunitário de vez em quando, junte-se a 
 Devido ao tamanho deste servidor discord, precisamos impor algumas [regras importantes](https://github.com/Slimefun/Slimefun4/wiki/Discord-Rules).<br>
 Não seguir estas regras pode levar a um kick ou até mesmo a um banimento do servidor.
 
-<p align="center">
   <a href="https://discord.gg/slimefun">
     <img src="https://discordapp.com/api/guilds/565557184348422174/widget.png?style=banner3" alt="Convite do Discord"/>
   </a>
-</p>
 
 ## :open_book: Wiki
 Slimefun tem uma Wiki (detalhada e bem mantida - *cof cof*) para novos jogadores, talvez considere também

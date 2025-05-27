@@ -1,14 +1,14 @@
 package io.github.thebusybiscuit.slimefun4.core.networks.cargo;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
+import java.util.logging.Level;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 
+import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
+import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -62,6 +62,22 @@ abstract class AbstractItemNetwork extends Network {
                 BlockFace face = ((Directional) block.getBlockData()).getFacing().getOppositeFace();
                 connectorCache.put(l, face);
                 return Optional.of(block.getRelative(face));
+            } else {
+                String dir = BlockStorage.getLocationInfo(block.getLocation(), "direction");
+
+                if (dir != null) {
+                    try {
+                        BlockFace face = BlockFace.valueOf(dir.toUpperCase(Locale.ROOT));
+
+                        if (face != null) {
+                            connectorCache.put(l, face);
+                        }
+                        return Optional.of(block.getRelative(face));
+                    } catch (IllegalArgumentException x) {
+                        Slimefun.logger().log(Level.WARNING, "Direction value invalid: " + dir + " for the node at " + l + " check the config.", x);
+                        return Optional.empty();
+                    }
+                }
             }
         }
 

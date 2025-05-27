@@ -77,7 +77,7 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
     public SurvivalSlimefunGuide(boolean showVanillaRecipes, boolean showHiddenItemGroupsInSearch) {
         this.showVanillaRecipes = showVanillaRecipes;
         this.showHiddenItemGroupsInSearch = showHiddenItemGroupsInSearch;
-        item = new SlimefunGuideItem(this, "&aSlimefun Guide &7(Chest GUI)");
+        item = new SlimefunGuideItem(this, "&aGuia do Slimefun");
     }
 
     @Override
