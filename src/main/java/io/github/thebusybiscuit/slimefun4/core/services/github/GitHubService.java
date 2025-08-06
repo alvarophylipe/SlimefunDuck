@@ -240,7 +240,7 @@ public class GitHubService {
             if (contributor.hasTexture()) {
                 String texture = contributor.getTexture(this);
 
-                if (!texture.equals(HeadTexture.UNKNOWN.getTexture())) {
+                if (!texture.equals(HeadTexture.UNKNOWN.texture)) {
                     texturesCache.setValue(contributor.getName(), texture);
                 }
             }

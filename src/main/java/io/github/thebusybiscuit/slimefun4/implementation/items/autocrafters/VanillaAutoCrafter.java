@@ -97,7 +97,7 @@ public class VanillaAutoCrafter extends AbstractAutoCrafter {
         SlimefunItem sfItem = SlimefunItem.getByItem(item);
 
         // Slimefunitems should be ignored (unless allowed)
-        if (sfItem == null || sfItem.isUseableInWorkbench()) {
+        if (sfItem == null || sfItem.isUseableInWorkbench) {
             return super.matches(item, predicate);
         } else {
             return false;

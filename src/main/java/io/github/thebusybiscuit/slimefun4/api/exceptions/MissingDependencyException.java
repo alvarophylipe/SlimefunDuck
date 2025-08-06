@@ -28,7 +28,7 @@ public class MissingDependencyException extends RuntimeException {
      */
     @ParametersAreNonnullByDefault
     public MissingDependencyException(SlimefunAddon addon, String dependency) {
-        super("Slimefun Addon \"" + addon.getName() + "\" forgot to define \"" + dependency + "\" as a depend or softdepend inside the plugin.yml file");
+        super("Slimefun Addon \"" + addon.getJavaPlugin().getName() + "\" forgot to define \"" + dependency + "\" as a depend or softdepend inside the plugin.yml file");
     }
 
 }

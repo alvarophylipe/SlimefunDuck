@@ -17,15 +17,6 @@ import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
 
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
 
-/**
- * The {@link IronGolemAssembler} is an electrical machine that can automatically spawn
- * a {@link IronGolem} if the required ingredients have been provided.
- *
- * @author TheBusyBiscuit
- *
- * @see WitherAssembler
- *
- */
 public class IronGolemAssembler extends AbstractEntityAssembler<IronGolem> {
 
     @ParametersAreNonnullByDefault

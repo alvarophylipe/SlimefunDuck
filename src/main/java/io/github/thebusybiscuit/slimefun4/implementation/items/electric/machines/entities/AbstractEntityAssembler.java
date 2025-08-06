@@ -41,15 +41,7 @@ import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
 import me.mrCookieSlime.Slimefun.api.inventory.DirtyChestMenu;
 import me.mrCookieSlime.Slimefun.api.item_transport.ItemTransportFlow;
 
-/**
- * This is an abstract super class for Entity Assemblers.
- *
- * @author TheBusyBiscuit
- *
- * @see WitherAssembler
- * @see IronGolemAssembler
- *
- */
+
 public abstract class AbstractEntityAssembler<T extends Entity> extends SimpleSlimefunItem<BlockTicker> implements EnergyNetComponent {
 
     private static final String KEY_ENABLED = "enabled";
@@ -70,7 +62,7 @@ public abstract class AbstractEntityAssembler<T extends Entity> extends SimpleSl
     protected AbstractEntityAssembler(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(itemGroup, item, recipeType, recipe);
 
-        new BlockMenuPreset(getId(), item.getItemMetaSnapshot().getDisplayName().orElse("Entity Assembler")) {
+        new BlockMenuPreset(getId(), item.getDisplayNameOrElse("Entity Assembler")) {
 
             @Override
             public void init() {

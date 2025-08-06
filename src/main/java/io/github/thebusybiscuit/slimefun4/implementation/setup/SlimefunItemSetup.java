@@ -122,7 +122,7 @@ import io.github.thebusybiscuit.slimefun4.implementation.items.electric.machines
 import io.github.thebusybiscuit.slimefun4.implementation.items.electric.machines.entities.ExpCollector;
 import io.github.thebusybiscuit.slimefun4.implementation.items.electric.machines.entities.IronGolemAssembler;
 import io.github.thebusybiscuit.slimefun4.implementation.items.electric.machines.entities.ProduceCollector;
-import io.github.thebusybiscuit.slimefun4.implementation.items.electric.machines.entities.WitherAssembler;
+// import io.github.thebusybiscuit.slimefun4.implementation.items.electric.machines.entities.WitherAssembler;
 import io.github.thebusybiscuit.slimefun4.implementation.items.electric.reactors.NetherStarReactor;
 import io.github.thebusybiscuit.slimefun4.implementation.items.electric.reactors.NuclearReactor;
 import io.github.thebusybiscuit.slimefun4.implementation.items.elevator.ElevatorPlate;
@@ -396,7 +396,7 @@ public final class SlimefunItemSetup {
                 .register(plugin);
 
         new BasicCircuitBoard(itemGroups.technicalComponents, SlimefunItems.BASIC_CIRCUIT_BOARD, RecipeType.MOB_DROP,
-                new ItemStack[] {null, null, null, null, CustomItemStack.create(SlimefunUtils.getCustomHead(HeadTexture.IRON_GOLEM.getTexture()), "&aIron Golem"), null, null, null, null})
+                new ItemStack[] {null, null, null, null, CustomItemStack.create(SlimefunUtils.getCustomHead(HeadTexture.IRON_GOLEM.texture), "&aIron Golem"), null, null, null, null})
                 .register(plugin);
 
         new UnplaceableBlock(itemGroups.technicalComponents, SlimefunItems.ADVANCED_CIRCUIT_BOARD, RecipeType.ENHANCED_CRAFTING_TABLE,
@@ -2629,9 +2629,9 @@ public final class SlimefunItemSetup {
                 new ItemStack[] {SlimefunItems.BLISTERING_INGOT_3.item(), SlimefunItems.ADVANCED_CIRCUIT_BOARD.item(), SlimefunItems.BLISTERING_INGOT_3.item(), new ItemStack(Material.IRON_BLOCK), SlimefunItems.ANDROID_MEMORY_CORE.item(), new ItemStack(Material.IRON_BLOCK), SlimefunItems.ELECTRIC_MOTOR.item(), SlimefunItems.REINFORCED_ALLOY_INGOT.item(), SlimefunItems.CARBONADO_EDGED_CAPACITOR.item()})
                 .register(plugin);
 
-        new WitherAssembler(itemGroups.electricity, SlimefunItems.WITHER_ASSEMBLER, RecipeType.ENHANCED_CRAFTING_TABLE,
+        /*new WitherAssembler(itemGroups.electricity, SlimefunItems.WITHER_ASSEMBLER, RecipeType.ENHANCED_CRAFTING_TABLE,
                 new ItemStack[] {SlimefunItems.BLISTERING_INGOT_3.item(), new ItemStack(Material.NETHER_STAR), SlimefunItems.BLISTERING_INGOT_3.item(), SlimefunItems.WITHER_PROOF_OBSIDIAN.item(), SlimefunItems.ANDROID_MEMORY_CORE.item(), SlimefunItems.WITHER_PROOF_OBSIDIAN.item(), SlimefunItems.ELECTRIC_MOTOR.item(), SlimefunItems.REINFORCED_ALLOY_INGOT.item(), SlimefunItems.CARBONADO_EDGED_CAPACITOR.item()})
-                .register(plugin);
+                .register(plugin);*/
 
         new TapeMeasure(itemGroups.usefulItems, SlimefunItems.TAPE_MEASURE, RecipeType.ENHANCED_CRAFTING_TABLE,
                 new ItemStack[] {SlimefunItems.SILICON.item(), new ItemStack(Material.YELLOW_DYE), SlimefunItems.SILICON.item(), new ItemStack(Material.YELLOW_DYE), new ItemStack(Material.STRING), new ItemStack(Material.YELLOW_DYE), SlimefunItems.GILDED_IRON.item(), new ItemStack(Material.YELLOW_DYE), SlimefunItems.SILICON.item()})
@@ -2666,11 +2666,9 @@ public final class SlimefunItemSetup {
                 new ItemStack[] {null, null, null, null, CustomItemStack.create(HeadTexture.PIGLIN_HEAD.getAsItemStack(), "&fPiglin"), null, null, null, null})
                 .register(plugin);
 
-        if (minecraftVersion.isAtLeast(MinecraftVersion.MINECRAFT_1_17)) {
-            new Juice(itemGroups.food, SlimefunItems.GLOW_BERRY_JUICE, RecipeType.JUICER,
-                    new ItemStack[] {new ItemStack(Material.GLOW_BERRIES), null, null, null, null, null, null, null, null})
-                    .register(plugin);
-        }
+        new Juice(itemGroups.food, SlimefunItems.GLOW_BERRY_JUICE, RecipeType.JUICER,
+                new ItemStack[] {new ItemStack(Material.GLOW_BERRIES), null, null, null, null, null, null, null, null})
+                .register(plugin);
 
         new ElytraCap(itemGroups.magicalArmor, SlimefunItems.ELYTRA_CAP, RecipeType.ARMOR_FORGE,
                 new ItemStack[] {new ItemStack(Material.SLIME_BALL), new ItemStack(Material.SLIME_BALL), new ItemStack(Material.SLIME_BALL), SlimefunItems.ELYTRA_SCALE.item(), SlimefunItems.ELYTRA_SCALE.item(), SlimefunItems.ELYTRA_SCALE.item(), new ItemStack(Material.SLIME_BALL), new ItemStack(Material.LEATHER_HELMET), new ItemStack(Material.SLIME_BALL)})

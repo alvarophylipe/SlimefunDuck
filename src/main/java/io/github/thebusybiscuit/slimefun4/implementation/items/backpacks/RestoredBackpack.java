@@ -35,6 +35,6 @@ public class RestoredBackpack extends SlimefunBackpack {
     public RestoredBackpack(@Nonnull ItemGroup itemGroup) {
         super(54, itemGroup, SlimefunItems.RESTORED_BACKPACK, RecipeType.NULL, new ItemStack[9]);
 
-        this.hidden = true;
+        setHidden(true);
     }
 }

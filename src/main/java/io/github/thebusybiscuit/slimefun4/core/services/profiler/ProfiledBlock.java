@@ -138,7 +138,7 @@ final class ProfiledBlock {
 
     @Nonnull
     public SlimefunAddon getAddon() {
-        return item.getAddon();
+        return item.addon;
     }
 
     @Override

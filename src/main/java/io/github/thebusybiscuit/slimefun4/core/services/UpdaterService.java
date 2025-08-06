@@ -7,12 +7,12 @@ import java.util.logging.Level;
 import javax.annotation.Nonnull;
 
 import io.github.bakedlibs.dough.updater.BlobBuildUpdater;
+import io.github.thebusybiscuit.slimefun4.api.SlimefunBranch;
 import org.bukkit.plugin.Plugin;
 
 import io.github.bakedlibs.dough.config.Config;
 import io.github.bakedlibs.dough.updater.PluginUpdater;
 import io.github.bakedlibs.dough.versions.PrefixedVersion;
-import io.github.thebusybiscuit.slimefun4.api.SlimefunBranch;
 import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 
 /**

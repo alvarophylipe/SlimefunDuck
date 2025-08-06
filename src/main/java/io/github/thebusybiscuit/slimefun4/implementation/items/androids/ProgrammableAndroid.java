@@ -79,7 +79,7 @@ public class ProgrammableAndroid extends SlimefunItem implements InventoryBlock,
         super(itemGroup, item, recipeType, recipe);
 
         this.tier = tier;
-        texture = item.getSkullTexture().orElse(null);
+        texture = item.getTexture();
         registerDefaultFuelTypes();
 
         new BlockMenuPreset(getId(), "Programmable Android") {
@@ -203,11 +203,11 @@ public class ProgrammableAndroid extends SlimefunItem implements InventoryBlock,
      * @return The required type of fuel
      */
     public AndroidFuelSource getFuelSource() {
-        return switch (getTier()) {
+        return switch (tier) {
             case 1 -> AndroidFuelSource.SOLID;
             case 2 -> AndroidFuelSource.LIQUID;
             case 3 -> AndroidFuelSource.NUCLEAR;
-            default -> throw new IllegalStateException("Cannot convert the following Android tier to a fuel type: " + getTier());
+            default -> throw new IllegalStateException("Cannot convert the following Android tier to a fuel type: " + tier);
         };
     }
 

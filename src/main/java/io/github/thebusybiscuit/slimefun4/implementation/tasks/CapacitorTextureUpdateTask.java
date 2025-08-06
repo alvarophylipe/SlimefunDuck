@@ -75,7 +75,7 @@ public class CapacitorTextureUpdateTask implements Runnable {
     }
 
     private void setTexture(@Nonnull Block b, @Nonnull HeadTexture texture) {
-        PlayerSkin skin = PlayerSkin.fromHashCode(texture.getUniqueId(), texture.getTexture());
+        PlayerSkin skin = PlayerSkin.fromHashCode(texture.getUniqueId(), texture.texture);
         PlayerHead.setSkin(b, skin, false);
 
         PaperLib.getBlockState(b, false).getState().update(true, false);

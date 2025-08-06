@@ -276,7 +276,7 @@ public class SlimefunProfiler {
         Map<String, Long> map = new HashMap<>();
 
         for (Map.Entry<ProfiledBlock, Long> entry : timings.entrySet()) {
-            map.merge(entry.getKey().getAddon().getName(), entry.getValue(), Long::sum);
+            map.merge(entry.getKey().getAddon().getJavaPlugin().getName(), entry.getValue(), Long::sum);
         }
 
         return map;
@@ -333,7 +333,7 @@ public class SlimefunProfiler {
         int blocks = 0;
 
         for (ProfiledBlock block : timings.keySet()) {
-            if (block.getAddon().getName().equals(pluginName)) {
+            if (block.getAddon().getJavaPlugin().getName().equals(pluginName)) {
                 blocks++;
             }
         }

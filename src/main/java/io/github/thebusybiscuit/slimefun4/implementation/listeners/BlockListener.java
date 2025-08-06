@@ -356,12 +356,7 @@ public class BlockListener implements Listener {
      */
     @ParametersAreNonnullByDefault
     private boolean isSupported(BlockData blockData, Block block) {
-        if (Slimefun.getMinecraftVersion().isAtLeast(MinecraftVersion.MINECRAFT_1_19)) {
-            return blockData.isSupported(block);
-        } else {
-            // TODO: Make 1.16-1.18 version. BlockData::isSupported is 1.19+.
-            return true;
-        }
+        return true;
     }
 
     private int getBonusDropsWithFortune(@Nullable ItemStack item, @Nonnull Block b) {

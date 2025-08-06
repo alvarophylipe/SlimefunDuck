@@ -243,7 +243,7 @@ public class MachineProcessor<T extends MachineOperation> {
         Validate.notNull(inv, "The inventory must not be null.");
         Validate.notNull(operation, "The MachineOperation must not be null.");
 
-        if (getProgressBar() == null) {
+        if (progressBar == null) {
             // No progress bar, no need to update anything.
             return;
         }
@@ -254,7 +254,7 @@ public class MachineProcessor<T extends MachineOperation> {
 
         // Fixes #3538 - If the operation is finished, we don't need to update the progress bar.
         if (remainingTicks > 0 || totalTicks > 0) {
-            ChestMenuUtils.updateProgressbar(inv, slot, remainingTicks, totalTicks, getProgressBar());
+            ChestMenuUtils.updateProgressbar(inv, slot, remainingTicks, totalTicks, progressBar);
         }
     }
 

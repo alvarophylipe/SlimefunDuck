@@ -151,15 +151,13 @@ public class WoodcutterAndroid extends ProgrammableAndroid {
             default -> {}
         }
 
-        if (Slimefun.getMinecraftVersion().isAtLeast(MinecraftVersion.MINECRAFT_1_19)) {
-            switch (logType) {
-                case MANGROVE_LOG,
-                    STRIPPED_MANGROVE_LOG -> {
-                    saplingType = Material.MANGROVE_PROPAGULE;
-                    soilRequirement = SlimefunTag.MANGROVE_BASE_BLOCKS::isTagged;
-                }
-                default -> {}
+        switch (logType) {
+            case MANGROVE_LOG,
+                STRIPPED_MANGROVE_LOG -> {
+                saplingType = Material.MANGROVE_PROPAGULE;
+                soilRequirement = SlimefunTag.MANGROVE_BASE_BLOCKS::isTagged;
             }
+            default -> {}
         }
 
         if (Slimefun.getMinecraftVersion().isAtLeast(MinecraftVersion.MINECRAFT_1_20)) {

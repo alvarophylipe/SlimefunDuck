@@ -97,7 +97,7 @@ public interface GEOResource extends Keyed {
     @Nonnull
     default String getName(@Nonnull Player p) {
         String name = Slimefun.getLocalization().getResourceString(p, "resources." + getKey().getNamespace() + "." + getKey().getKey());
-        return name == null ? getName() : name;
+        return name == null ? name : name;
     }
 
 }

@@ -124,7 +124,7 @@ public final class PostSetup {
     private static int countNonAddonItems() {
         // @formatter:off
         return (int) Slimefun.getRegistry().getEnabledSlimefunItems().stream()
-                        .filter(item -> item.getAddon() instanceof Slimefun)
+                        .filter(item -> item.addon instanceof Slimefun)
                         .count();
         // @formatter:on
     }

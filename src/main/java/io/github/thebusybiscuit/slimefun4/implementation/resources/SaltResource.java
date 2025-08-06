@@ -25,13 +25,8 @@ class SaltResource extends AbstractResource {
     SaltResource() {
         super("salt", "Salt", SlimefunItems.SALT.item(), 18, true);
         MinecraftVersion version = Slimefun.getMinecraftVersion();
+        biomes = getBiomeMap(this, "/biome-maps/salt_v1.18.json");
 
-        if (version.isAtLeast(MinecraftVersion.MINECRAFT_1_18)) {
-            // 1.18+ renamed most biomes
-            biomes = getBiomeMap(this, "/biome-maps/salt_v1.18.json");
-        } else {
-            biomes = getBiomeMap(this, "/biome-maps/salt_v1.16.json");
-        }
     }
 
     @Override

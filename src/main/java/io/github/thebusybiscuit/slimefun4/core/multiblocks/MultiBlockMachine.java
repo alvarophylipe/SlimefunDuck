@@ -51,7 +51,7 @@ public abstract class MultiBlockMachine extends SlimefunItem implements NotPlace
 
     protected final List<ItemStack[]> recipes;
     protected final List<ItemStack> displayRecipes;
-    protected final MultiBlock multiblock;
+    protected final MultiBlock multiBlock;
 
     @ParametersAreNonnullByDefault
     protected MultiBlockMachine(ItemGroup itemGroup, SlimefunItemStack item, ItemStack[] recipe, ItemStack[] machineRecipes, BlockFace trigger) {
@@ -59,7 +59,7 @@ public abstract class MultiBlockMachine extends SlimefunItem implements NotPlace
         this.recipes = new ArrayList<>();
         this.displayRecipes = new ArrayList<>();
         this.displayRecipes.addAll(Arrays.asList(machineRecipes));
-        this.multiblock = new MultiBlock(this, convertItemStacksToMaterial(recipe), trigger);
+        this.multiBlock = new MultiBlock(this, convertItemStacksToMaterial(recipe), trigger);
 
         registerDefaultRecipes(displayRecipes);
     }
@@ -83,7 +83,7 @@ public abstract class MultiBlockMachine extends SlimefunItem implements NotPlace
     }
 
     public @Nonnull MultiBlock getMultiBlock() {
-        return multiblock;
+        return multiBlock;
     }
 
     public void addRecipe(ItemStack[] input, ItemStack output) {
@@ -101,7 +101,7 @@ public abstract class MultiBlockMachine extends SlimefunItem implements NotPlace
 
     @Override
     public void postRegister() {
-        Slimefun.getRegistry().getMultiBlocks().add(multiblock);
+        Slimefun.getRegistry().getMultiBlocks().add(multiBlock);
     }
 
     @Override

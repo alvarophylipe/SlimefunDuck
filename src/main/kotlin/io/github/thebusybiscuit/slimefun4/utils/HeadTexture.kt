@@ -1,25 +1,20 @@
-package io.github.thebusybiscuit.slimefun4.utils;
+package io.github.thebusybiscuit.slimefun4.utils
 
-import java.nio.charset.StandardCharsets;
-import java.util.UUID;
-
-import javax.annotation.Nonnull;
-
-import org.apache.commons.lang.Validate;
-import org.bukkit.inventory.ItemStack;
-
-import io.github.bakedlibs.dough.common.CommonPatterns;
-import io.github.bakedlibs.dough.skins.PlayerSkin;
+import io.github.bakedlibs.dough.common.CommonPatterns
+import io.github.bakedlibs.dough.skins.PlayerSkin
+import org.apache.commons.lang.Validate
+import org.bukkit.inventory.ItemStack
+import java.nio.charset.StandardCharsets
+import java.util.UUID
+import javax.annotation.Nonnull
 
 /**
  * This enum holds all currently used Head textures in Slimefun.
  * Credit for most of these goes to our main head designer "AquaLazuryt".
- * 
- * @author TheBusyBiscuit
  *
+ * @author TheBusyBiscuit
  */
-public enum HeadTexture {
-
+enum class HeadTexture(@Nonnull texture: String) {
     PORTABLE_CRAFTER("72ec4a4bd8a58f8361f8a0303e2199d33d624ea5f92f7cb3414fee95e2d861"),
     ENDER_BACKPACK("2a3b34862b9afb63cf8d5779966d3fba70af82b04e83f3eaf6449aeba"),
     TIN_CAN("94da97f080e395b842c4cc82a840823d4dbd8ca688a206853e5783e4bfdc012"),
@@ -123,48 +118,43 @@ public enum HeadTexture {
     CARGO_MOTOR("8e47f99abcd645a3ef1122c9d850a981979f431ba293255c1680e91ab117ed35"),
     CRAFTING_MOTOR("1003620899f1afa271e8e521ecbee2977a06c8529d3f389e8cc04af06d8c7940");
 
-    private final String texture;
-    private final UUID uuid;
-
-    HeadTexture(@Nonnull String texture) {
-        Validate.notNull(texture, "Texture cannot be null");
-        Validate.isTrue(CommonPatterns.HEXADECIMAL.matcher(texture).matches(), "Textures must be in hexadecimal.");
-
-        this.texture = texture;
-        this.uuid = UUID.nameUUIDFromBytes(texture.getBytes(StandardCharsets.UTF_8));
-    }
-
     /**
      * This returns the texture hash for this particular head.
-     * 
+     *
      * @return The associated texture hash
      */
-    public @Nonnull String getTexture() {
-        return texture;
-    }
+    @JvmField
+    @get:Nonnull
+    val texture: String
 
     /**
-     * This returns the {@link UUID} for this {@link HeadTexture}.
-     * The {@link UUID} is generated from the texture and cached for
+     * This returns the [java.util.UUID] for this [HeadTexture].
+     * The [java.util.UUID] is generated from the texture and cached for
      * performance reasons.
-     * 
-     * @return The {@link UUID} for this {@link HeadTexture}
+     *
+     * @return The [java.util.UUID] for this [HeadTexture]
      */
-    public @Nonnull UUID getUniqueId() {
-        return uuid;
+    @get:Nonnull
+    val uniqueId: UUID
+
+    init {
+        Validate.notNull(texture, "Texture cannot be null")
+        Validate.isTrue(CommonPatterns.HEXADECIMAL.matcher(texture).matches(), "Textures must be in hexadecimal.")
+
+        this.texture = texture
+        this.uniqueId = UUID.nameUUIDFromBytes(texture.toByteArray(StandardCharsets.UTF_8))
     }
 
-    /**
-     * This method returns an {@link ItemStack} with the given texture assigned to it.
-     * 
-     * @return A custom head {@link ItemStack}
-     */
-    public @Nonnull ItemStack getAsItemStack() {
-        return SlimefunUtils.getCustomHead(getTexture());
-    }
+    @get:Nonnull
+    val asItemStack: ItemStack
+        /**
+         * This method returns an [ItemStack] with the given texture assigned to it.
+         *
+         * @return A custom head [ItemStack]
+         */
+        get() = SlimefunUtils.getCustomHead(this.texture)
 
-    public @Nonnull PlayerSkin getAsSkin() {
-        return PlayerSkin.fromHashCode(texture);
-    }
-
+    @get:Nonnull
+    val asSkin: PlayerSkin
+        get() = PlayerSkin.fromHashCode(texture)
 }

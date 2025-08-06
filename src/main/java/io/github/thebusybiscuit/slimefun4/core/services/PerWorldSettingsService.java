@@ -177,7 +177,7 @@ public class PerWorldSettingsService {
 
         for (SlimefunItem item : Slimefun.getRegistry().getEnabledSlimefunItems()) {
             if (item != null) {
-                String addon = item.getAddon().getName().toLowerCase(Locale.ROOT);
+                String addon = item.addon.getJavaPlugin().getName().toLowerCase(Locale.ROOT);
                 config.setValue(addon + '.' + item.getId(), !items.contains(item.getId()));
             }
         }
@@ -220,7 +220,7 @@ public class PerWorldSettingsService {
     private void loadItemsFromWorldConfig(@Nonnull String worldName, @Nonnull Config config, @Nonnull Set<String> items) {
         for (SlimefunItem item : Slimefun.getRegistry().getEnabledSlimefunItems()) {
             if (item != null) {
-                String addon = item.getAddon().getName().toLowerCase(Locale.ROOT);
+                String addon = item.addon.getJavaPlugin().getName().toLowerCase(Locale.ROOT);
                 config.setDefaultValue(addon + ".enabled", true);
                 config.setDefaultValue(addon + '.' + item.getId(), true);
 

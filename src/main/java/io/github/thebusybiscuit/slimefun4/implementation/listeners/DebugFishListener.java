@@ -134,7 +134,7 @@ public class DebugFishListener implements Listener {
         p.sendMessage(" ");
         p.sendMessage(ChatColors.color("&d" + b.getType() + " &e@ X: " + b.getX() + " Y: " + b.getY() + " Z: " + b.getZ()));
         p.sendMessage(ChatColors.color("&dId: " + "&e" + item.getId()));
-        p.sendMessage(ChatColors.color("&dPlugin: " + "&e" + item.getAddon().getName()));
+        p.sendMessage(ChatColors.color("&dPlugin: " + "&e" + item.addon.getJavaPlugin().getName()));
 
         if (b.getState() instanceof Skull) {
             p.sendMessage(ChatColors.color("&dSkull: " + greenCheckmark));

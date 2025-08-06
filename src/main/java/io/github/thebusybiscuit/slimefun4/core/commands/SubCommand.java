@@ -67,7 +67,7 @@ public abstract class SubCommand {
 
     @Nonnull
     protected String getDescription() {
-        return "commands." + getName();
+        return "commands." + name;
     }
 
     /**

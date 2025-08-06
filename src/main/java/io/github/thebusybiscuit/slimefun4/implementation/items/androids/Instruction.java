@@ -261,7 +261,7 @@ public enum Instruction {
     @ParametersAreNonnullByDefault
     Instruction(AndroidType type, HeadTexture head, @Nullable AndroidAction method) {
         this.type = type;
-        this.item = SlimefunUtils.getCustomHead(head.getTexture());
+        this.item = SlimefunUtils.getCustomHead(head.texture);
         this.method = method;
     }
 

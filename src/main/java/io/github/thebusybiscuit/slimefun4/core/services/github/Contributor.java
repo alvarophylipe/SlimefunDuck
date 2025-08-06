@@ -197,7 +197,7 @@ public class Contributor {
             if (cached != null) {
                 return cached;
             } else {
-                return HeadTexture.UNKNOWN.getTexture();
+                return HeadTexture.UNKNOWN.texture;
             }
         } else {
             return headTexture.get();

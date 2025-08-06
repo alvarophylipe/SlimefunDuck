@@ -87,7 +87,7 @@ public class Talisman extends SlimefunItem {
                 lore.add(line);
             }
 
-            enderTalisman = new SlimefunItemStack("ENDER_" + getId(), getItem().getType(), name, lore.toArray(new String[0]));
+            enderTalisman = new SlimefunItemStack("ENDER_"  + getId(), getItem().getType(), name, lore.toArray(new String[0]));
         } else {
             enderTalisman = null;
         }
@@ -129,7 +129,7 @@ public class Talisman extends SlimefunItem {
     @Override
     public void postRegister() {
         EnderTalisman talisman = new EnderTalisman(this, getEnderVariant());
-        talisman.register(getAddon());
+        talisman.register(addon);
     }
 
     @Override

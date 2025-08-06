@@ -134,7 +134,7 @@ public class LegacyStorage implements Storage {
         for (Waypoint waypoint : data.getWaypoints()) {
             // Legacy data uses IDs
             waypointsFile.setValue(waypoint.getId(), waypoint.getLocation());
-            waypointsFile.setValue(waypoint.getId() + ".name", waypoint.getName());
+            waypointsFile.setValue(waypoint.getId() + ".name", waypoint.getLocation());
         }
 
         // Save files

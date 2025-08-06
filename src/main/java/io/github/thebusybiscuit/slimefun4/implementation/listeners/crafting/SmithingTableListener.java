@@ -28,7 +28,7 @@ public class SmithingTableListener implements SlimefunCraftingListener {
     @EventHandler(ignoreCancelled = true)
     public void onSmith(SmithItemEvent e) {
         SlimefunItem sfItem = SlimefunItem.getByItem(e.getInventory().getContents()[materialSlot()]);
-        if (sfItem != null && !sfItem.isUseableInWorkbench()) {
+        if (sfItem != null && !sfItem.isUseableInWorkbench) {
             e.setResult(Result.DENY);
             Slimefun.getLocalization().sendMessage(e.getWhoClicked(), "smithing_table.not-working", true);
         }
@@ -38,7 +38,7 @@ public class SmithingTableListener implements SlimefunCraftingListener {
     public void onPrepareSmith(PrepareSmithingEvent e) {
         if (e.getInventory().getResult() != null) {
             SlimefunItem sfItem = SlimefunItem.getByItem(e.getInventory().getContents()[materialSlot()]);
-            if (sfItem != null && !sfItem.isUseableInWorkbench()) {
+            if (sfItem != null && !sfItem.isUseableInWorkbench) {
                 e.setResult(null);
             }
         }

@@ -166,8 +166,8 @@ public class ItemSetting<T> {
     public void reload() {
         Validate.notNull(item, "Cannot apply settings for a non-existing SlimefunItem");
 
-        Slimefun.getItemCfg().setDefaultValue(item.getId() + '.' + getKey(), getDefaultValue());
-        Object configuredValue = Slimefun.getItemCfg().getValue(item.getId() + '.' + getKey());
+        Slimefun.getItemCfg().setDefaultValue(item.getId() + '.' + key, defaultValue);
+        Object configuredValue = Slimefun.getItemCfg().getValue(item.getId() + '.' + key);
 
         if (defaultValue.getClass().isInstance(configuredValue) || (configuredValue instanceof List && defaultValue instanceof List)) {
             // We can do an unsafe cast here, we did an isInstance(...) check before!
@@ -179,7 +179,7 @@ public class ItemSetting<T> {
                 // @formatter:off
                 item.warn(
                         "We have found an invalid config setting in your Items.yml!" +
-                        "\n  at \"" + item.getId() + "." + getKey() + "\"" +
+                        "\n  at \"" + item.getId() + "." + key + "\"" +
                         "\n  " + configuredValue + " is not a valid input!" +
                         "\n" + getErrorMessage()
                 );
@@ -193,7 +193,7 @@ public class ItemSetting<T> {
             item.warn(
                     "We have found an invalid config setting in your Items.yml!" +
                     "\nPlease only use settings that are valid." +
-                    "\n  at \"" + item.getId() + "." + getKey() + "\"" +
+                    "\n  at \"" + item.getId() + "." + key + "\"" +
                     "\n  Expected \"" + defaultValue.getClass().getSimpleName() + "\" but found: \"" + found + "\""
             );
             // @formatter:on
@@ -203,7 +203,7 @@ public class ItemSetting<T> {
     @Override
     public String toString() {
         T currentValue = this.value != null ? this.value : defaultValue;
-        return getClass().getSimpleName() + " {" + getKey() + " = " + currentValue + " (default: " + getDefaultValue() + ")";
+        return getClass().getSimpleName() + " {" + key + " = " + currentValue + " (default: " + defaultValue + ")";
     }
 
     @Override
@@ -215,7 +215,7 @@ public class ItemSetting<T> {
     public final boolean equals(Object obj) {
         if (obj instanceof ItemSetting) {
             ItemSetting<?> setting = (ItemSetting<?>) obj;
-            return Objects.equals(getKey(), setting.getKey()) && Objects.equals(getItem(), setting.getItem());
+            return Objects.equals(key, setting.key) && Objects.equals(item, setting.item);
         } else {
             return false;
         }

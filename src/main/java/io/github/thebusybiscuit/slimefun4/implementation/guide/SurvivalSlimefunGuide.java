@@ -120,7 +120,7 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
                 SlimefunAddon addon = group.getAddon();
 
                 if (addon != null) {
-                    addon.getLogger().log(Level.SEVERE, x, () -> "Could not display item group: " + group);
+                    addon.getJavaPlugin().getLogger().log(Level.SEVERE, x, () -> "Could not display item group: " + group);
                 } else {
                     Slimefun.logger().log(Level.SEVERE, x, () -> "Could not display item group: " + group);
                 }
@@ -512,7 +512,7 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
         }
 
         ChestMenu menu = create(p);
-        Optional<String> wiki = item.getWikipage();
+        Optional<String> wiki = item.getWikiURL();
 
         if (wiki.isPresent()) {
             menu.addItem(8, CustomItemStack.create(Material.KNOWLEDGE_BOOK, ChatColor.WHITE + Slimefun.getLocalization().getMessage(p, "guide.tooltips.wiki"), "", ChatColor.GRAY + "\u21E8 " + ChatColor.GREEN + Slimefun.getLocalization().getMessage(p, "guide.tooltips.open-itemgroup")));
