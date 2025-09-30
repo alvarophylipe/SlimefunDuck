@@ -32,7 +32,7 @@ public class MockHazmatSuit extends SlimefunArmorPiece implements ProtectiveArmo
 
     @Override
     public NamespacedKey getArmorSetId() {
-        return new NamespacedKey(getAddon().getJavaPlugin(), "mock_hazmat");
+        return new NamespacedKey(getAddon().javaPlugin, "mock_hazmat");
     }
 
 }

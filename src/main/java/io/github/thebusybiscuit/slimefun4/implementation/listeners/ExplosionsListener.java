@@ -84,7 +84,7 @@ public class ExplosionsListener implements Listener {
         if (!(slimefunItem instanceof WitherProof)
             && !slimefunItem.callItemHandler(BlockBreakHandler.class, handler -> handleExplosion(handler, block))
         ) {
-            BlockStorage.clearBlockInfo(block);
+            BlockStorage.clearBlockInfo(block, true);
             block.setType(Material.AIR);
         }
     }
@@ -92,7 +92,7 @@ public class ExplosionsListener implements Listener {
     @ParametersAreNonnullByDefault
     private void handleExplosion(BlockBreakHandler handler, Block block) {
         if (handler.isExplosionAllowed(block)) {
-            BlockStorage.clearBlockInfo(block);
+            BlockStorage.clearBlockInfo(block, true);
             block.setType(Material.AIR);
 
             List<ItemStack> drops = new ArrayList<>();

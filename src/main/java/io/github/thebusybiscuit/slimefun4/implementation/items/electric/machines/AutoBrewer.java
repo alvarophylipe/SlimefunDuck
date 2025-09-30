@@ -94,7 +94,7 @@ public class AutoBrewer extends AContainer implements NotHopperable {
             }
 
             for (int slot : getInputSlots()) {
-                menu.consumeItem(slot);
+                menu.consumeItem(slot, 1, false);
             }
 
             return new MachineRecipe(30, new ItemStack[] { input1, input2 }, new ItemStack[] { output });

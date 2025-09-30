@@ -130,7 +130,7 @@ public class SlimefunItemInteractListener implements Listener {
             if (!interactable) {
                 Player p = event.getPlayer();
 
-                if (BlockMenuPreset.isInventory(sfItem.getId())) {
+                if (BlockMenuPreset.Companion.isInventory(sfItem.getId())) {
                     openInventory(p, sfItem, event.getInteractEvent().getClickedBlock(), event);
                     return false;
                 }
@@ -154,7 +154,7 @@ public class SlimefunItemInteractListener implements Listener {
                     } else {
                         Slimefun.getLocalization().sendMessage(p, "inventory.no-access", true);
                     }
-                } else if (BlockStorage.getStorage(clickedBlock.getWorld()).hasInventory(clickedBlock.getLocation())) {
+                } else if (BlockStorage.Companion.getStorage(clickedBlock.getWorld()).hasInventory(clickedBlock.getLocation())) {
                     BlockMenu menu = BlockStorage.getInventory(clickedBlock.getLocation());
 
                     if (menu.canOpen(clickedBlock, p)) {

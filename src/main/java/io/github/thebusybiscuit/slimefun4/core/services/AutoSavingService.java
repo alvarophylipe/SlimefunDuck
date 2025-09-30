@@ -92,7 +92,7 @@ public class AutoSavingService {
         Set<BlockStorage> worlds = new HashSet<>();
 
         for (World world : Bukkit.getWorlds()) {
-            BlockStorage storage = BlockStorage.getStorage(world);
+            BlockStorage storage = BlockStorage.Companion.getStorage(world);
 
             if (storage != null) {
                 storage.computeChanges();

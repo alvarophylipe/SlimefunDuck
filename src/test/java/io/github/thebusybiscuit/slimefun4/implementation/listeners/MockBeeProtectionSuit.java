@@ -29,7 +29,7 @@ class MockBeeProtectionSuit extends SlimefunArmorPiece implements ProtectiveArmo
 
     @Override
     public NamespacedKey getArmorSetId() {
-        return new NamespacedKey(getAddon().getJavaPlugin(), "mock_bees");
+        return new NamespacedKey(getAddon().javaPlugin, "mock_bees");
     }
 
 }

@@ -88,7 +88,7 @@ public class BookBinder extends AContainer {
                     }
 
                     for (int inputSlot : getInputSlots()) {
-                        menu.consumeItem(inputSlot);
+                        menu.consumeItem(inputSlot, 1, false);
                     }
 
                     return recipe;

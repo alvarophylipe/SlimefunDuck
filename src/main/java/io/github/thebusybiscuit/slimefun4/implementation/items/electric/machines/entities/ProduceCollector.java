@@ -139,7 +139,7 @@ public class ProduceCollector extends AContainer implements RecipeDisplayItem {
                 }
 
                 if (isAnimalNearby(inv.getBlock(), produce)) {
-                    inv.consumeItem(slot);
+                    inv.consumeItem(slot, 1, false);
                     return produce;
                 }
             }

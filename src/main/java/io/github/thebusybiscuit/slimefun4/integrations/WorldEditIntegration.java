@@ -50,7 +50,7 @@ class WorldEditIntegration {
                         Location l = new Location(world, pos.getBlockX(), pos.getBlockY(), pos.getBlockZ());
 
                         if (BlockStorage.hasBlockInfo(l)) {
-                            BlockStorage.clearBlockInfo(l);
+                            BlockStorage.clearBlockInfo(l, true);
                         }
                     }
                 }

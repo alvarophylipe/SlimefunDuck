@@ -84,7 +84,7 @@ public abstract class Reactor extends AbstractEnergyProvider implements Hologram
 
         processor.setProgressBar(getProgressBar());
 
-        new BlockMenuPreset(getId(), getInventoryTitle()) {
+        new BlockMenuPreset(getId(), getInventoryTitle(), false) {
 
             @Override
             public void init() {
@@ -392,7 +392,7 @@ public abstract class Reactor extends AbstractEnergyProvider implements Hologram
 
         if (fuel != null) {
             for (Map.Entry<Integer, Integer> entry : found.entrySet()) {
-                inv.consumeItem(entry.getKey(), entry.getValue());
+                inv.consumeItem(entry.getKey(), entry.getValue(), false);
             }
 
             processor.startOperation(l, new FuelOperation(fuel));
@@ -430,7 +430,7 @@ public abstract class Reactor extends AbstractEnergyProvider implements Hologram
 
             for (int slot : getCoolantSlots()) {
                 if (SlimefunUtils.isItemSimilar(menu.getItemInSlot(slot), coolant, true, false)) {
-                    menu.consumeItem(slot);
+                    menu.consumeItem(slot, 1, false);
                     updateHologram(reactor.getBlock(), "&b\u2744 &7100%");
                     return true;
                 }

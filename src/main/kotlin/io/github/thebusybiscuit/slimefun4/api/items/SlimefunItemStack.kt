@@ -236,8 +236,8 @@ class SlimefunItemStack : ItemStack {
     fun getDisplayNameOrElse(fallback: String): String = displayName ?: fallback
 
     @Nonnull
-    override fun clone(): SlimefunItemStack {
-        return SlimefunItemStack(this.itemId, super.clone())
+    override fun clone(): ItemStack {
+        return super.clone()
     }
 
     override fun toString(): String {

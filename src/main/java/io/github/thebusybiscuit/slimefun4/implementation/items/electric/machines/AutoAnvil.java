@@ -57,7 +57,7 @@ public class AutoAnvil extends AContainer {
                     }
 
                     for (int inputSlot : getInputSlots()) {
-                        menu.consumeItem(inputSlot);
+                        menu.consumeItem(inputSlot, 1, false);
                     }
 
                     return new MachineRecipe(30, new ItemStack[] { ductTape, item }, new ItemStack[] { repairedItem });

@@ -141,7 +141,7 @@ public class FluidPump extends SimpleSlimefunItem<BlockTicker> implements Invent
 
                     if (nextFluid != null) {
                         removeCharge(b.getLocation(), ENERGY_CONSUMPTION);
-                        menu.consumeItem(slot);
+                        menu.consumeItem(slot, 1, false);
                         menu.pushItem(bucket, getOutputSlots());
                         nextFluid.setType(Material.AIR);
                     }
@@ -158,7 +158,7 @@ public class FluidPump extends SimpleSlimefunItem<BlockTicker> implements Invent
 
                     if (nextFluid != null) {
                         removeCharge(b.getLocation(), ENERGY_CONSUMPTION);
-                        menu.consumeItem(slot);
+                        menu.consumeItem(slot, 1, false);
                         menu.pushItem(bottle, getOutputSlots());
 
                         if (ThreadLocalRandom.current().nextInt(100) < 30) {

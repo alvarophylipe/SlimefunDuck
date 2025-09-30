@@ -436,7 +436,7 @@ public abstract class AContainer extends SlimefunItem implements InventoryBlock,
                 }
 
                 for (Map.Entry<Integer, Integer> entry : found.entrySet()) {
-                    inv.consumeItem(entry.getKey(), entry.getValue());
+                    inv.consumeItem(entry.getKey(), entry.getValue(), false);
                 }
 
                 return recipe;

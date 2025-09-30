@@ -2,9 +2,9 @@
 
 package io.github.thebusybiscuit.slimefun4.api
 
+import com.github.shynixn.mccoroutine.bukkit.SuspendingJavaPlugin
 import org.apache.commons.lang.Validate
 import org.bukkit.plugin.java.JavaPlugin
-import java.util.logging.Logger
 import javax.annotation.Nonnull
 import io.github.thebusybiscuit.slimefun4.implementation.Slimefun
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem
@@ -22,15 +22,15 @@ import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem
  *
  * @author TheBusyBiscuit
  */
-interface SlimefunAddon {
-    val javaPlugin: JavaPlugin
+abstract class SlimefunAddon : JavaPlugin() {
+    abstract val javaPlugin: JavaPlugin
 
     /**
      * This method returns a link to the Bug Tracker of this [SlimefunAddon]
      *
      * @return The URL for this Plugin's Bug Tracker, or null
      */
-    val bugTrackerURL: String?
+    abstract val bugTrackerURL: String?
 
     val pluginVersion: String?
         /**

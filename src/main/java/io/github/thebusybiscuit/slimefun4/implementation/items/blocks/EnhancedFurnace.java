@@ -81,7 +81,7 @@ public class EnhancedFurnace extends SimpleSlimefunItem<BlockTicker> {
             public void tick(Block b, SlimefunItem item, Config data) {
                 if (b.getType() != Material.FURNACE) {
                     // The Furnace has been destroyed, we can clear the block data
-                    BlockStorage.clearBlockInfo(b);
+                    BlockStorage.clearBlockInfo(b, true);
                 } else {
                     BlockStateSnapshotResult result = PaperLib.getBlockState(b, false);
                     BlockState state = result.getState();

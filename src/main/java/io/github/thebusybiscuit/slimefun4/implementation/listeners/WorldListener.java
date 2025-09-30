@@ -22,12 +22,12 @@ public class WorldListener implements Listener {
     @EventHandler
     public void onWorldLoad(WorldLoadEvent e) {
         Slimefun.getWorldSettingsService().load(e.getWorld());
-        BlockStorage.getOrCreate(e.getWorld());
+        BlockStorage.Companion.getOrCreate(e.getWorld());
     }
 
     @EventHandler
     public void onWorldUnload(WorldUnloadEvent e) {
-        BlockStorage storage = BlockStorage.getStorage(e.getWorld());
+        BlockStorage storage = BlockStorage.Companion.getStorage(e.getWorld());
 
         if (storage != null) {
             storage.saveAndRemove();

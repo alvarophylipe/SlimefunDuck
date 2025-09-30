@@ -80,7 +80,7 @@ public class DebugFishListener implements Listener {
     private void onLeftClick(Player p, Block b, PlayerInteractEvent e) {
         if (p.isSneaking()) {
             if (BlockStorage.hasBlockInfo(b)) {
-                BlockStorage.clearBlockInfo(b);
+                BlockStorage.clearBlockInfo(b, true);
             }
         } else {
             e.setCancelled(false);
@@ -147,7 +147,7 @@ public class DebugFishListener implements Listener {
             }
         }
 
-        if (BlockStorage.getStorage(b.getWorld()).hasInventory(b.getLocation())) {
+        if (BlockStorage.Companion.getStorage(b.getWorld()).hasInventory(b.getLocation())) {
             p.sendMessage(ChatColors.color("&dInventory: " + greenCheckmark));
         } else {
             p.sendMessage(ChatColors.color("&dInventory: " + redCross));

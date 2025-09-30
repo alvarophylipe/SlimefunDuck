@@ -40,7 +40,7 @@ public class OilPump extends AContainer implements RecipeDisplayItem {
 
         oil = Slimefun.getRegistry().getGEOResources().get(new NamespacedKey(Slimefun.instance(), "oil")).orElse(null);
 
-        new BlockMenuPreset(getId(), getInventoryTitle()) {
+        new BlockMenuPreset(getId(), getInventoryTitle(), false) {
 
             @Override
             public void init() {
@@ -99,7 +99,7 @@ public class OilPump extends AContainer implements RecipeDisplayItem {
                     if (supplies.isPresent() && supplies.getAsInt() > 0) {
                         MachineRecipe recipe = new MachineRecipe(26, new ItemStack[] { emptyBucket }, new ItemStack[] { SlimefunItems.OIL_BUCKET.item() });
 
-                        inv.consumeItem(slot);
+                        inv.consumeItem(slot, 1, false);
                         Slimefun.getGPSNetwork().getResourceManager().setSupplies(oil, b.getWorld(), b.getX() >> 4, b.getZ() >> 4, supplies.getAsInt() - 1);
                         return recipe;
                     } else {

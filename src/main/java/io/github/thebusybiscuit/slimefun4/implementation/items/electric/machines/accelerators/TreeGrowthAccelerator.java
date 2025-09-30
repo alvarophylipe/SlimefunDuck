@@ -86,7 +86,7 @@ public class TreeGrowthAccelerator extends AbstractGrowthAccelerator {
 
                 sapling.applyBoneMeal(BlockFace.UP);
 
-                inv.consumeItem(slot);
+                inv.consumeItem(slot, 1, false);
                 sapling.getWorld().spawnParticle(VersionedParticle.HAPPY_VILLAGER, sapling.getLocation().add(0.5D, 0.5D, 0.5D), 4, 0.1F, 0.1F, 0.1F);
                 return true;
             }
@@ -104,7 +104,7 @@ public class TreeGrowthAccelerator extends AbstractGrowthAccelerator {
                 sapling.setStage(sapling.getStage() + 1);
                 block.setBlockData(sapling, false);
 
-                inv.consumeItem(slot);
+                inv.consumeItem(slot, 1, false);
                 block.getWorld().spawnParticle(VersionedParticle.HAPPY_VILLAGER, block.getLocation().add(0.5D, 0.5D, 0.5D), 4, 0.1F, 0.1F, 0.1F);
                 return true;
             }

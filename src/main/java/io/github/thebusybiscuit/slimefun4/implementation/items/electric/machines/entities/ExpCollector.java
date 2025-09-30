@@ -168,7 +168,7 @@ public class ExpCollector extends SlimefunItem implements InventoryBlock, Energy
                 break;
             }
         }
-        BlockStorage.addBlockInfo(location, DATA_KEY, String.valueOf(experiencePoints - withdrawn));
+        BlockStorage.addBlockInfo(location.getBlock(), DATA_KEY, String.valueOf(experiencePoints - withdrawn));
     }
 
     private int getStoredExperience(Location location) {
@@ -178,7 +178,7 @@ public class ExpCollector extends SlimefunItem implements InventoryBlock, Energy
         if (value != null) {
             return Integer.parseInt(value);
         } else {
-            BlockStorage.addBlockInfo(location, DATA_KEY, "0");
+            BlockStorage.addBlockInfo(location.getBlock(), DATA_KEY, "0");
             return 0;
         }
     }

@@ -145,7 +145,7 @@ public class AutoEnchanter extends AbstractEnchantmentMachine {
             }
 
             for (int inputSlot : getInputSlots()) {
-                menu.consumeItem(inputSlot);
+                menu.consumeItem(inputSlot, 1, false);
             }
 
             return recipe;

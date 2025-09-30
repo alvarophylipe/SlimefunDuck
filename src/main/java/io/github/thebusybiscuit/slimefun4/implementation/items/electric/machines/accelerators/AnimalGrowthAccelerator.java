@@ -47,7 +47,7 @@ public class AnimalGrowthAccelerator extends AbstractGrowthAccelerator {
 
                     Ageable ageable = (Ageable) n;
                     removeCharge(b.getLocation(), ENERGY_CONSUMPTION);
-                    inv.consumeItem(slot);
+                    inv.consumeItem(slot, 1, false);
                     ageable.setAge(ageable.getAge() + 2000);
 
                     if (ageable.getAge() > 0) {

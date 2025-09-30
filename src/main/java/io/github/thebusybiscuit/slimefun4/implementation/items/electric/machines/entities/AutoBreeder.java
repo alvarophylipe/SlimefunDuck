@@ -117,7 +117,7 @@ public class AutoBreeder extends SlimefunItem implements InventoryBlock, EnergyN
                     }
 
                     removeCharge(b.getLocation(), ENERGY_CONSUMPTION);
-                    inv.consumeItem(slot);
+                    inv.consumeItem(slot, 1, false);
 
                     ((Animals) n).setLoveModeTicks(600);
                     n.getWorld().spawnParticle(Particle.HEART, ((LivingEntity) n).getEyeLocation(), 8, 0.2F, 0.2F, 0.2F);

@@ -56,7 +56,7 @@ public abstract class AGenerator extends AbstractEnergyProvider implements Machi
 
         processor.setProgressBar(getProgressBar());
 
-        new BlockMenuPreset(item.getItemId(), getInventoryTitle()) {
+        new BlockMenuPreset(item.getItemId(), getInventoryTitle(), false) {
 
             @Override
             public void init() {
@@ -175,7 +175,7 @@ public abstract class AGenerator extends AbstractEnergyProvider implements Machi
 
             if (fuel != null) {
                 for (Map.Entry<Integer, Integer> entry : found.entrySet()) {
-                    inv.consumeItem(entry.getKey(), entry.getValue());
+                    inv.consumeItem(entry.getKey(), entry.getValue(), false);
                 }
 
                 processor.startOperation(l, new FuelOperation(fuel));

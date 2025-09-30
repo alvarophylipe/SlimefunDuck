@@ -61,7 +61,7 @@ public class InfusedHopper extends SimpleSlimefunItem<BlockTicker> {
             public void tick(Block b, SlimefunItem sfItem, Config data) {
                 if (b.getType() != Material.HOPPER) {
                     // we're no longer a hopper, we were probably destroyed. skipping this tick.
-                    BlockStorage.clearBlockInfo(b);
+                    BlockStorage.clearBlockInfo(b, true);
                     return;
                 }
 

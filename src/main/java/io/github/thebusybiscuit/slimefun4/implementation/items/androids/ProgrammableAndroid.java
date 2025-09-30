@@ -82,7 +82,7 @@ public class ProgrammableAndroid extends SlimefunItem implements InventoryBlock,
         texture = item.getTexture();
         registerDefaultFuelTypes();
 
-        new BlockMenuPreset(getId(), "Programmable Android") {
+        new BlockMenuPreset(getId(), "Programmable Android", false) {
 
             @Override
             public void init() {
@@ -105,21 +105,21 @@ public class ProgrammableAndroid extends SlimefunItem implements InventoryBlock,
                 menu.replaceExistingItem(15, CustomItemStack.create(HeadTexture.SCRIPT_START.getAsItemStack(), "&aStart/Continue"));
                 menu.addMenuClickHandler(15, (p, slot, item, action) -> {
                     Slimefun.getLocalization().sendMessage(p, "android.started", true);
-                    BlockStorage.addBlockInfo(b, "paused", "false");
+                    BlockStorage.addBlockInfo(b, "paused", "false", false);
                     p.closeInventory();
                     return false;
                 });
 
                 menu.replaceExistingItem(17, CustomItemStack.create(HeadTexture.SCRIPT_PAUSE.getAsItemStack(), "&4Pause"));
                 menu.addMenuClickHandler(17, (p, slot, item, action) -> {
-                    BlockStorage.addBlockInfo(b, "paused", "true");
+                    BlockStorage.addBlockInfo(b, "paused", "true", false);
                     Slimefun.getLocalization().sendMessage(p, "android.stopped", true);
                     return false;
                 });
 
                 menu.replaceExistingItem(16, CustomItemStack.create(HeadTexture.ENERGY_REGULATOR.getAsItemStack(), "&bMemory Core", "", "&8\u21E8 &7Click to open the Script Editor"));
                 menu.addMenuClickHandler(16, (p, slot, item, action) -> {
-                    BlockStorage.addBlockInfo(b, "paused", "true");
+                    BlockStorage.addBlockInfo(b, "paused", "true", false);
                     Slimefun.getLocalization().sendMessage(p, "android.stopped", true);
                     openScriptEditor(p, b);
                     return false;
@@ -144,12 +144,12 @@ public class ProgrammableAndroid extends SlimefunItem implements InventoryBlock,
                 Player p = e.getPlayer();
                 Block b = e.getBlock();
 
-                BlockStorage.addBlockInfo(b, "owner", p.getUniqueId().toString());
-                BlockStorage.addBlockInfo(b, "script", DEFAULT_SCRIPT);
-                BlockStorage.addBlockInfo(b, "index", "0");
-                BlockStorage.addBlockInfo(b, "fuel", "0");
-                BlockStorage.addBlockInfo(b, "rotation", p.getFacing().getOppositeFace().toString());
-                BlockStorage.addBlockInfo(b, "paused", "true");
+                BlockStorage.addBlockInfo(b, "owner", p.getUniqueId().toString(), false);
+                BlockStorage.addBlockInfo(b, "script", DEFAULT_SCRIPT, false);
+                BlockStorage.addBlockInfo(b, "index", "0", false);
+                BlockStorage.addBlockInfo(b, "fuel", "0", false);
+                BlockStorage.addBlockInfo(b, "rotation", p.getFacing().getOppositeFace().toString(), false);
+                BlockStorage.addBlockInfo(b, "paused", "true", false);
 
                 BlockData blockData = Material.PLAYER_HEAD.createBlockData(data -> {
                     if (data instanceof Rotatable rotatable) {
@@ -589,7 +589,7 @@ public class ProgrammableAndroid extends SlimefunItem implements InventoryBlock,
         Validate.isTrue(script.endsWith('-' + Instruction.REPEAT.name()), "A script must end with a 'REPEAT' token.");
         Validate.isTrue(CommonPatterns.DASH.split(script).length <= MAX_SCRIPT_LENGTH, "Scripts may not have more than " + MAX_SCRIPT_LENGTH + " segments");
 
-        BlockStorage.addBlockInfo(l, "script", script);
+        BlockStorage.addBlockInfo(l, "script", script, false);
     }
 
     private void registerDefaultFuelTypes() {
@@ -695,7 +695,7 @@ public class ProgrammableAndroid extends SlimefunItem implements InventoryBlock,
                     index = 0;
                 }
 
-                BlockStorage.addBlockInfo(b, "fuel", String.valueOf(fuel - 1));
+                BlockStorage.addBlockInfo(b, "fuel", String.valueOf(fuel - 1), false);
                 Instruction instruction = Instruction.getInstruction(script[index]);
 
                 if (instruction == null) {
@@ -718,16 +718,16 @@ public class ProgrammableAndroid extends SlimefunItem implements InventoryBlock,
                 case START:
                 case WAIT:
                     // We are "waiting" here, so we only move a step forward
-                    BlockStorage.addBlockInfo(b, "index", String.valueOf(index));
+                    BlockStorage.addBlockInfo(b, "index", String.valueOf(index), false);
                     break;
                 case REPEAT:
                     // "repeat" just means, we reset our index
-                    BlockStorage.addBlockInfo(b, "index", String.valueOf(0));
+                    BlockStorage.addBlockInfo(b, "index", String.valueOf(0), false);
                     break;
                 case CHOP_TREE:
                     // We only move to the next step if we finished chopping wood
                     if (chopTree(b, inv, face)) {
-                        BlockStorage.addBlockInfo(b, "index", String.valueOf(index));
+                        BlockStorage.addBlockInfo(b, "index", String.valueOf(index), false);
                     }
                     break;
                 default:
@@ -825,7 +825,7 @@ public class ProgrammableAndroid extends SlimefunItem implements InventoryBlock,
         if (item != null && item.getType() != Material.AIR) {
             for (MachineFuel fuel : fuelTypes) {
                 if (fuel.test(item)) {
-                    menu.consumeItem(43);
+                    menu.consumeItem(43, 1, false);
 
                     if (getFuelSource() == AndroidFuelSource.LIQUID) {
                         menu.pushItem(new ItemStack(Material.BUCKET), getOutputSlots());

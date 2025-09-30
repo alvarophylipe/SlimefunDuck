@@ -63,7 +63,7 @@ import javax.annotation.Nonnull
  * @author TheBusyBiscuit
  */
 @Suppress("DEPRECATION", "NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
-class Slimefun : JavaPlugin(), SlimefunAddon {
+class Slimefun : SlimefunAddon() {
     /**
      * Keep track of which [MinecraftVersion] we are on.
      */
@@ -81,7 +81,7 @@ class Slimefun : JavaPlugin(), SlimefunAddon {
     override val javaPlugin: JavaPlugin
         get() = this
     override val bugTrackerURL: String
-        get() = "https://github.com/Slimefun/Slimefun4/issues"
+        get() = "https://github.com/Slimefun/Slimefun4/issues Slimefun/Slimefun4 Slimefun/Slimefun4  "
 
     // Services - Systems that fulfill certain tasks, treat them as a black box
     private val itemDataService = CustomItemDataService(this, "slimefun_item")
@@ -338,7 +338,7 @@ class Slimefun : JavaPlugin(), SlimefunAddon {
             ticker.halt()
             ticker.run()
         } catch (x: Exception) {
-            logger?.log(
+            logger.log(
                 Level.SEVERE,
                 x
             ) { "Something went wrong while disabling the ticker task for Slimefun v" + description.version }
@@ -359,7 +359,7 @@ class Slimefun : JavaPlugin(), SlimefunAddon {
             try {
                 entry.value.saveAndRemove()
             } catch (x: Exception) {
-                logger?.log(
+                logger.log(
                     Level.SEVERE,
                     x
                 ) { "An Error occurred while saving Slimefun-Blocks in World '" + entry.key + "' for Slimefun " + version }
@@ -451,7 +451,7 @@ class Slimefun : JavaPlugin(), SlimefunAddon {
                     StartupWarnings.invalidMinecraftVersion(logger, version, description.version)
                     return true
                 } else {
-                    logger?.log(
+                    logger.log(
                         Level.WARNING,
                         "We could not determine the version of Minecraft you were using? ({0})",
                         Bukkit.getVersion()
@@ -466,7 +466,7 @@ class Slimefun : JavaPlugin(), SlimefunAddon {
                     return false
                 }
             } catch (x: Exception) {
-                logger?.log(
+                logger.log(
                     Level.SEVERE,
                     x
                 ) { "Error: Could not determine Environment or version of Minecraft for Slimefun v" + description.version }
@@ -474,7 +474,7 @@ class Slimefun : JavaPlugin(), SlimefunAddon {
                 // We assume "unsupported" if something went wrong.
                 return true
             } catch (x: LinkageError) {
-                logger?.log(
+                logger.log(
                     Level.SEVERE,
                     x
                 ) { "Error: Could not determine Environment or version of Minecraft for Slimefun v" + description.version }
@@ -597,7 +597,7 @@ class Slimefun : JavaPlugin(), SlimefunAddon {
                     tag.reload()
                 }
             } catch (e: TagMisconfigurationException) {
-                logger?.log(Level.SEVERE, e) { "Failed to load Tag: " + tag.name }
+                logger.log(Level.SEVERE, e) { "Failed to load Tag: " + tag.name }
             }
         }
     }
@@ -609,12 +609,12 @@ class Slimefun : JavaPlugin(), SlimefunAddon {
         try {
             SlimefunItemSetup.setup(this)
         } catch (x: Exception) {
-            logger?.log(
+            logger.log(
                 Level.SEVERE,
                 x
             ) { "An Error occurred while initializing SlimefunItems for Slimefun $version" }
         } catch (x: LinkageError) {
-            logger?.log(
+            logger.log(
                 Level.SEVERE,
                 x
             ) { "An Error occurred while initializing SlimefunItems for Slimefun $version" }
@@ -628,12 +628,12 @@ class Slimefun : JavaPlugin(), SlimefunAddon {
         try {
             ResearchSetup.setupResearches()
         } catch (x: Exception) {
-            logger?.log(
+            logger.log(
                 Level.SEVERE,
                 x
             ) { "An Error occurred while initializing Slimefun Researches for Slimefun $version" }
         } catch (x: LinkageError) {
-            logger?.log(
+            logger.log(
                 Level.SEVERE,
                 x
             ) { "An Error occurred while initializing Slimefun Researches for Slimefun $version" }
@@ -1075,10 +1075,10 @@ class Slimefun : JavaPlugin(), SlimefunAddon {
                     instance!!.name
 
                 // @formatter:off - Collect any Plugin that (soft)-depends on Slimefun
-            return Arrays.stream<Plugin>(instance!!.server.pluginManager.plugins).filter {
-            plugin: Plugin? -> val description = plugin!!.description
-            pluginName in description.depend || pluginName in description.softDepend
-            } .collect(Collectors.toSet())
+                return Arrays.stream<Plugin>(instance!!.server.pluginManager.plugins).filter {
+                        plugin: Plugin? -> val description = plugin!!.description
+                    pluginName in description.depend || pluginName in description.softDepend
+                } .collect(Collectors.toSet())
                 // @formatter:on
             }
 

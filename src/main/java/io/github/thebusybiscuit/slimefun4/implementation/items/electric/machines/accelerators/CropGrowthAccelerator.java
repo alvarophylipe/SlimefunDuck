@@ -60,7 +60,7 @@ public abstract class CropGrowthAccelerator extends AbstractGrowthAccelerator {
             for (int slot : getInputSlots()) {
                 if (SlimefunUtils.isItemSimilar(inv.getItemInSlot(slot), organicFertilizer, false, false)) {
                     removeCharge(machine.getLocation(), getEnergyConsumption());
-                    inv.consumeItem(slot);
+                    inv.consumeItem(slot, 1, false);
 
                     ageable.setAge(ageable.getAge() + 1);
                     crop.setBlockData(ageable);

@@ -192,7 +192,7 @@ public class ExplosiveTool extends SimpleSlimefunItem<ToolUseHandler> implements
             if (!dummyEvent.isCancelled()) {
                 drops.addAll(sfItem.getDrops(p));
                 b.setType(Material.AIR);
-                BlockStorage.clearBlockInfo(b);
+                BlockStorage.clearBlockInfo(b, true);
             }
         } else {
             b.breakNaturally(item);

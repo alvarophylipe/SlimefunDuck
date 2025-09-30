@@ -207,7 +207,7 @@ public class Crucible extends SimpleSlimefunItem<BlockUseHandler> implements Rec
             }
 
             if (BlockStorage.hasBlockInfo(block)) {
-                BlockStorage.clearBlockInfo(block);
+                BlockStorage.clearBlockInfo(block, true);
             }
         }
         runPostTask(block, water ? SoundEffect.CRUCIBLE_PLACE_WATER_SOUND : SoundEffect.CRUCIBLE_PLACE_LAVA_SOUND, 1);

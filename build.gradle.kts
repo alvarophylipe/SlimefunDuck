@@ -44,6 +44,8 @@ dependencies {
     implementation("io.papermc:paperlib:1.0.8")
     implementation("commons-lang:commons-lang:2.6")
     implementation(kotlin("stdlib"))
+    implementation("com.github.shynixn.mccoroutine:mccoroutine-bukkit-api:2.22.0")
+    implementation("com.github.shynixn.mccoroutine:mccoroutine-bukkit-core:2.22.0")
 
     compileOnly("com.google.code.findbugs:jsr305:3.0.2")
 

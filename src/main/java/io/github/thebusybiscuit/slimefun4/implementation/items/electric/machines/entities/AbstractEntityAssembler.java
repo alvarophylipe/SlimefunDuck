@@ -62,7 +62,7 @@ public abstract class AbstractEntityAssembler<T extends Entity> extends SimpleSl
     protected AbstractEntityAssembler(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(itemGroup, item, recipeType, recipe);
 
-        new BlockMenuPreset(getId(), item.getDisplayNameOrElse("Entity Assembler")) {
+        new BlockMenuPreset(getId(), item.getDisplayNameOrElse("Entity Assembler"), false) {
 
             @Override
             public void init() {
@@ -246,7 +246,7 @@ public abstract class AbstractEntityAssembler<T extends Entity> extends SimpleSl
                 int amount = inv.getItemInSlot(slot).getAmount();
 
                 if (amount >= bodyCount) {
-                    inv.consumeItem(slot, bodyCount);
+                    inv.consumeItem(slot, bodyCount, false);
                     break;
                 } else {
                     bodyCount -= amount;
@@ -260,7 +260,7 @@ public abstract class AbstractEntityAssembler<T extends Entity> extends SimpleSl
                 int amount = inv.getItemInSlot(slot).getAmount();
 
                 if (amount >= headCount) {
-                    inv.consumeItem(slot, headCount);
+                    inv.consumeItem(slot, headCount, false);
                     break;
                 } else {
                     headCount -= amount;

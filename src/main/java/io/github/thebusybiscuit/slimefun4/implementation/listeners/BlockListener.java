@@ -82,7 +82,7 @@ public class BlockListener implements Listener {
                 }
             }
 
-            BlockStorage.clearBlockInfo(block);
+            BlockStorage.clearBlockInfo(block, true);
         } else if (BlockStorage.hasBlockInfo(e.getBlock())) {
             // If there is no air (e.g. grass) then don't let the block be placed
             e.setCancelled(true);
@@ -233,7 +233,7 @@ public class BlockListener implements Listener {
                 }
             }
             // Remove the block data
-            BlockStorage.clearBlockInfo(e.getBlock());
+            BlockStorage.clearBlockInfo(e.getBlock(), true);
         }
     }
 
@@ -302,7 +302,7 @@ public class BlockListener implements Listener {
                 }
 
                 // Fixes #2944 - Don't forget to clear the Block Data
-                BlockStorage.clearBlockInfo(blockAbove);
+                BlockStorage.clearBlockInfo(blockAbove, true);
             }
         }
     }
