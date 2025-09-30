@@ -1,0 +1,28 @@
+package io.github.ducklin.implementation.items.multiblocks.miner;
+
+import java.util.Random;
+
+import javax.annotation.Nonnull;
+import javax.annotation.ParametersAreNonnullByDefault;
+
+import org.bukkit.Material;
+import org.bukkit.inventory.ItemStack;
+
+import io.github.thebusybiscuit.slimefun4.api.MinecraftVersion;
+
+/**
+ * Simple interface to map ore blocks to their respective item(s).
+ * 
+ * @author TheBusyBiscuit
+ *
+ */
+interface OreDictionary {
+
+    @Nonnull
+    @ParametersAreNonnullByDefault
+    ItemStack getDrops(Material material, Random random);
+
+    static @Nonnull OreDictionary forVersion(@Nonnull MinecraftVersion version) {
+        return new OreDictionary17();
+    }
+}
