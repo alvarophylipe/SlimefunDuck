@@ -14,7 +14,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-import io.github.ducklin.core.guide.SlimefunGuide;
+import io.github.ducklin.migration.guide.SlimefunGuide;
 import io.github.ducklin.core.services.LocalizationService;
 import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;

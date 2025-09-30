@@ -7,6 +7,11 @@ import java.util.List;
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
+import io.github.ducklin.core.Slimefun;
+import io.github.ducklin.core.handlers.BlockBreakHandler;
+import io.github.ducklin.migration.BlockStorage;
+import io.github.ducklin.migration.attributes.WitherProof;
+import io.github.ducklin.migration.items.SlimefunItem;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.EntityType;
@@ -18,24 +23,6 @@ import org.bukkit.event.entity.EntityChangeBlockEvent;
 import org.bukkit.event.entity.EntityExplodeEvent;
 import org.bukkit.inventory.ItemStack;
 
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
-import io.github.thebusybiscuit.slimefun4.core.attributes.WitherProof;
-import io.github.thebusybiscuit.slimefun4.core.handlers.BlockBreakHandler;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
-
-import me.mrCookieSlime.Slimefun.api.BlockStorage;
-
-/**
- * The {@link ExplosionsListener} is a {@link Listener} which listens to any explosion events.
- * Any {@link WitherProof} block is excluded from these explosions and this {@link Listener} also
- * calls the explosive part of the {@link BlockBreakHandler}.
- * 
- * @author TheBusyBiscuit
- * 
- * @see BlockBreakHandler
- * @see WitherProof
- *
- */
 public class ExplosionsListener implements Listener {
 
     public ExplosionsListener(@Nonnull Slimefun plugin) {

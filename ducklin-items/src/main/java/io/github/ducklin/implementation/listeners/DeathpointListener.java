@@ -6,15 +6,15 @@ import java.util.Locale;
 
 import javax.annotation.Nonnull;
 
+import io.github.ducklin.core.Slimefun;
+import io.github.ducklin.migration.utils.SlimefunUtils;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
 
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import io.github.ducklin.implementation.SlimefunItems;
-import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
 
 /**
  * This {@link Listener} listens to the {@link EntityDeathEvent} to automatically

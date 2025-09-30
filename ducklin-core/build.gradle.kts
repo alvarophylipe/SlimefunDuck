@@ -22,7 +22,6 @@ dependencies {
     compileOnly("com.mojang:authlib:6.0.52")
     compileOnly("com.google.code.findbugs:jsr305:3.0.2")
 
-    // included dependencies
     implementation("com.github.Slimefun.dough:dough-api:cb22e71335")
     implementation("io.papermc:paperlib:1.0.8")
     implementation("commons-lang:commons-lang:2.6")
@@ -51,7 +50,6 @@ tasks.withType<ShadowJar> {
 
     mergeServiceFiles()
     exclude("META-INF/**")
-    minimize()
 }
 
 tasks.build {

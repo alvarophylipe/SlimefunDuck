@@ -3,23 +3,23 @@ package io.github.ducklin.implementation.listeners;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import io.github.ducklin.core.Slimefun;
+import io.github.ducklin.migration.items.SlimefunItem;
+import io.github.ducklin.migration.utils.SlimefunUtils;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
 
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import io.github.ducklin.implementation.SlimefunItems;
 import io.github.ducklin.implementation.items.armor.Parachute;
 import io.github.ducklin.implementation.items.electric.gadgets.JetBoots;
 import io.github.ducklin.implementation.items.electric.gadgets.Jetpack;
 import io.github.ducklin.implementation.items.magical.InfusedMagnet;
-import io.github.ducklin.implementation.tasks.player.InfusedMagnetTask;
-import io.github.ducklin.implementation.tasks.player.JetBootsTask;
-import io.github.ducklin.implementation.tasks.player.JetpackTask;
-import io.github.ducklin.implementation.tasks.player.ParachuteTask;
-import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
+import io.github.ducklin.migration.tasks.player.InfusedMagnetTask;
+import io.github.ducklin.migration.tasks.player.JetBootsTask;
+import io.github.ducklin.migration.tasks.player.JetpackTask;
+import io.github.ducklin.migration.tasks.player.ParachuteTask;
 
 /**
  * This {@link Listener} is responsible for listening to the {@link PlayerToggleSneakEvent}

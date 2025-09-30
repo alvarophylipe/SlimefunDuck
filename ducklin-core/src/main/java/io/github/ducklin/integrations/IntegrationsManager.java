@@ -7,6 +7,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 import dev.lone.itemsadder.api.CustomBlock;
+import io.github.ducklin.core.Slimefun;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Server;
@@ -19,23 +20,10 @@ import com.gmail.nossr50.events.fake.FakeBlockBreakEvent;
 import com.gmail.nossr50.util.skills.SkillUtils;
 
 import io.github.bakedlibs.dough.protection.ProtectionManager;
-import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
-import io.github.thebusybiscuit.slimefun4.implementation.items.electric.machines.enchanting.AutoDisenchanter;
 
 import dev.lone.itemsadder.api.ItemsAdder;
 
-/**
- * This Service holds all interactions and hooks with third-party {@link Plugin Plugins}
- * that are not necessarily a dependency or a {@link SlimefunAddon}.
- * 
- * Integration with these plugins happens inside Slimefun itself.
- * 
- * @author TheBusyBiscuit
- * 
- * @see Slimefun
- *
- */
+
 public class IntegrationsManager {
 
     /**

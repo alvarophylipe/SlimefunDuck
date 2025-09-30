@@ -34,7 +34,7 @@ import io.github.thebusybiscuit.slimefun4.core.handlers.BlockDispenseHandler;
 import io.github.thebusybiscuit.slimefun4.core.handlers.BlockPlaceHandler;
 import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import io.github.ducklin.implementation.handlers.VanillaInventoryDropHandler;
-import io.github.ducklin.api.utils.tags.SlimefunTag;
+import io.github.ducklin.migration.utils.tags.SlimefunTag;
 import io.papermc.lib.PaperLib;
 import io.papermc.lib.features.blockstatesnapshot.BlockStateSnapshotResult;
 

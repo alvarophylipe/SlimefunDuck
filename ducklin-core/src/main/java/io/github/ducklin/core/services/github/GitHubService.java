@@ -14,12 +14,11 @@ import java.util.logging.Level;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import io.github.ducklin.core.Slimefun;
+import io.github.ducklin.migration.utils.HeadTexture;
 import org.apache.commons.lang.Validate;
 
 import io.github.bakedlibs.dough.config.Config;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
-import io.github.thebusybiscuit.slimefun4.utils.HeadTexture;
-
 /**
  * This Service is responsible for grabbing every {@link Contributor} to this project
  * from GitHub and holding data associated to the project repository, such

@@ -7,19 +7,19 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 
-import org.apache.commons.lang.Validate;
+import io.github.ducklin.menu.ChestMenu;
+import io.github.ducklin.migration.items.SlimefunItem;
+import io.github.ducklin.migration.recipes.RecipeType;
+import org.apache.commons.lang3.Validate;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.Recipe;
 import org.bukkit.inventory.RecipeChoice.MaterialChoice;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.ShapelessRecipe;
 
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
-import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.ducklin.implementation.items.multiblocks.EnhancedCraftingTable;
-import io.github.ducklin.implementation.tasks.AsyncRecipeChoiceTask;
+import io.github.ducklin.migration.tasks.AsyncRecipeChoiceTask;
 
-import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu;
 
 /**
  * This class abstracts away from concrete recipes.

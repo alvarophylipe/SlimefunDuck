@@ -16,7 +16,7 @@ import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.core.handlers.ItemUseHandler;
 import io.github.thebusybiscuit.slimefun4.core.services.sounds.SoundEffect;
 import io.github.ducklin.implementation.items.SimpleSlimefunItem;
-import io.github.ducklin.api.utils.compatibility.VersionedPotionEffectType;
+import io.github.ducklin.migration.utils.compatibility.VersionedPotionEffectType;
 
 public class Splint extends SimpleSlimefunItem<ItemUseHandler> {
 

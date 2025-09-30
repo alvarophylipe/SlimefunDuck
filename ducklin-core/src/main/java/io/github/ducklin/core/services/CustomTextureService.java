@@ -10,6 +10,8 @@ import java.util.logging.Level;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import io.github.ducklin.core.Slimefun;
+import io.github.ducklin.migration.items.SlimefunItem;
 import org.apache.commons.lang.Validate;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -17,18 +19,8 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import io.github.bakedlibs.dough.config.Config;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 
-/**
- * This Service is responsible for applying custom model data to any {@link SlimefunItemStack}
- * if a Server Owner configured Slimefun to use those.
- * We simply use {@link ItemMeta#setCustomModelData(Integer)} for this.
- * 
- * @author TheBusyBiscuit
- *
- */
+
 public class CustomTextureService {
 
     /**

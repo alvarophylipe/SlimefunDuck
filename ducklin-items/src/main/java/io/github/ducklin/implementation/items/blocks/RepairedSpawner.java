@@ -6,20 +6,20 @@ import java.util.Collection;
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
+import io.github.ducklin.core.handlers.BlockPlaceHandler;
+import io.github.ducklin.core.handlers.BlockUseHandler;
+import io.github.ducklin.migration.events.BlockPlacerPlaceEvent;
+import io.github.ducklin.migration.items.ItemGroup;
+import io.github.ducklin.migration.items.ItemSetting;
+import io.github.ducklin.migration.items.SlimefunItemStack;
+import io.github.ducklin.migration.recipes.RecipeType;
 import org.bukkit.Material;
 import org.bukkit.block.CreatureSpawner;
 import org.bukkit.event.block.BlockEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.inventory.ItemStack;
 
-import io.github.thebusybiscuit.slimefun4.api.events.BlockPlacerPlaceEvent;
-import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
-import io.github.thebusybiscuit.slimefun4.api.items.ItemSetting;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
-import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
-import io.github.thebusybiscuit.slimefun4.core.handlers.BlockPlaceHandler;
-import io.github.thebusybiscuit.slimefun4.core.handlers.BlockUseHandler;
-import io.github.ducklin.api.utils.tags.SlimefunTag;
+import io.github.ducklin.migration.utils.tags.SlimefunTag;
 
 /**
  * A {@link RepairedSpawner} is the repaired variant of a {@link BrokenSpawner}.

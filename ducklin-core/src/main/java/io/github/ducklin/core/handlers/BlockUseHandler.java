@@ -2,11 +2,11 @@ package io.github.ducklin.core.handlers;
 
 import java.util.Optional;
 
-import io.github.thebusybiscuit.slimefun4.api.events.PlayerRightClickEvent;
-import io.github.thebusybiscuit.slimefun4.api.exceptions.IncompatibleItemHandlerException;
-import io.github.thebusybiscuit.slimefun4.api.items.ItemHandler;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
-import io.github.ducklin.core.attributes.NotPlaceable;
+import io.github.ducklin.migration.events.PlayerRightClickEvent;
+import io.github.ducklin.migration.exceptions.IncompatibleItemHandlerException;
+import io.github.ducklin.migration.attributes.NotPlaceable;
+import io.github.ducklin.migration.items.ItemHandler;
+import io.github.ducklin.migration.items.SlimefunItem;
 
 @FunctionalInterface
 public interface BlockUseHandler extends ItemHandler {

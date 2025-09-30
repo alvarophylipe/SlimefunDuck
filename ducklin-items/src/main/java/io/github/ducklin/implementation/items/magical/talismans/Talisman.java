@@ -9,7 +9,15 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 
-import org.apache.commons.lang.Validate;
+import io.github.ducklin.core.Slimefun;
+import io.github.ducklin.migration.events.TalismanActivateEvent;
+import io.github.ducklin.migration.items.ItemGroup;
+import io.github.ducklin.migration.items.SlimefunItem;
+import io.github.ducklin.migration.items.SlimefunItemStack;
+import io.github.ducklin.migration.recipes.RecipeType;
+import io.github.ducklin.migration.researches.Research;
+import io.github.ducklin.migration.utils.SlimefunUtils;
+import org.apache.commons.lang3.Validate;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.NamespacedKey;
@@ -28,15 +36,7 @@ import org.bukkit.potion.PotionEffect;
 
 import io.github.bakedlibs.dough.items.CustomItemStack;
 import io.github.bakedlibs.dough.items.ItemUtils;
-import io.github.thebusybiscuit.slimefun4.api.events.TalismanActivateEvent;
-import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
-import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
-import io.github.thebusybiscuit.slimefun4.api.researches.Research;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import io.github.ducklin.implementation.SlimefunItems;
-import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
 
 public class Talisman extends SlimefunItem {
 

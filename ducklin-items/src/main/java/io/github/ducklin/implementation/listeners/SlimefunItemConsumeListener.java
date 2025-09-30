@@ -2,15 +2,14 @@ package io.github.ducklin.implementation.listeners;
 
 import javax.annotation.Nonnull;
 
+import io.github.ducklin.core.Slimefun;
+import io.github.ducklin.core.handlers.ItemConsumptionHandler;
+import io.github.ducklin.migration.items.SlimefunItem;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerItemConsumeEvent;
 import org.bukkit.inventory.ItemStack;
-
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
-import io.github.thebusybiscuit.slimefun4.core.handlers.ItemConsumptionHandler;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 
 /**
  * This {@link Listener} is responsible for handling the {@link ItemConsumptionHandler}

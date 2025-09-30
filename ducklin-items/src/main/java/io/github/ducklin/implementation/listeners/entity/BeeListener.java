@@ -4,6 +4,9 @@ import java.util.Optional;
 
 import javax.annotation.Nonnull;
 
+import io.github.ducklin.core.Slimefun;
+import io.github.ducklin.migration.attributes.ProtectionType;
+import io.github.ducklin.migration.player.PlayerProfile;
 import org.bukkit.entity.Bee;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -12,10 +15,6 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.inventory.ItemStack;
 
 import io.github.bakedlibs.dough.items.ItemUtils;
-import io.github.thebusybiscuit.slimefun4.api.player.PlayerProfile;
-import io.github.thebusybiscuit.slimefun4.core.attributes.ProtectionType;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
-
 /**
  * The {@link Listener} for Hazmat Suit's {@link Bee} sting protection.
  * Only applied if the whole set is worn.

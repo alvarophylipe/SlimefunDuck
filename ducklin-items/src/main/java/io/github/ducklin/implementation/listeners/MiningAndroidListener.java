@@ -2,15 +2,13 @@ package io.github.ducklin.implementation.listeners;
 
 import javax.annotation.Nonnull;
 
+import io.github.ducklin.core.Slimefun;
+import io.github.ducklin.core.handlers.BlockBreakHandler;
+import io.github.ducklin.migration.BlockStorage;
+import io.github.ducklin.migration.events.AndroidMineEvent;
+import io.github.ducklin.migration.items.SlimefunItem;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-
-import io.github.thebusybiscuit.slimefun4.api.events.AndroidMineEvent;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
-import io.github.thebusybiscuit.slimefun4.core.handlers.BlockBreakHandler;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
-
-import me.mrCookieSlime.Slimefun.api.BlockStorage;
 
 /**
  * This {@link Listener} makes sure that an {@link AndroidMineEvent} gets properly propagated

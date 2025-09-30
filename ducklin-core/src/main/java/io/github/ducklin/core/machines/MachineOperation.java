@@ -1,7 +1,7 @@
 package io.github.ducklin.core.machines;
 
 import io.github.bakedlibs.dough.blocks.BlockPosition;
-import io.github.ducklin.core.attributes.MachineProcessHolder;
+import io.github.ducklin.migration.attributes.MachineProcessHolder;
 
 /**
  * This represents a {@link MachineOperation} which is handled

@@ -25,7 +25,7 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.util.Vector;
 
 import io.github.bakedlibs.dough.blocks.BlockPosition;
-import io.github.ducklin.core.attributes.HologramOwner;
+import io.github.ducklin.migration.attributes.HologramOwner;
 import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 
 /**

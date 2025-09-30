@@ -5,27 +5,17 @@ import java.util.concurrent.ThreadLocalRandom;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
+import io.github.ducklin.core.Slimefun;
+import io.github.ducklin.core.handlers.ItemConsumptionHandler;
+import io.github.ducklin.migration.items.ItemGroup;
+import io.github.ducklin.migration.items.SlimefunItemStack;
+import io.github.ducklin.migration.recipes.RecipeType;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 import io.github.bakedlibs.dough.common.ChatColors;
-import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
-import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
-import io.github.thebusybiscuit.slimefun4.core.handlers.ItemConsumptionHandler;
-import io.github.thebusybiscuit.slimefun4.core.services.LocalizationService;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import io.github.ducklin.implementation.items.SimpleSlimefunItem;
 
-/**
- * The {@link FortuneCookie} is a rather simple {@link SlimefunItem}, it's a cookie which
- * sends the {@link Player} who ate it a random text message.
- * The messages can be defined in the {@link LocalizationService}.
- * 
- * @author TheBusyBiscuit
- *
- */
 public class FortuneCookie extends SimpleSlimefunItem<ItemConsumptionHandler> {
 
     @ParametersAreNonnullByDefault

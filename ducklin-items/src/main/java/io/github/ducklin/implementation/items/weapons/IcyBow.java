@@ -13,7 +13,7 @@ import org.bukkit.potion.PotionEffect;
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.core.handlers.BowShootHandler;
-import io.github.ducklin.api.utils.compatibility.VersionedPotionEffectType;
+import io.github.ducklin.migration.utils.compatibility.VersionedPotionEffectType;
 
 /**
  * The {@link IcyBow} is a special kind of bow which slows down any

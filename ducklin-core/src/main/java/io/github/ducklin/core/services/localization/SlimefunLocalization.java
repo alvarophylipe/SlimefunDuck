@@ -11,6 +11,10 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 
+import io.github.ducklin.core.Slimefun;
+import io.github.ducklin.migration.MinecraftVersion;
+import io.github.ducklin.migration.SlimefunBranch;
+import io.github.ducklin.migration.recipes.RecipeType;
 import org.apache.commons.lang.Validate;
 import org.bukkit.ChatColor;
 import org.bukkit.Keyed;
@@ -26,11 +30,7 @@ import org.bukkit.inventory.ItemStack;
 import io.github.bakedlibs.dough.common.ChatColors;
 import io.github.bakedlibs.dough.config.Config;
 import io.github.bakedlibs.dough.items.CustomItemStack;
-import io.github.thebusybiscuit.slimefun4.api.MinecraftVersion;
-import io.github.thebusybiscuit.slimefun4.api.SlimefunBranch;
-import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.ducklin.core.services.LocalizationService;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.BaseComponent;

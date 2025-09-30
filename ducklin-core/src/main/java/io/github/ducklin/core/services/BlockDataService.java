@@ -6,7 +6,7 @@ import java.util.logging.Level;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import io.github.ducklin.api.utils.tags.SlimefunTag;
+import io.github.ducklin.migration.utils.tags.SlimefunTag;
 import org.apache.commons.lang.Validate;
 import org.bukkit.Bukkit;
 import org.bukkit.Keyed;

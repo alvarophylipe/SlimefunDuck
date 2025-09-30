@@ -13,16 +13,16 @@ import java.util.UUID;
 
 import javax.annotation.Nonnull;
 
+import io.github.ducklin.migration.MinecraftVersion;
+import io.github.ducklin.migration.SlimefunAddon;
+import io.github.ducklin.migration.items.SlimefunItem;
+import io.github.ducklin.core.Slimefun;
 import org.apache.commons.lang.Validate;
 import org.bukkit.Server;
 import org.bukkit.World;
 
 import io.github.bakedlibs.dough.collections.OptionalMap;
 import io.github.bakedlibs.dough.config.Config;
-import io.github.thebusybiscuit.slimefun4.api.MinecraftVersion;
-import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 
 /**
  * This Service is responsible for disabling a {@link SlimefunItem} in a certain {@link World}.

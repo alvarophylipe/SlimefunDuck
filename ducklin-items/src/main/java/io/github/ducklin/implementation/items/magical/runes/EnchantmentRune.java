@@ -29,7 +29,7 @@ import io.github.thebusybiscuit.slimefun4.core.handlers.ItemDropHandler;
 import io.github.thebusybiscuit.slimefun4.core.services.sounds.SoundEffect;
 import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import io.github.ducklin.implementation.items.SimpleSlimefunItem;
-import io.github.ducklin.api.utils.compatibility.VersionedParticle;
+import io.github.ducklin.migration.utils.compatibility.VersionedParticle;
 
 /**
  * This {@link SlimefunItem} allows you to enchant any enchantable {@link ItemStack} with a random

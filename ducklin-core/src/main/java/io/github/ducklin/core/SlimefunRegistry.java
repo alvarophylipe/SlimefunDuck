@@ -14,6 +14,18 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import javax.annotation.Nonnull;
 
+import io.github.ducklin.implementation.guide.CheatSheetSlimefunGuide;
+import io.github.ducklin.implementation.guide.SurvivalSlimefunGuide;
+import io.github.ducklin.menu.BlockMenuPreset;
+import io.github.ducklin.menu.UniversalBlockMenu;
+import io.github.ducklin.migration.BlockInfoConfig;
+import io.github.ducklin.migration.BlockStorage;
+import io.github.ducklin.migration.geo.GEOResource;
+import io.github.ducklin.migration.items.ItemGroup;
+import io.github.ducklin.migration.items.ItemHandler;
+import io.github.ducklin.migration.items.SlimefunItem;
+import io.github.ducklin.migration.player.PlayerProfile;
+import io.github.ducklin.migration.researches.Research;
 import org.apache.commons.lang.Validate;
 import org.bukkit.NamespacedKey;
 import org.bukkit.Server;
@@ -25,24 +37,10 @@ import org.bukkit.inventory.ItemStack;
 
 import io.github.bakedlibs.dough.collections.KeyMap;
 import io.github.bakedlibs.dough.config.Config;
-import io.github.thebusybiscuit.slimefun4.api.geo.GEOResource;
-import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
-import io.github.thebusybiscuit.slimefun4.api.items.ItemHandler;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
-import io.github.thebusybiscuit.slimefun4.api.player.PlayerProfile;
-import io.github.thebusybiscuit.slimefun4.api.researches.Research;
-import io.github.ducklin.core.guide.SlimefunGuide;
-import io.github.ducklin.core.guide.SlimefunGuideImplementation;
-import io.github.ducklin.core.guide.SlimefunGuideMode;
+import io.github.ducklin.migration.guide.SlimefunGuide;
+import io.github.ducklin.migration.guide.SlimefunGuideImplementation;
+import io.github.ducklin.migration.guide.SlimefunGuideMode;
 import io.github.ducklin.core.multiblocks.MultiBlock;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
-import io.github.thebusybiscuit.slimefun4.implementation.guide.CheatSheetSlimefunGuide;
-import io.github.thebusybiscuit.slimefun4.implementation.guide.SurvivalSlimefunGuide;
-
-import me.mrCookieSlime.Slimefun.api.BlockInfoConfig;
-import me.mrCookieSlime.Slimefun.api.BlockStorage;
-import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
-import me.mrCookieSlime.Slimefun.api.inventory.UniversalBlockMenu;
 
 /**
  * This class houses a lot of instances of {@link Map} and {@link List} that hold

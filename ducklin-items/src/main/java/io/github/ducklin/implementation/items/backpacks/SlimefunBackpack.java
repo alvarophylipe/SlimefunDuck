@@ -4,33 +4,24 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 
+import io.github.ducklin.core.Slimefun;
+import io.github.ducklin.core.handlers.ItemUseHandler;
+import io.github.ducklin.migration.attributes.DistinctiveItem;
+import io.github.ducklin.migration.items.ItemGroup;
+import io.github.ducklin.migration.items.SlimefunItem;
+import io.github.ducklin.migration.items.SlimefunItemStack;
+import io.github.ducklin.migration.recipes.RecipeType;
+import io.github.ducklin.migration.utils.SlimefunUtils;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
-import io.github.thebusybiscuit.slimefun4.api.player.PlayerBackpack;
-import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
-import io.github.thebusybiscuit.slimefun4.core.attributes.DistinctiveItem;
-import io.github.thebusybiscuit.slimefun4.core.handlers.ItemUseHandler;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
+
 import io.github.ducklin.implementation.items.SimpleSlimefunItem;
 import io.github.ducklin.implementation.listeners.BackpackListener;
-import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
-import io.github.ducklin.api.utils.tags.SlimefunTag;
+import io.github.ducklin.migration.utils.tags.SlimefunTag;
 
-/**
- * This class represents a {@link SlimefunItem} that is considered a Backpack.
- * Right-Clicking will open the {@link Inventory} of the currently held Backpack.
- * 
- * @author TheBusyBiscuit
- * 
- * @see BackpackListener
- * @see PlayerBackpack
- *
- */
+
 public class SlimefunBackpack extends SimpleSlimefunItem<ItemUseHandler> implements DistinctiveItem {
 
     private final int size;
@@ -51,18 +42,7 @@ public class SlimefunBackpack extends SimpleSlimefunItem<ItemUseHandler> impleme
         return size;
     }
 
-    /**
-     * This method returns whether a given {@link ItemStack} is allowed to be stored
-     * in this {@link SlimefunBackpack}.
-     * 
-     * @param item
-     *            The {@link ItemStack} to check for
-     * 
-     * @param itemAsSlimefunItem
-     *            The same {@link ItemStack} as a {@link SlimefunItem}, might be null
-     * 
-     * @return Whether the given {@link ItemStack} is allowed to be put into this {@link SlimefunBackpack}
-     */
+
     public boolean isItemAllowed(@Nonnull ItemStack item, @Nullable SlimefunItem itemAsSlimefunItem) {
         // Shulker Boxes are not allowed!
         if (SlimefunTag.SHULKER_BOXES.isTagged(item.getType())) {

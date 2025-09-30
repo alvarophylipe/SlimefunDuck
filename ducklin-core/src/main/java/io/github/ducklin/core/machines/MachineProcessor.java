@@ -15,7 +15,7 @@ import org.bukkit.inventory.ItemStack;
 
 import io.github.bakedlibs.dough.blocks.BlockPosition;
 import io.github.thebusybiscuit.slimefun4.api.events.AsyncMachineOperationFinishEvent;
-import io.github.ducklin.core.attributes.MachineProcessHolder;
+import io.github.ducklin.migration.attributes.MachineProcessHolder;
 import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
 
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;

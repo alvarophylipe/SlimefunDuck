@@ -7,7 +7,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
-import io.github.ducklin.core.attributes.Rechargeable;
+import io.github.ducklin.migration.attributes.Rechargeable;
 import io.github.ducklin.core.commands.SlimefunCommand;
 import io.github.ducklin.core.commands.SubCommand;
 import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;

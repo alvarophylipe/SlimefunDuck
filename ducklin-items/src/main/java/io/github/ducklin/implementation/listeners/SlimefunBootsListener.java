@@ -2,6 +2,8 @@ package io.github.ducklin.implementation.listeners;
 
 import javax.annotation.Nonnull;
 
+import io.github.ducklin.core.Slimefun;
+import io.github.ducklin.migration.items.SlimefunItem;
 import org.bukkit.Material;
 import org.bukkit.SoundCategory;
 import org.bukkit.block.Block;
@@ -16,8 +18,6 @@ import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
 import org.bukkit.event.player.PlayerInteractEvent;
 
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import io.github.ducklin.implementation.items.armor.EnderBoots;
 import io.github.ducklin.implementation.items.armor.FarmerShoes;
 import io.github.ducklin.implementation.items.armor.LongFallBoots;

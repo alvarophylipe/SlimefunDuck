@@ -2,12 +2,12 @@ package io.github.ducklin.core.handlers;
 
 import java.util.Optional;
 
+import io.github.ducklin.migration.exceptions.IncompatibleItemHandlerException;
+import io.github.ducklin.migration.items.ItemHandler;
+import io.github.ducklin.migration.items.SlimefunItem;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 
-import io.github.thebusybiscuit.slimefun4.api.exceptions.IncompatibleItemHandlerException;
-import io.github.thebusybiscuit.slimefun4.api.items.ItemHandler;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import io.github.ducklin.core.multiblocks.MultiBlock;
 import io.github.ducklin.core.multiblocks.MultiBlockMachine;
 

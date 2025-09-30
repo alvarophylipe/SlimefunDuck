@@ -3,6 +3,9 @@ package io.github.ducklin.implementation.listeners;
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
+import io.github.ducklin.core.Slimefun;
+import io.github.ducklin.migration.BlockStorage;
+import io.github.ducklin.migration.items.SlimefunItem;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.HumanEntity;
@@ -11,11 +14,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.ClickType;
 import org.bukkit.event.inventory.InventoryCreativeEvent;
 import org.bukkit.event.inventory.InventoryType.SlotType;
-
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
-
-import me.mrCookieSlime.Slimefun.api.BlockStorage;
 
 /**
  * The {@link MiddleClickListener} is responsible for listening to

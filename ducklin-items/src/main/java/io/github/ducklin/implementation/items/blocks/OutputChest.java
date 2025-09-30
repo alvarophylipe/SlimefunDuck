@@ -5,7 +5,12 @@ import java.util.Optional;
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
-import org.apache.commons.lang.Validate;
+import io.github.bakedlibs.dough.common.Validate;
+import io.github.ducklin.migration.BlockStorage;
+import io.github.ducklin.migration.items.ItemGroup;
+import io.github.ducklin.migration.items.SlimefunItem;
+import io.github.ducklin.migration.items.SlimefunItemStack;
+import io.github.ducklin.migration.recipes.RecipeType;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
@@ -15,24 +20,9 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
 import io.github.bakedlibs.dough.inventory.InvUtils;
-import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
-import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
-import io.github.thebusybiscuit.slimefun4.core.multiblocks.MultiBlockMachine;
 import io.github.ducklin.implementation.handlers.VanillaInventoryDropHandler;
 import io.papermc.lib.PaperLib;
 
-import me.mrCookieSlime.Slimefun.api.BlockStorage;
-
-/**
- * The {@link OutputChest} can be used to capture the output items from a {@link MultiBlockMachine}.
- * 
- * @author TheBusyBiscuit
- * 
- * @see MultiBlockMachine
- *
- */
 public class OutputChest extends SlimefunItem {
 
     // @formatter:off

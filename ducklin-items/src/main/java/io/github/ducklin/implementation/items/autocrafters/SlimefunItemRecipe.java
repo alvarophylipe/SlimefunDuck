@@ -7,26 +7,17 @@ import java.util.function.Predicate;
 
 import javax.annotation.Nonnull;
 
-import org.apache.commons.lang.Validate;
+import io.github.ducklin.menu.ChestMenu;
+import io.github.ducklin.migration.items.SlimefunItem;
+import io.github.ducklin.migration.utils.ChestMenuUtils;
+import io.github.ducklin.migration.utils.SlimefunUtils;
+import org.apache.commons.lang3.Validate;
 import org.bukkit.inventory.ItemStack;
 
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
-import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
-import io.github.ducklin.implementation.tasks.AsyncRecipeChoiceTask;
-import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
-import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
+import io.github.ducklin.migration.tasks.AsyncRecipeChoiceTask;
 
-import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu;
 
-/**
- * This {@link AbstractRecipe} implementation stands for a {@link SlimefunItem} which
- * is crafted using any {@link RecipeType}.
- * 
- * @author TheBusyBiscuit
- * 
- * @see SlimefunAutoCrafter
- *
- */
+
 class SlimefunItemRecipe extends AbstractRecipe {
 
     private final int[] slots = { 11, 12, 13, 20, 21, 22, 29, 30, 31 };

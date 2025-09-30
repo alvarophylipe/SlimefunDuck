@@ -9,6 +9,14 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 
+import io.github.ducklin.core.Slimefun;
+import io.github.ducklin.core.multiblocks.MultiBlockMachine;
+import io.github.ducklin.migration.items.ItemGroup;
+import io.github.ducklin.migration.items.SlimefunItem;
+import io.github.ducklin.migration.items.SlimefunItemStack;
+import io.github.ducklin.migration.player.PlayerBackpack;
+import io.github.ducklin.migration.player.PlayerProfile;
+import io.github.ducklin.migration.utils.SlimefunUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.block.BlockFace;
@@ -20,15 +28,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import io.github.bakedlibs.dough.common.ChatColors;
 import io.github.bakedlibs.dough.common.CommonPatterns;
 import io.github.bakedlibs.dough.items.ItemUtils;
-import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
-import io.github.thebusybiscuit.slimefun4.api.player.PlayerBackpack;
-import io.github.thebusybiscuit.slimefun4.api.player.PlayerProfile;
-import io.github.thebusybiscuit.slimefun4.core.multiblocks.MultiBlockMachine;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import io.github.ducklin.implementation.items.backpacks.SlimefunBackpack;
-import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
 
 /**
  * This abstract super class is responsible for some utility methods for machines which

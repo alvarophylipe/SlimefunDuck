@@ -28,7 +28,7 @@ import io.github.ducklin.implementation.handlers.SimpleBlockBreakHandler;
 import io.github.ducklin.implementation.items.SimpleSlimefunItem;
 import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
 import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
-import io.github.ducklin.api.utils.itemstack.ItemStackWrapper;
+import io.github.ducklin.migration.utils.itemstack.ItemStackWrapper;
 
 import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.interfaces.InventoryBlock;

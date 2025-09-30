@@ -6,6 +6,11 @@ import java.util.List;
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 
+import io.github.ducklin.core.handlers.ItemConsumptionHandler;
+import io.github.ducklin.migration.items.ItemGroup;
+import io.github.ducklin.migration.items.SlimefunItemStack;
+import io.github.ducklin.migration.recipes.RecipeType;
+import io.github.ducklin.migration.utils.SlimefunUtils;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -14,26 +19,9 @@ import org.bukkit.inventory.meta.PotionMeta;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
-import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
-import io.github.thebusybiscuit.slimefun4.core.handlers.ItemConsumptionHandler;
 import io.github.ducklin.implementation.items.SimpleSlimefunItem;
-import io.github.ducklin.implementation.items.backpacks.Cooler;
-import io.github.ducklin.implementation.listeners.CoolerListener;
-import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
 
-/**
- * This class represents a {@link SlimefunItem} that can be stored inside
- * of a {@link Cooler}.
- * 
- * @author TheBusyBiscuit
- * 
- * @see Cooler
- * @see CoolerListener
- *
- */
+
 public class Juice extends SimpleSlimefunItem<ItemConsumptionHandler> {
 
     private final List<PotionEffect> effects;

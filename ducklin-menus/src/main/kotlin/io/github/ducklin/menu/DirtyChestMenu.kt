@@ -2,7 +2,7 @@ package io.github.ducklin.menu
 
 import io.github.bakedlibs.dough.inventory.InvUtils
 import io.github.bakedlibs.dough.items.ItemUtils
-import io.github.ducklin.api.utils.itemstack.ItemStackWrapper
+import io.github.ducklin.migration.utils.itemstack.ItemStackWrapper
 import org.bukkit.Material
 import org.bukkit.block.Block
 import org.bukkit.entity.HumanEntity

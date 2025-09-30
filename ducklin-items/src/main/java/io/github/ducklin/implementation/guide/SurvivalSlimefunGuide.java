@@ -11,60 +11,31 @@ import java.util.logging.Level;
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
-import org.apache.commons.lang.Validate;
+import io.github.ducklin.core.Slimefun;
+import io.github.ducklin.menu.ChestMenu;
+import io.github.ducklin.migration.SlimefunAddon;
+import io.github.ducklin.migration.guide.GuideHistory;
+import io.github.ducklin.migration.guide.SlimefunGuideImplementation;
+import io.github.ducklin.migration.guide.SlimefunGuideMode;
+import io.github.ducklin.migration.items.ItemGroup;
+import io.github.ducklin.migration.items.groups.FlexItemGroup;
+import io.github.ducklin.migration.items.groups.LockedItemGroup;
+import io.github.ducklin.migration.player.PlayerProfile;
+import io.github.ducklin.migration.utils.ChestMenuUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.Tag;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.Recipe;
 import org.bukkit.inventory.RecipeChoice;
 import org.bukkit.inventory.RecipeChoice.MaterialChoice;
 
-import io.github.bakedlibs.dough.chat.ChatInput;
-import io.github.bakedlibs.dough.items.CustomItemStack;
-import io.github.bakedlibs.dough.items.ItemUtils;
-import io.github.bakedlibs.dough.recipes.MinecraftRecipe;
-import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
-import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
-import io.github.thebusybiscuit.slimefun4.api.items.groups.FlexItemGroup;
-import io.github.thebusybiscuit.slimefun4.api.items.groups.LockedItemGroup;
-import io.github.thebusybiscuit.slimefun4.api.player.PlayerProfile;
-import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
-import io.github.thebusybiscuit.slimefun4.api.researches.Research;
-import io.github.thebusybiscuit.slimefun4.core.attributes.RecipeDisplayItem;
-import io.github.thebusybiscuit.slimefun4.core.guide.GuideHistory;
-import io.github.thebusybiscuit.slimefun4.core.guide.SlimefunGuide;
-import io.github.thebusybiscuit.slimefun4.core.guide.SlimefunGuideImplementation;
-import io.github.thebusybiscuit.slimefun4.core.guide.SlimefunGuideMode;
-import io.github.thebusybiscuit.slimefun4.core.guide.options.SlimefunGuideSettings;
-import io.github.thebusybiscuit.slimefun4.core.multiblocks.MultiBlock;
-import io.github.thebusybiscuit.slimefun4.core.multiblocks.MultiBlockMachine;
-import io.github.thebusybiscuit.slimefun4.core.services.sounds.SoundEffect;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
-import io.github.ducklin.implementation.tasks.AsyncRecipeChoiceTask;
-import io.github.thebusybiscuit.slimefun4.utils.ChatUtils;
-import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
-import io.github.ducklin.api.utils.compatibility.VersionedItemFlag;
-import io.github.ducklin.api.utils.itemstack.SlimefunGuideItem;
+import io.github.ducklin.migration.tasks.AsyncRecipeChoiceTask;
+import io.github.ducklin.migration.utils.compatibility.VersionedItemFlag;
+import io.github.ducklin.migration.utils.itemstack.SlimefunGuideItem;
 
-import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu;
-import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu.MenuClickHandler;
-
-/**
- * The {@link SurvivalSlimefunGuide} is the standard version of our {@link SlimefunGuide}.
- * It uses an {@link Inventory} to display {@link SlimefunGuide} contents.
- *
- * @author TheBusyBiscuit
- *
- * @see SlimefunGuide
- * @see SlimefunGuideImplementation
- * @see CheatSheetSlimefunGuide
- *
- */
 public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
 
     private static final int MAX_ITEM_GROUPS = 36;
@@ -94,16 +65,6 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
         return getMode() != SlimefunGuideMode.CHEAT_MODE;
     }
 
-    /**
-     * Returns a {@link List} of visible {@link ItemGroup} instances that the {@link SlimefunGuide} would display.
-     *
-     * @param p
-     *            The {@link Player} who opened his {@link SlimefunGuide}
-     * @param profile
-     *            The {@link PlayerProfile} of the {@link Player}
-     *
-     * @return a {@link List} of visible {@link ItemGroup} instances
-     */
     protected @Nonnull List<ItemGroup> getVisibleItemGroups(@Nonnull Player p, @Nonnull PlayerProfile profile) {
         List<ItemGroup> groups = new LinkedList<>();
 

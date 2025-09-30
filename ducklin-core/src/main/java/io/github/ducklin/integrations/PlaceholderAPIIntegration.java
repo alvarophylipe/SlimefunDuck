@@ -7,12 +7,11 @@ import java.util.stream.Stream;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import io.github.ducklin.migration.player.PlayerProfile;
+import io.github.ducklin.migration.researches.Research;
+import io.github.ducklin.core.Slimefun;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
-
-import io.github.thebusybiscuit.slimefun4.api.player.PlayerProfile;
-import io.github.thebusybiscuit.slimefun4.api.researches.Research;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 
 import me.clip.placeholderapi.PlaceholderAPI;
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;

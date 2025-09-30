@@ -2,18 +2,16 @@ package io.github.ducklin.implementation.listeners.entity;
 
 import javax.annotation.Nonnull;
 
+import io.github.ducklin.core.Slimefun;
+import io.github.ducklin.implementation.SlimefunItems;
+import io.github.ducklin.migration.BlockStorage;
+import io.github.ducklin.migration.attributes.WitherProof;
+import io.github.ducklin.migration.items.SlimefunItem;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Wither;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityChangeBlockEvent;
-
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
-import io.github.thebusybiscuit.slimefun4.core.attributes.WitherProof;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
-import io.github.ducklin.implementation.SlimefunItems;
-
-import me.mrCookieSlime.Slimefun.api.BlockStorage;
 
 /**
  * This {@link Listener} is responsible for implementing the functionality of blocks that

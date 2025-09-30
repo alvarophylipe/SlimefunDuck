@@ -2,6 +2,7 @@ package io.github.ducklin.implementation.listeners.entity;
 
 import javax.annotation.Nonnull;
 
+import io.github.ducklin.core.Slimefun;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Firework;
 import org.bukkit.entity.Player;
@@ -10,16 +11,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.inventory.meta.FireworkMeta;
 
-import io.github.thebusybiscuit.slimefun4.api.researches.Research;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 
-/**
- * This {@link Listener} makes sure that any {@link Firework} caused by a {@link Player}
- * unlocking a {@link Research} does not cause damage to be dealt.
- * 
- * @author TheBusyBiscuit
- *
- */
 public class FireworksListener implements Listener {
 
     public FireworksListener(@Nonnull Slimefun plugin) {

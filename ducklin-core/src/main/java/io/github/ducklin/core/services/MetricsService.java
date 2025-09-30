@@ -25,15 +25,14 @@ import java.util.logging.Level;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import io.github.ducklin.migration.utils.JsonUtils;
+import io.github.ducklin.core.Slimefun;
 import org.bukkit.plugin.Plugin;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParseException;
 
 import io.github.bakedlibs.dough.common.CommonPatterns;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
-import io.github.thebusybiscuit.slimefun4.utils.JsonUtils;
-
 /**
  * This Class represents a Metrics Service that sends data to https://bstats.org/
  * This data is used to analyse the usage of this {@link Plugin}.

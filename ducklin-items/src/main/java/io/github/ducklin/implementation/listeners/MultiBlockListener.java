@@ -6,6 +6,10 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 
+import io.github.ducklin.core.Slimefun;
+import io.github.ducklin.core.handlers.MultiBlockInteractionHandler;
+import io.github.ducklin.core.multiblocks.MultiBlock;
+import io.github.ducklin.migration.events.MultiBlockInteractEvent;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.Tag;
@@ -18,22 +22,6 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.EquipmentSlot;
 
-import io.github.thebusybiscuit.slimefun4.api.events.MultiBlockInteractEvent;
-import io.github.thebusybiscuit.slimefun4.core.handlers.MultiBlockInteractionHandler;
-import io.github.thebusybiscuit.slimefun4.core.multiblocks.MultiBlock;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
-
-/**
- * This {@link Listener} is responsible for listening to a {@link PlayerInteractEvent} and
- * triggering any {@link MultiBlockInteractionHandler}.
- * 
- * @author TheBusyBiscuit
- * 
- * @see MultiBlock
- * @see MultiBlockInteractionHandler
- * @see MultiBlockInteractEvent
- *
- */
 public class MultiBlockListener implements Listener {
 
     public MultiBlockListener(@Nonnull Slimefun plugin) {

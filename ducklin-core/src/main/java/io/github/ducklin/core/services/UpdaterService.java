@@ -7,13 +7,14 @@ import java.util.logging.Level;
 import javax.annotation.Nonnull;
 
 import io.github.bakedlibs.dough.updater.BlobBuildUpdater;
-import io.github.thebusybiscuit.slimefun4.api.SlimefunBranch;
+import io.github.ducklin.migration.SlimefunBranch;
+import io.github.ducklin.core.Slimefun;
 import org.bukkit.plugin.Plugin;
 
 import io.github.bakedlibs.dough.config.Config;
 import io.github.bakedlibs.dough.updater.PluginUpdater;
 import io.github.bakedlibs.dough.versions.PrefixedVersion;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
+import org.bukkit.plugin.java.JavaPlugin;
 
 /**
  * This Class represents our {@link PluginUpdater} Service.
@@ -25,10 +26,8 @@ import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
  */
 public class UpdaterService {
 
-    /**
-     * Our {@link Slimefun} instance.
-     */
-    private final Slimefun plugin;
+
+    private final JavaPlugin plugin;
 
     /**
      * Our {@link PluginUpdater} implementation.
@@ -52,7 +51,7 @@ public class UpdaterService {
      * @param file
      *            The {@link File} of this {@link Plugin}
      */
-    public UpdaterService(@Nonnull Slimefun plugin, @Nonnull String version, @Nonnull File file) {
+    public UpdaterService(@Nonnull JavaPlugin plugin, @Nonnull String version, @Nonnull File file) {
         this.plugin = plugin;
         BlobBuildUpdater autoUpdater = null;
 

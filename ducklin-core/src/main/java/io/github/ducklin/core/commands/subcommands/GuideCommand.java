@@ -7,8 +7,8 @@ import org.bukkit.entity.Player;
 
 import io.github.ducklin.core.commands.SlimefunCommand;
 import io.github.ducklin.core.commands.SubCommand;
-import io.github.ducklin.core.guide.SlimefunGuide;
-import io.github.ducklin.core.guide.SlimefunGuideMode;
+import io.github.ducklin.migration.guide.SlimefunGuide;
+import io.github.ducklin.migration.guide.SlimefunGuideMode;
 import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 
 class GuideCommand extends SubCommand {

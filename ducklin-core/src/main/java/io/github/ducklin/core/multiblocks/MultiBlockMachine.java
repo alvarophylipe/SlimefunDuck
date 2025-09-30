@@ -11,6 +11,12 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 import com.google.common.base.Preconditions;
 
+import io.github.ducklin.core.Slimefun;
+import io.github.ducklin.migration.SlimefunAddon;
+import io.github.ducklin.migration.items.ItemGroup;
+import io.github.ducklin.migration.items.SlimefunItem;
+import io.github.ducklin.migration.items.SlimefunItemStack;
+import io.github.ducklin.migration.recipes.RecipeType;
 import org.apache.commons.lang.Validate;
 
 import org.bukkit.Material;
@@ -25,18 +31,9 @@ import org.bukkit.inventory.ItemStack;
 
 import io.github.bakedlibs.dough.inventory.InvUtils;
 import io.github.bakedlibs.dough.protection.Interaction;
-import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
-import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
-import io.github.thebusybiscuit.slimefun4.api.items.ItemSpawnReason;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
-import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
-import io.github.ducklin.core.attributes.NotPlaceable;
-import io.github.ducklin.core.attributes.RecipeDisplayItem;
+import io.github.ducklin.migration.attributes.NotPlaceable;
+import io.github.ducklin.migration.attributes.RecipeDisplayItem;
 import io.github.ducklin.core.handlers.MultiBlockInteractionHandler;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
-import io.github.thebusybiscuit.slimefun4.implementation.items.blocks.OutputChest;
-import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
 
 /**
  * A {@link MultiBlockMachine} is a {@link SlimefunItem} that is built in the {@link World}.

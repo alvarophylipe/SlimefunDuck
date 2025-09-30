@@ -32,7 +32,7 @@ import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import io.github.ducklin.implementation.handlers.SimpleBlockBreakHandler;
 import io.github.ducklin.implementation.items.SimpleSlimefunItem;
 import io.github.ducklin.implementation.listeners.AncientAltarListener;
-import io.github.ducklin.implementation.tasks.AncientAltarTask;
+import io.github.ducklin.migration.tasks.AncientAltarTask;
 import io.github.thebusybiscuit.slimefun4.utils.ArmorStandUtils;
 import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
 

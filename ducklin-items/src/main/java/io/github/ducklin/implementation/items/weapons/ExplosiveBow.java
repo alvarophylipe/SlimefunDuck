@@ -21,7 +21,7 @@ import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.items.settings.IntRangeSetting;
 import io.github.thebusybiscuit.slimefun4.core.handlers.BowShootHandler;
 import io.github.thebusybiscuit.slimefun4.core.services.sounds.SoundEffect;
-import io.github.ducklin.api.utils.compatibility.VersionedParticle;
+import io.github.ducklin.migration.utils.compatibility.VersionedParticle;
 
 /**
  * The {@link ExplosiveBow} is a {@link SlimefunBow} which creates a fake explosion when it hits

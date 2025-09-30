@@ -17,7 +17,7 @@ import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.ShapelessRecipe;
 
 import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
-import io.github.ducklin.implementation.tasks.AsyncRecipeChoiceTask;
+import io.github.ducklin.migration.tasks.AsyncRecipeChoiceTask;
 import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
 
 import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu;

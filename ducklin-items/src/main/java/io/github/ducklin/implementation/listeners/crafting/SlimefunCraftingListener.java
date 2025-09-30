@@ -2,11 +2,11 @@ package io.github.ducklin.implementation.listeners.crafting;
 
 import javax.annotation.Nullable;
 
+import io.github.ducklin.migration.guide.SlimefunGuide;
+import io.github.ducklin.migration.items.SlimefunItem;
 import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
 
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
-import io.github.thebusybiscuit.slimefun4.core.guide.SlimefunGuide;
 import io.github.ducklin.implementation.items.VanillaItem;
 
 interface SlimefunCraftingListener extends Listener {

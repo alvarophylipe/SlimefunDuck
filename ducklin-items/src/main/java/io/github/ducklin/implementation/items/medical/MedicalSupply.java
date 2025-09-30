@@ -18,7 +18,7 @@ import io.github.thebusybiscuit.slimefun4.api.items.ItemHandler;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.ducklin.implementation.items.SimpleSlimefunItem;
-import io.github.ducklin.api.utils.compatibility.VersionedPotionEffectType;
+import io.github.ducklin.migration.utils.compatibility.VersionedPotionEffectType;
 
 public abstract class MedicalSupply<T extends ItemHandler> extends SimpleSlimefunItem<T> {
 

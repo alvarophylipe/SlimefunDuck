@@ -16,6 +16,9 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 
+import io.github.ducklin.core.Slimefun;
+import io.github.ducklin.migration.utils.NumberUtils;
+import io.github.ducklin.migration.utils.PatternUtils;
 import org.apache.commons.lang.Validate;
 import org.bukkit.NamespacedKey;
 import org.bukkit.Server;
@@ -29,9 +32,6 @@ import org.bukkit.persistence.PersistentDataType;
 import io.github.ducklin.core.services.localization.Language;
 import io.github.ducklin.core.services.localization.LanguageFile;
 import io.github.ducklin.core.services.localization.SlimefunLocalization;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
-import io.github.thebusybiscuit.slimefun4.utils.NumberUtils;
-import io.github.thebusybiscuit.slimefun4.utils.PatternUtils;
 
 /**
  * As the name suggests, this Service is responsible for Localization.

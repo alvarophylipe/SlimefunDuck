@@ -2,34 +2,20 @@ package io.github.ducklin.implementation.setup;
 
 import java.time.Month;
 
+import io.github.ducklin.core.Slimefun;
+import io.github.ducklin.migration.items.ItemGroup;
+import io.github.ducklin.migration.items.groups.FlexItemGroup;
+import io.github.ducklin.migration.items.groups.LockedItemGroup;
+import io.github.ducklin.migration.items.groups.SeasonalItemGroup;
+import io.github.ducklin.migration.utils.ChatUtils;
+import io.github.ducklin.migration.utils.HeadTexture;
+import io.github.ducklin.migration.utils.SlimefunUtils;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 
 import io.github.bakedlibs.dough.items.CustomItemStack;
-import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
-import io.github.thebusybiscuit.slimefun4.api.items.groups.FlexItemGroup;
-import io.github.thebusybiscuit.slimefun4.api.items.groups.LockedItemGroup;
-import io.github.thebusybiscuit.slimefun4.api.items.groups.SeasonalItemGroup;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import io.github.ducklin.implementation.SlimefunItems;
-import io.github.thebusybiscuit.slimefun4.utils.ChatUtils;
-import io.github.thebusybiscuit.slimefun4.utils.HeadTexture;
-import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
 
-/**
- * This class holds a reference to every {@link ItemGroup}
- * found in Slimefun itself.
- * 
- * Addons should use their own {@link ItemGroup} hence why the visible of this class was now
- * changed to package-private. Only {@link SlimefunItemSetup} has access to this class.
- * 
- * @author TheBusyBiscuit
- * 
- * @see ItemGroup
- * @see LockedItemGroup
- * @see SeasonalItemGroup
- *
- */
 class DefaultItemGroups {
 
     // Standard Item Groups

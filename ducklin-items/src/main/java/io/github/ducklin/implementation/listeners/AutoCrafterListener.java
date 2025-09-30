@@ -4,6 +4,9 @@ import java.util.Optional;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
+import io.github.ducklin.core.Slimefun;
+import io.github.ducklin.migration.events.PlayerRightClickEvent;
+import io.github.ducklin.migration.items.SlimefunItem;
 import org.bukkit.GameRule;
 import org.bukkit.Keyed;
 import org.bukkit.block.Block;
@@ -15,9 +18,6 @@ import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.Recipe;
 
-import io.github.thebusybiscuit.slimefun4.api.events.PlayerRightClickEvent;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import io.github.ducklin.implementation.items.autocrafters.AbstractAutoCrafter;
 import io.github.ducklin.implementation.items.autocrafters.EnhancedAutoCrafter;
 import io.github.ducklin.implementation.items.autocrafters.VanillaAutoCrafter;

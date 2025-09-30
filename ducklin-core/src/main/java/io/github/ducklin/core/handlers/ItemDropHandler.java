@@ -2,11 +2,11 @@ package io.github.ducklin.core.handlers;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
+import io.github.ducklin.migration.items.ItemHandler;
 import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerDropItemEvent;
 
-import io.github.thebusybiscuit.slimefun4.api.items.ItemHandler;
 
 /**
  * The {@link ItemDropHandler} is a {@link GlobalItemHandler} which listens to

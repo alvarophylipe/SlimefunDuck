@@ -39,8 +39,8 @@ import io.github.thebusybiscuit.slimefun4.core.handlers.ItemUseHandler;
 import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import io.github.ducklin.implementation.items.SimpleSlimefunItem;
 import io.github.ducklin.implementation.settings.ClimbableSurface;
-import io.github.ducklin.api.utils.compatibility.VersionedEnchantment;
-import io.github.ducklin.api.utils.tags.SlimefunTag;
+import io.github.ducklin.migration.utils.compatibility.VersionedEnchantment;
+import io.github.ducklin.migration.utils.tags.SlimefunTag;
 
 /**
  * The {@link ClimbingPick} launches you 1 block upwards when you right click

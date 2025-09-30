@@ -8,6 +8,8 @@ import java.util.concurrent.ThreadLocalRandom;
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
+import io.github.ducklin.core.Slimefun;
+import io.github.ducklin.migration.utils.SlimefunUtils;
 import org.bukkit.Material;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
@@ -19,10 +21,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.inventory.ItemStack;
 
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import io.github.ducklin.implementation.items.androids.AndroidInstance;
 import io.github.ducklin.implementation.items.androids.ButcherAndroid;
-import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
 
 /**
  * This {@link Listener} handles the collection of drops from an {@link Entity} that was

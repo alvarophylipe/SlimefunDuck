@@ -8,29 +8,16 @@ import java.util.Set;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import io.github.ducklin.migration.items.SlimefunItem;
 import org.apache.commons.lang.Validate;
 import org.bukkit.Material;
 import org.bukkit.Tag;
 import org.bukkit.World;
 import org.bukkit.block.BlockFace;
 
-import io.github.thebusybiscuit.slimefun4.api.events.MultiBlockInteractEvent;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import io.github.ducklin.core.handlers.MultiBlockInteractionHandler;
 
-/**
- * A {@link MultiBlock} represents a structure build in a {@link World}.
- * A {@link MultiBlock} is often linked to a {@link MultiBlockMachine} and is used
- * to recognize that machine in a {@link MultiBlockInteractEvent}.
- * 
- * @author TheBusyBiscuit
- * @author Liruxo
- * 
- * @see MultiBlockMachine
- * @see MultiBlockInteractionHandler
- * @see MultiBlockInteractEvent
- *
- */
+
 public class MultiBlock {
 
     private static final Set<Tag<Material>> SUPPORTED_TAGS = new HashSet<>();

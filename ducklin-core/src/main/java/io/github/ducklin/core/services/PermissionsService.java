@@ -9,24 +9,16 @@ import java.util.Optional;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import io.github.ducklin.migration.items.SlimefunItem;
+import io.github.ducklin.core.Slimefun;
 import org.apache.commons.lang.Validate;
 import org.bukkit.entity.Player;
 import org.bukkit.permissions.Permissible;
 import org.bukkit.permissions.Permission;
 
 import io.github.bakedlibs.dough.config.Config;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 
-/**
- * This Service is responsible for handling the {@link Permission} of a
- * {@link SlimefunItem}.
- * 
- * You can set up these {@link Permission} nodes inside the {@code permissions.yml} file.
- * 
- * @author TheBusyBiscuit
- *
- */
+
 public class PermissionsService {
 
     private final Map<String, String> permissions = new HashMap<>();

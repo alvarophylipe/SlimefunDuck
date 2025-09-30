@@ -7,7 +7,7 @@ import io.github.thebusybiscuit.slimefun4.api.MinecraftVersion;
 import io.github.thebusybiscuit.slimefun4.api.geo.GEOResource;
 import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import io.github.ducklin.implementation.SlimefunItems;
-import io.github.ducklin.api.utils.biomes.BiomeMap;
+import io.github.ducklin.migration.utils.biomes.BiomeMap;
 
 /**
  * A {@link GEOResource} which consists of Salt.

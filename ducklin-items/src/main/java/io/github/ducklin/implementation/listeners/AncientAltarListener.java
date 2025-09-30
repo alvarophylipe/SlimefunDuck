@@ -11,6 +11,12 @@ import java.util.Map;
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
+import io.github.ducklin.core.Slimefun;
+import io.github.ducklin.core.services.sounds.SoundEffect;
+import io.github.ducklin.migration.BlockStorage;
+import io.github.ducklin.migration.events.PlayerRightClickEvent;
+import io.github.ducklin.migration.items.SlimefunItem;
+import io.github.ducklin.migration.utils.SlimefunUtils;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -30,20 +36,14 @@ import org.bukkit.inventory.ItemStack;
 import io.github.bakedlibs.dough.items.CustomItemStack;
 import io.github.bakedlibs.dough.items.ItemUtils;
 import io.github.bakedlibs.dough.protection.Interaction;
-import io.github.thebusybiscuit.slimefun4.api.events.PlayerRightClickEvent;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
-import io.github.thebusybiscuit.slimefun4.core.services.sounds.SoundEffect;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import io.github.ducklin.implementation.SlimefunItems;
 import io.github.ducklin.implementation.items.altar.AltarRecipe;
 import io.github.ducklin.implementation.items.altar.AncientAltar;
 import io.github.ducklin.implementation.items.altar.AncientPedestal;
 import io.github.ducklin.implementation.items.blocks.RepairedSpawner;
-import io.github.ducklin.implementation.tasks.AncientAltarTask;
-import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
-import io.github.ducklin.api.utils.itemstack.ItemStackWrapper;
+import io.github.ducklin.migration.tasks.AncientAltarTask;
+import io.github.ducklin.migration.utils.itemstack.ItemStackWrapper;
 
-import me.mrCookieSlime.Slimefun.api.BlockStorage;
 
 /**
  * This {@link Listener} is responsible for providing the core mechanics of the {@link AncientAltar}

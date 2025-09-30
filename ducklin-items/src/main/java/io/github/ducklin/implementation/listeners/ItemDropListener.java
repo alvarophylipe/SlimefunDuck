@@ -2,14 +2,13 @@ package io.github.ducklin.implementation.listeners;
 
 import javax.annotation.Nonnull;
 
+import io.github.ducklin.core.Slimefun;
+import io.github.ducklin.core.SlimefunRegistry;
+import io.github.ducklin.core.handlers.ItemDropHandler;
+import io.github.ducklin.migration.items.ItemHandler;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerDropItemEvent;
-
-import io.github.thebusybiscuit.slimefun4.api.items.ItemHandler;
-import io.github.thebusybiscuit.slimefun4.core.SlimefunRegistry;
-import io.github.thebusybiscuit.slimefun4.core.handlers.ItemDropHandler;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 
 /**
  * Listens to the {@link PlayerDropItemEvent} to call any {@link ItemDropHandler}.

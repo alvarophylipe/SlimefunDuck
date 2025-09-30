@@ -2,6 +2,9 @@ package io.github.ducklin.implementation.listeners;
 
 import javax.annotation.Nonnull;
 
+import io.github.ducklin.core.Slimefun;
+import io.github.ducklin.migration.events.ExplosiveToolBreakBlocksEvent;
+import io.github.ducklin.migration.networks.NetworkManager;
 import org.bukkit.block.Block;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -9,21 +12,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
 
-import io.github.thebusybiscuit.slimefun4.api.events.ExplosiveToolBreakBlocksEvent;
-import io.github.thebusybiscuit.slimefun4.api.network.Network;
-import io.github.thebusybiscuit.slimefun4.core.networks.NetworkManager;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 
-/**
- * This {@link Listener} is responsible for all updates to a {@link Network}.
- * 
- * @author meiamsome
- * @author TheBusyBiscuit
- * 
- * @see Network
- * @see NetworkManager
- *
- */
 public class NetworkListener implements Listener {
 
     /**

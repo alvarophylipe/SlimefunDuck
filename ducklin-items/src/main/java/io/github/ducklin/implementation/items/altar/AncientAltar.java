@@ -6,31 +6,15 @@ import java.util.List;
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
+import io.github.ducklin.migration.items.ItemGroup;
+import io.github.ducklin.migration.items.ItemSetting;
+import io.github.ducklin.migration.items.SlimefunItem;
+import io.github.ducklin.migration.items.SlimefunItemStack;
+import io.github.ducklin.migration.items.settings.IntRangeSetting;
+import io.github.ducklin.migration.recipes.RecipeType;
 import org.bukkit.inventory.ItemStack;
 
-import io.github.thebusybiscuit.slimefun4.api.events.AncientAltarCraftEvent;
-import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
-import io.github.thebusybiscuit.slimefun4.api.items.ItemSetting;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
-import io.github.thebusybiscuit.slimefun4.api.items.settings.IntRangeSetting;
-import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
-import io.github.ducklin.implementation.listeners.AncientAltarListener;
-import io.github.ducklin.implementation.tasks.AncientAltarTask;
 
-/**
- * The {@link AncientAltar} is a multiblock structure.
- * The altar itself stands in the center, surrounded by {@link AncientPedestal Pedestals}, it is used
- * to craft various magical items.
- *
- * @author TheBusyBiscuit
- * @author martinbrom
- *
- * @see AncientAltarListener
- * @see AncientAltarTask
- * @see AncientAltarCraftEvent
- * @see AncientPedestal
- */
 public class AncientAltar extends SlimefunItem {
 
     /**

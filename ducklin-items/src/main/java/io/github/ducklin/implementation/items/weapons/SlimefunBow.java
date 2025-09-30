@@ -3,23 +3,14 @@ package io.github.ducklin.implementation.items.weapons;
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
+import io.github.ducklin.core.handlers.BowShootHandler;
+import io.github.ducklin.migration.items.ItemGroup;
+import io.github.ducklin.migration.items.SlimefunItem;
+import io.github.ducklin.migration.items.SlimefunItemStack;
+import io.github.ducklin.migration.recipes.RecipeType;
 import org.bukkit.entity.Arrow;
 import org.bukkit.inventory.ItemStack;
 
-import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
-import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
-import io.github.thebusybiscuit.slimefun4.core.handlers.BowShootHandler;
-
-/**
- * This class represents a {@link SlimefunItem} that is a Bow.
- * It comes with a {@link BowShootHandler} to handle actions that shall be performed
- * whenever an {@link Arrow} fired from this {@link SlimefunBow} hits a target.
- * 
- * @author TheBusyBiscuit
- *
- */
 public abstract class SlimefunBow extends SlimefunItem {
 
     @ParametersAreNonnullByDefault

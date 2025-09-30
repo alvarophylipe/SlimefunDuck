@@ -2,26 +2,18 @@ package io.github.ducklin.implementation.items.magical;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
+import io.github.ducklin.migration.items.ItemGroup;
+import io.github.ducklin.migration.items.ItemSetting;
+import io.github.ducklin.migration.items.SlimefunItemStack;
+import io.github.ducklin.migration.items.settings.DoubleRangeSetting;
+import io.github.ducklin.migration.recipes.RecipeType;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
-import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
-import io.github.thebusybiscuit.slimefun4.api.items.ItemSetting;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
-import io.github.thebusybiscuit.slimefun4.api.items.settings.DoubleRangeSetting;
-import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.ducklin.implementation.items.blocks.UnplaceableBlock;
 
-/**
- * The {@link InfusedMagnet} is a {@link SlimefunItem} that allows a {@link Player} to
- * automatically pick up items in a certain radius while holding shift and having an
- * {@link InfusedMagnet} in their {@link Inventory}.
- * 
- * @author TheBusyBiscuit
- *
- */
+
 public class InfusedMagnet extends UnplaceableBlock {
 
     private final ItemSetting<Double> radius = new DoubleRangeSetting(this, "pickup-radius", 0.1, 6.0, Double.MAX_VALUE);

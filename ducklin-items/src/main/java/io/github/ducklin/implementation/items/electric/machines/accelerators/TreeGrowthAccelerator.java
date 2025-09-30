@@ -15,8 +15,8 @@ import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.ducklin.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
-import io.github.ducklin.api.utils.compatibility.VersionedParticle;
-import io.github.ducklin.api.utils.itemstack.ItemStackWrapper;
+import io.github.ducklin.migration.utils.compatibility.VersionedParticle;
+import io.github.ducklin.migration.utils.itemstack.ItemStackWrapper;
 
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;

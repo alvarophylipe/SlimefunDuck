@@ -5,15 +5,15 @@ import java.time.Month;
 
 import javax.annotation.Nonnull;
 
+import io.github.ducklin.migration.guide.SlimefunGuideMode;
+import io.github.ducklin.migration.items.groups.FlexItemGroup;
+import io.github.ducklin.migration.player.PlayerProfile;
+import io.github.ducklin.migration.utils.ChatUtils;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.entity.Player;
 
 import io.github.bakedlibs.dough.items.CustomItemStack;
-import io.github.thebusybiscuit.slimefun4.api.items.groups.FlexItemGroup;
-import io.github.thebusybiscuit.slimefun4.api.player.PlayerProfile;
-import io.github.thebusybiscuit.slimefun4.core.guide.SlimefunGuideMode;
-import io.github.thebusybiscuit.slimefun4.utils.ChatUtils;
 
 /**
  * A super ordinary class.

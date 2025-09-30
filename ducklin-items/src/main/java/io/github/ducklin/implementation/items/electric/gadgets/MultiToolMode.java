@@ -3,8 +3,8 @@ package io.github.ducklin.implementation.items.electric.gadgets;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import io.github.thebusybiscuit.slimefun4.api.items.ItemSetting;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
+import io.github.ducklin.migration.items.ItemSetting;
+import io.github.ducklin.migration.items.SlimefunItem;
 
 class MultiToolMode {
 

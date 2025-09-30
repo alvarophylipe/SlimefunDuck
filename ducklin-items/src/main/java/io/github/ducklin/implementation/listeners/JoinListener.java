@@ -2,18 +2,18 @@ package io.github.ducklin.implementation.listeners;
 
 import javax.annotation.Nonnull;
 
+import io.github.ducklin.core.Slimefun;
+import io.github.ducklin.migration.items.HashedArmorpiece;
+import io.github.ducklin.migration.items.SlimefunItem;
+import io.github.ducklin.migration.player.PlayerProfile;
 import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.ItemStack;
 
-import io.github.thebusybiscuit.slimefun4.api.items.HashedArmorpiece;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
-import io.github.thebusybiscuit.slimefun4.api.player.PlayerProfile;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import io.github.ducklin.implementation.items.armor.SlimefunArmorPiece;
-import io.github.ducklin.implementation.tasks.armor.RadiationTask;
+import io.github.ducklin.migration.tasks.armor.RadiationTask;
 
 /**
  * This {@link Listener} caches the armor of the player on join.

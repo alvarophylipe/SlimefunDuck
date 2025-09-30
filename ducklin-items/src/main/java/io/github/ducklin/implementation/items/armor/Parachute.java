@@ -2,14 +2,14 @@ package io.github.ducklin.implementation.items.armor;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
+import io.github.ducklin.migration.items.ItemGroup;
+import io.github.ducklin.migration.items.SlimefunItem;
+import io.github.ducklin.migration.items.SlimefunItemStack;
+import io.github.ducklin.migration.recipes.RecipeType;
 import org.bukkit.inventory.ItemStack;
 
-import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
-import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.ducklin.implementation.items.electric.gadgets.Jetpack;
-import io.github.ducklin.implementation.tasks.player.ParachuteTask;
+import io.github.ducklin.migration.tasks.player.ParachuteTask;
 
 /**
  * The {@link Parachute} is a {@link SlimefunItem} that can be equipped as a chestplate.

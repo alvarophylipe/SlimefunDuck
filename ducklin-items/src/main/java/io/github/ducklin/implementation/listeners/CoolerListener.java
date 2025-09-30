@@ -3,6 +3,11 @@ package io.github.ducklin.implementation.listeners;
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
+import io.github.ducklin.core.Slimefun;
+import io.github.ducklin.core.services.sounds.SoundEffect;
+import io.github.ducklin.migration.events.CoolerFeedPlayerEvent;
+import io.github.ducklin.migration.player.PlayerBackpack;
+import io.github.ducklin.migration.player.PlayerProfile;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -15,11 +20,6 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.PotionMeta;
 import org.bukkit.potion.PotionEffect;
 
-import io.github.thebusybiscuit.slimefun4.api.events.CoolerFeedPlayerEvent;
-import io.github.thebusybiscuit.slimefun4.api.player.PlayerBackpack;
-import io.github.thebusybiscuit.slimefun4.api.player.PlayerProfile;
-import io.github.thebusybiscuit.slimefun4.core.services.sounds.SoundEffect;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import io.github.ducklin.implementation.items.backpacks.Cooler;
 import io.github.ducklin.implementation.items.food.Juice;
 

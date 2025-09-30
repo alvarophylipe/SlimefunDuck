@@ -4,6 +4,9 @@ import java.util.Optional;
 
 import javax.annotation.Nonnull;
 
+import io.github.ducklin.core.Slimefun;
+import io.github.ducklin.migration.BlockStorage;
+import io.github.ducklin.migration.items.SlimefunItem;
 import org.bukkit.Material;
 import org.bukkit.block.BlockState;
 import org.bukkit.block.Furnace;
@@ -15,13 +18,11 @@ import org.bukkit.event.inventory.FurnaceSmeltEvent;
 import org.bukkit.inventory.FurnaceInventory;
 import org.bukkit.inventory.ItemStack;
 
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
+
 import io.github.ducklin.implementation.items.blocks.EnhancedFurnace;
-import io.github.ducklin.api.utils.tags.SlimefunTag;
+import io.github.ducklin.migration.utils.tags.SlimefunTag;
 import io.papermc.lib.PaperLib;
 
-import me.mrCookieSlime.Slimefun.api.BlockStorage;
 
 /**
  * This {@link Listener} is responsible for enforcing the "fuel efficiency" and "fortune" policies

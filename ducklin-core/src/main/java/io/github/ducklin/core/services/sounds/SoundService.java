@@ -8,7 +8,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import io.github.bakedlibs.dough.config.Config;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
+import io.github.ducklin.core.Slimefun;
 
 import com.google.common.base.Preconditions;
 

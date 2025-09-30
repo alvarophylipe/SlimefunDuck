@@ -10,7 +10,22 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 
-import org.apache.commons.lang.Validate;
+import io.github.ducklin.core.Configuration.Config;
+import io.github.ducklin.core.Slimefun;
+import io.github.ducklin.core.services.sounds.SoundEffect;
+import io.github.ducklin.menu.ChestMenu;
+import io.github.ducklin.migration.Objects.handlers.BlockTicker;
+import io.github.ducklin.migration.SlimefunAddon;
+import io.github.ducklin.migration.attributes.EnergyNetComponent;
+import io.github.ducklin.migration.items.ItemGroup;
+import io.github.ducklin.migration.items.ItemState;
+import io.github.ducklin.migration.items.SlimefunItem;
+import io.github.ducklin.migration.items.SlimefunItemStack;
+import io.github.ducklin.migration.networks.energy.EnergyNetComponentType;
+import io.github.ducklin.migration.recipes.RecipeType;
+import io.github.ducklin.migration.utils.ChestMenuUtils;
+import io.github.ducklin.migration.utils.HeadTexture;
+import org.apache.commons.lang3.Validate;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
@@ -26,39 +41,14 @@ import org.bukkit.inventory.ItemStack;
 import io.github.bakedlibs.dough.data.persistent.PersistentDataAPI;
 import io.github.bakedlibs.dough.items.CustomItemStack;
 import io.github.bakedlibs.dough.protection.Interaction;
-import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
-import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
-import io.github.thebusybiscuit.slimefun4.api.items.ItemState;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
-import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
-import io.github.thebusybiscuit.slimefun4.core.attributes.EnergyNetComponent;
-import io.github.thebusybiscuit.slimefun4.core.networks.energy.EnergyNetComponentType;
-import io.github.thebusybiscuit.slimefun4.core.services.sounds.SoundEffect;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import io.github.ducklin.implementation.listeners.AutoCrafterListener;
-import io.github.ducklin.implementation.tasks.AsyncRecipeChoiceTask;
-import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
-import io.github.thebusybiscuit.slimefun4.utils.HeadTexture;
-import io.github.ducklin.api.utils.compatibility.VersionedParticle;
-import io.github.ducklin.api.utils.tags.SlimefunTag;
+import io.github.ducklin.migration.tasks.AsyncRecipeChoiceTask;
+import io.github.ducklin.migration.utils.compatibility.VersionedParticle;
+import io.github.ducklin.migration.utils.tags.SlimefunTag;
 import io.papermc.lib.PaperLib;
 import io.papermc.lib.features.blockstatesnapshot.BlockStateSnapshotResult;
 
-import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
-import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu;
-import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.AContainer;
-import me.mrCookieSlime.Slimefun.Objects.handlers.BlockTicker;
 
-/**
- * This is the abstract super class for our auto crafters.
- *
- * @author TheBusyBiscuit
- *
- * @see VanillaAutoCrafter
- * @see EnhancedAutoCrafter
- *
- */
 public abstract class AbstractAutoCrafter extends SlimefunItem implements EnergyNetComponent {
 
     /**
@@ -501,16 +491,6 @@ public abstract class AbstractAutoCrafter extends SlimefunItem implements Energy
         return energyConsumed;
     }
 
-    /**
-     * This sets the energy capacity for this machine.
-     * This method <strong>must</strong> be called before registering the item
-     * and only before registering.
-     *
-     * @param capacity
-     *            The amount of energy this machine can store
-     *
-     * @return This method will return the current instance of {@link AContainer}, so that it can be chained.
-     */
     @Nonnull
     public final AbstractAutoCrafter setCapacity(int capacity) {
         Validate.isTrue(capacity > 0, "The capacity must be greater than zero!");
@@ -523,14 +503,7 @@ public abstract class AbstractAutoCrafter extends SlimefunItem implements Energy
         }
     }
 
-    /**
-     * This method sets the energy consumed by this machine per tick.
-     *
-     * @param energyConsumption
-     *            The energy consumed per tick
-     *
-     * @return This method will return the current instance of {@link AContainer}, so that it can be chained.
-     */
+
     @Nonnull
     public final AbstractAutoCrafter setEnergyConsumption(int energyConsumption) {
         Validate.isTrue(energyConsumption > 0, "The energy consumption must be greater than zero!");

@@ -9,7 +9,12 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 
-import org.apache.commons.lang.Validate;
+import io.github.bakedlibs.dough.common.Validate;
+import io.github.ducklin.core.Slimefun;
+import io.github.ducklin.core.services.sounds.SoundEffect;
+import io.github.ducklin.migration.items.SlimefunItem;
+import io.github.ducklin.migration.player.PlayerBackpack;
+import io.github.ducklin.migration.player.PlayerProfile;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.OfflinePlayer;
@@ -25,29 +30,10 @@ import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
-import io.github.thebusybiscuit.slimefun4.api.player.PlayerBackpack;
-import io.github.thebusybiscuit.slimefun4.api.player.PlayerProfile;
-import io.github.thebusybiscuit.slimefun4.core.services.sounds.SoundEffect;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import io.github.ducklin.implementation.items.backpacks.Cooler;
 import io.github.ducklin.implementation.items.backpacks.SlimefunBackpack;
 
-/**
- * This {@link Listener} is responsible for all events centered around a {@link SlimefunBackpack}.
- * This also includes the {@link Cooler}
- * 
- * @author TheBusyBiscuit
- * @author Walshy
- * @author NihilistBrew
- * @author AtomicScience
- * @author VoidAngel
- * @author John000708
- * 
- * @see SlimefunBackpack
- * @see PlayerBackpack
- *
- */
+
 public class BackpackListener implements Listener {
 
     private final Map<UUID, ItemStack> backpacks = new HashMap<>();

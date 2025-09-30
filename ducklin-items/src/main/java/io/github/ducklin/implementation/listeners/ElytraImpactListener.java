@@ -7,6 +7,12 @@ import java.util.UUID;
 
 import javax.annotation.Nonnull;
 
+import io.github.ducklin.core.Slimefun;
+import io.github.ducklin.core.services.sounds.SoundEffect;
+import io.github.ducklin.migration.attributes.DamageableItem;
+import io.github.ducklin.migration.attributes.ProtectionType;
+import io.github.ducklin.migration.items.SlimefunItem;
+import io.github.ducklin.migration.player.PlayerProfile;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -14,12 +20,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
 
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
-import io.github.thebusybiscuit.slimefun4.api.player.PlayerProfile;
-import io.github.thebusybiscuit.slimefun4.core.attributes.DamageableItem;
-import io.github.thebusybiscuit.slimefun4.core.attributes.ProtectionType;
-import io.github.thebusybiscuit.slimefun4.core.services.sounds.SoundEffect;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import io.github.ducklin.implementation.items.armor.ElytraCap;
 import io.github.ducklin.implementation.items.armor.SlimefunArmorPiece;
 import org.bukkit.event.entity.EntityToggleGlideEvent;

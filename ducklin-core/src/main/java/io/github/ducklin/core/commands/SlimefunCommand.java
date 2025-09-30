@@ -19,6 +19,7 @@ import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import io.github.bakedlibs.dough.common.ChatColors;
 import io.github.ducklin.core.commands.subcommands.SlimefunSubCommands;
 import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
+import org.bukkit.plugin.java.JavaPlugin;
 
 /**
  * This {@link CommandExecutor} holds the functionality of our {@code /slimefun} command.
@@ -29,7 +30,7 @@ import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 public class SlimefunCommand implements CommandExecutor, Listener {
 
     private boolean registered = false;
-    private final Slimefun plugin;
+    private final JavaPlugin plugin;
     private final List<SubCommand> commands = new LinkedList<>();
     private final Map<SubCommand, Integer> commandUsage = new HashMap<>();
 
@@ -39,7 +40,7 @@ public class SlimefunCommand implements CommandExecutor, Listener {
      * @param plugin
      *            The instance of our {@link Slimefun}
      */
-    public SlimefunCommand(@Nonnull Slimefun plugin) {
+    public SlimefunCommand(@Nonnull JavaPlugin plugin) {
         this.plugin = plugin;
     }
 

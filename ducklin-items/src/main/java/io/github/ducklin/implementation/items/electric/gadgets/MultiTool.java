@@ -9,6 +9,15 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 import io.github.bakedlibs.dough.common.ChatColors;
 import io.github.bakedlibs.dough.data.persistent.PersistentDataAPI;
+import io.github.ducklin.core.Slimefun;
+import io.github.ducklin.core.handlers.EntityInteractHandler;
+import io.github.ducklin.core.handlers.ItemUseHandler;
+import io.github.ducklin.core.handlers.ToolUseHandler;
+import io.github.ducklin.migration.attributes.Rechargeable;
+import io.github.ducklin.migration.items.ItemGroup;
+import io.github.ducklin.migration.items.SlimefunItem;
+import io.github.ducklin.migration.items.SlimefunItemStack;
+import io.github.ducklin.migration.recipes.RecipeType;
 import org.bukkit.ChatColor;
 import org.bukkit.NamespacedKey;
 import org.bukkit.entity.EntityType;
@@ -16,16 +25,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
-import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
-import io.github.thebusybiscuit.slimefun4.core.attributes.Rechargeable;
-import io.github.thebusybiscuit.slimefun4.core.handlers.EntityInteractHandler;
-import io.github.thebusybiscuit.slimefun4.core.handlers.ItemUseHandler;
-import io.github.thebusybiscuit.slimefun4.core.handlers.ToolUseHandler;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
-import io.github.ducklin.api.utils.compatibility.VersionedEntityType;
+import io.github.ducklin.migration.utils.compatibility.VersionedEntityType;
 
 /**
  * The {@link MultiTool} is an electric device which can mimic

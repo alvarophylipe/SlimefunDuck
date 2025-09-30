@@ -14,7 +14,7 @@ import com.google.gson.JsonElement;
 import io.github.thebusybiscuit.slimefun4.api.exceptions.BiomeMapException;
 import io.github.thebusybiscuit.slimefun4.api.geo.GEOResource;
 import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
-import io.github.ducklin.api.utils.biomes.BiomeMap;
+import io.github.ducklin.migration.utils.biomes.BiomeMap;
 
 /**
  * This is an abstract parent class for any {@link GEOResource}

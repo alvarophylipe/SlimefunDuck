@@ -5,7 +5,7 @@ import org.bukkit.block.Biome;
 
 import io.github.thebusybiscuit.slimefun4.api.geo.GEOResource;
 import io.github.ducklin.implementation.SlimefunItems;
-import io.github.ducklin.api.utils.biomes.BiomeMap;
+import io.github.ducklin.migration.utils.biomes.BiomeMap;
 
 /**
  * A {@link GEOResource} which consists of nether ice.

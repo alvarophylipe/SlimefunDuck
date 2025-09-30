@@ -5,6 +5,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import io.github.ducklin.migration.attributes.MachineTier;
+import io.github.ducklin.migration.attributes.MachineType;
+import io.github.ducklin.migration.attributes.Radioactivity;
+import io.github.ducklin.migration.items.SlimefunItemStack;
+import io.github.ducklin.migration.utils.ChatUtils;
+import io.github.ducklin.migration.utils.HeadTexture;
+import io.github.ducklin.migration.utils.LoreBuilder;
 import org.bukkit.ChatColor;
 import org.bukkit.Color;
 import org.bukkit.Material;
@@ -14,16 +21,9 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
-import io.github.thebusybiscuit.slimefun4.core.attributes.MachineTier;
-import io.github.thebusybiscuit.slimefun4.core.attributes.MachineType;
-import io.github.thebusybiscuit.slimefun4.core.attributes.Radioactivity;
 import io.github.ducklin.implementation.items.magical.staves.StormStaff;
-import io.github.thebusybiscuit.slimefun4.utils.ChatUtils;
-import io.github.thebusybiscuit.slimefun4.utils.HeadTexture;
-import io.github.thebusybiscuit.slimefun4.utils.LoreBuilder;
-import io.github.ducklin.api.utils.compatibility.VersionedEnchantment;
-import io.github.ducklin.api.utils.itemstack.ColoredFireworkStar;
+import io.github.ducklin.migration.utils.compatibility.VersionedEnchantment;
+import io.github.ducklin.migration.utils.itemstack.ColoredFireworkStar;
 
 /**
  * This class holds a static references to every {@link SlimefunItemStack}

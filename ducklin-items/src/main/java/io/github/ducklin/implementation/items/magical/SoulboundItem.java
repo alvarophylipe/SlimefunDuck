@@ -2,14 +2,14 @@ package io.github.ducklin.implementation.items.magical;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
+import io.github.ducklin.migration.attributes.NotPlaceable;
+import io.github.ducklin.migration.attributes.Soulbound;
+import io.github.ducklin.migration.items.ItemGroup;
+import io.github.ducklin.migration.items.SlimefunItem;
+import io.github.ducklin.migration.items.SlimefunItemStack;
+import io.github.ducklin.migration.recipes.RecipeType;
 import org.bukkit.inventory.ItemStack;
 
-import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
-import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
-import io.github.thebusybiscuit.slimefun4.core.attributes.NotPlaceable;
-import io.github.thebusybiscuit.slimefun4.core.attributes.Soulbound;
 import io.github.ducklin.implementation.items.magical.runes.SoulboundRune;
 import io.github.ducklin.implementation.listeners.SoulboundListener;
 

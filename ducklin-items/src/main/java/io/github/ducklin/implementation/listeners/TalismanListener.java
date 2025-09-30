@@ -10,7 +10,8 @@ import java.util.concurrent.ThreadLocalRandom;
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
+import io.github.ducklin.core.Slimefun;
+import io.github.ducklin.migration.items.SlimefunItemStack;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
@@ -44,13 +45,12 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.util.Vector;
 
 import io.github.bakedlibs.dough.items.CustomItemStack;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import io.github.ducklin.implementation.SlimefunItems;
 import io.github.ducklin.implementation.items.magical.talismans.MagicianTalisman;
 import io.github.ducklin.implementation.items.magical.talismans.Talisman;
 import io.github.ducklin.implementation.settings.TalismanEnchantment;
-import io.github.ducklin.api.utils.compatibility.VersionedEnchantment;
-import io.github.ducklin.api.utils.tags.SlimefunTag;
+import io.github.ducklin.migration.utils.compatibility.VersionedEnchantment;
+import io.github.ducklin.migration.utils.tags.SlimefunTag;
 
 /**
  * This {@link Listener} is responsible for handling any {@link Event}

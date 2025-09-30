@@ -10,6 +10,18 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 
+import io.github.bakedlibs.dough.protection.Interaction;
+import io.github.ducklin.core.Slimefun;
+import io.github.ducklin.core.handlers.BlockBreakHandler;
+import io.github.ducklin.core.handlers.BlockPlaceHandler;
+import io.github.ducklin.core.handlers.ToolUseHandler;
+import io.github.ducklin.menu.BlockMenu;
+import io.github.ducklin.migration.BlockStorage;
+import io.github.ducklin.migration.attributes.NotPlaceable;
+import io.github.ducklin.migration.events.ExplosiveToolBreakBlocksEvent;
+import io.github.ducklin.migration.events.SlimefunBlockBreakEvent;
+import io.github.ducklin.migration.events.SlimefunBlockPlaceEvent;
+import io.github.ducklin.migration.items.SlimefunItem;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Material;
@@ -28,35 +40,10 @@ import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import io.github.bakedlibs.dough.protection.Interaction;
-import io.github.thebusybiscuit.slimefun4.api.events.ExplosiveToolBreakBlocksEvent;
-import io.github.thebusybiscuit.slimefun4.api.events.SlimefunBlockBreakEvent;
-import io.github.thebusybiscuit.slimefun4.api.events.SlimefunBlockPlaceEvent;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
-import io.github.thebusybiscuit.slimefun4.core.attributes.NotPlaceable;
-import io.github.thebusybiscuit.slimefun4.core.handlers.BlockBreakHandler;
-import io.github.thebusybiscuit.slimefun4.core.handlers.BlockPlaceHandler;
-import io.github.thebusybiscuit.slimefun4.core.handlers.ToolUseHandler;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
-import io.github.ducklin.api.utils.compatibility.VersionedEnchantment;
-import io.github.ducklin.api.utils.tags.SlimefunTag;
+import io.github.ducklin.migration.utils.compatibility.VersionedEnchantment;
+import io.github.ducklin.migration.utils.tags.SlimefunTag;
 
-import me.mrCookieSlime.Slimefun.api.BlockStorage;
-import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 
-/**
- * The {@link BlockListener} is responsible for listening to the {@link BlockPlaceEvent}
- * and {@link BlockBreakEvent}.
- *
- * @author TheBusyBiscuit
- * @author Linox
- * @author Patbox
- *
- * @see BlockPlaceHandler
- * @see BlockBreakHandler
- * @see ToolUseHandler
- *
- */
 public class BlockListener implements Listener {
 
     private static final BlockFace[] CARDINAL_BLOCKFACES = new BlockFace[]{BlockFace.WEST, BlockFace.EAST, BlockFace.NORTH, BlockFace.SOUTH, BlockFace.DOWN, BlockFace.UP};

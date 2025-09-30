@@ -2,15 +2,15 @@ package io.github.ducklin.implementation.listeners;
 
 import javax.annotation.Nonnull;
 
+import io.github.ducklin.core.Slimefun;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityToggleGlideEvent;
 import org.bukkit.inventory.ItemStack;
 
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import io.github.ducklin.implementation.items.magical.BeeWings;
-import io.github.ducklin.implementation.tasks.player.BeeWingsTask;
+import io.github.ducklin.migration.tasks.player.BeeWingsTask;
 
 /**
  * This {@link Listener} is responsible for the slow falling effect given to the {@link Player}

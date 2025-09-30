@@ -7,17 +7,16 @@ import java.util.logging.Level;
 
 import javax.annotation.Nonnull;
 
+import io.github.ducklin.core.Slimefun;
+import io.github.ducklin.migration.BlockStorage;
+import io.github.ducklin.migration.player.PlayerProfile;
 import org.bukkit.Bukkit;
 import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 
-import io.github.thebusybiscuit.slimefun4.api.player.PlayerProfile;
 import io.github.ducklin.core.debug.Debug;
 import io.github.ducklin.core.debug.TestCase;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
-
-import me.mrCookieSlime.Slimefun.api.BlockStorage;
 
 /**
  * This Service is responsible for automatically saving {@link Player} and {@link Block}

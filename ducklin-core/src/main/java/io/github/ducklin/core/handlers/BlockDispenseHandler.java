@@ -2,29 +2,18 @@ package io.github.ducklin.core.handlers;
 
 import java.util.Optional;
 
+import io.github.ducklin.migration.exceptions.IncompatibleItemHandlerException;
+import io.github.ducklin.migration.items.ItemHandler;
+import io.github.ducklin.migration.items.SlimefunItem;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.Dispenser;
 import org.bukkit.event.block.BlockDispenseEvent;
 
-import io.github.thebusybiscuit.slimefun4.api.exceptions.IncompatibleItemHandlerException;
-import io.github.thebusybiscuit.slimefun4.api.items.ItemHandler;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
-import io.github.ducklin.core.attributes.NotPlaceable;
-import io.github.thebusybiscuit.slimefun4.implementation.items.blocks.BlockPlacer;
 
-/**
- * This {@link ItemHandler} is triggered when the {@link SlimefunItem} it was assigned to
- * is a {@link Dispenser} and was triggered.
- * 
- * This {@link ItemHandler} is used for the {@link BlockPlacer}.
- * 
- * @author TheBusyBiscuit
- *
- * @see ItemHandler
- * @see BlockPlacer
- * 
- */
+import io.github.ducklin.migration.attributes.NotPlaceable;
+
+
 @FunctionalInterface
 public interface BlockDispenseHandler extends ItemHandler {
 
