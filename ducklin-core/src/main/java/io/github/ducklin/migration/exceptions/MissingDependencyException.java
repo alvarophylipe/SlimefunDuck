@@ -2,7 +2,7 @@ package io.github.ducklin.migration.exceptions;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
-import io.github.ducklin.migration.SlimefunAddon;
+import io.github.ducklin.api.SlimefunAddon;
 
 /**
  * A {@link MissingDependencyException} is thrown when a {@link SlimefunAddon} tried

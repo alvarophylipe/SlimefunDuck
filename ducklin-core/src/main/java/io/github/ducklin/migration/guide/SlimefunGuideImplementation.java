@@ -7,7 +7,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 import io.github.ducklin.core.Slimefun;
 import io.github.ducklin.migration.items.ItemGroup;
-import io.github.ducklin.migration.items.SlimefunItem;
+import io.github.ducklin.api.items.DuckItem;
 import io.github.ducklin.migration.player.PlayerProfile;
 import io.github.ducklin.migration.researches.Research;
 import org.bukkit.GameMode;
@@ -51,10 +51,10 @@ public interface SlimefunGuideImplementation {
     void displayItem(PlayerProfile profile, ItemStack item, int index, boolean addToHistory);
 
     @ParametersAreNonnullByDefault
-    void displayItem(PlayerProfile profile, SlimefunItem item, boolean addToHistory);
+    void displayItem(PlayerProfile profile, DuckItem item, boolean addToHistory);
 
     @ParametersAreNonnullByDefault
-    default void unlockItem(Player p, SlimefunItem sfitem, Consumer<Player> callback) {
+    default void unlockItem(Player p, DuckItem sfitem, Consumer<Player> callback) {
         Research research = sfitem.getResearch();
 
         if (p.getGameMode() == GameMode.CREATIVE && Slimefun.getRegistry().isFreeCreativeResearchingEnabled()) {

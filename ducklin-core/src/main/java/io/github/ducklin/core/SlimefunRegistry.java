@@ -23,7 +23,7 @@ import io.github.ducklin.migration.BlockStorage;
 import io.github.ducklin.migration.geo.GEOResource;
 import io.github.ducklin.migration.items.ItemGroup;
 import io.github.ducklin.migration.items.ItemHandler;
-import io.github.ducklin.migration.items.SlimefunItem;
+import io.github.ducklin.api.items.DuckItem;
 import io.github.ducklin.migration.player.PlayerProfile;
 import io.github.ducklin.migration.researches.Research;
 import org.apache.commons.lang.Validate;
@@ -44,16 +44,16 @@ import io.github.ducklin.core.multiblocks.MultiBlock;
 
 /**
  * This class houses a lot of instances of {@link Map} and {@link List} that hold
- * various mappings and collections related to {@link SlimefunItem}.
+ * various mappings and collections related to {@link DuckItem}.
  *
  * @author TheBusyBiscuit
  *
  */
 public final class SlimefunRegistry {
 
-    private final Map<String, SlimefunItem> slimefunIds = new HashMap<>();
-    private final List<SlimefunItem> slimefunItems = new ArrayList<>();
-    private final List<SlimefunItem> enabledItems = new ArrayList<>();
+    private final Map<String, DuckItem> slimefunIds = new HashMap<>();
+    private final List<DuckItem> duckItems = new ArrayList<>();
+    private final List<DuckItem> enabledItems = new ArrayList<>();
 
     private final List<ItemGroup> categories = new ArrayList<>();
     private final List<MultiBlock> multiblocks = new LinkedList<>();
@@ -72,7 +72,7 @@ public final class SlimefunRegistry {
     private boolean talismanActionBarMessages;
 
     private final Set<String> tickers = new HashSet<>();
-    private final Set<SlimefunItem> radioactive = new HashSet<>();
+    private final Set<DuckItem> radioactive = new HashSet<>();
     private final Set<ItemStack> barterDrops = new HashSet<>();
 
     private NamespacedKey soulboundKey;
@@ -115,9 +115,9 @@ public final class SlimefunRegistry {
 
     /**
      * This returns whether auto-loading is enabled.
-     * Auto-Loading will automatically call {@link SlimefunItem#load()} when the item is registered.
+     * Auto-Loading will automatically call {@link DuckItem#load()} when the item is registered.
      * Normally that method is called after the {@link Server} finished starting up.
-     * But in the unusual scenario if a {@link SlimefunItem} is registered after that, this is gonna cover that.
+     * But in the unusual scenario if a {@link DuckItem} is registered after that, this is gonna cover that.
      *
      * @return Whether auto-loading is enabled
      */
@@ -126,8 +126,8 @@ public final class SlimefunRegistry {
     }
 
     /**
-     * This method will make any {@link SlimefunItem} which is registered automatically
-     * call {@link SlimefunItem#load()}.
+     * This method will make any {@link DuckItem} which is registered automatically
+     * call {@link DuckItem#load()}.
      * Normally this method call is delayed but when the {@link Server} is already running,
      * the method can be called instantaneously.
      *
@@ -148,21 +148,21 @@ public final class SlimefunRegistry {
     }
 
     /**
-     * This {@link List} contains every {@link SlimefunItem}, even disabled items.
+     * This {@link List} contains every {@link DuckItem}, even disabled items.
      *
-     * @return A {@link List} containing every {@link SlimefunItem}
+     * @return A {@link List} containing every {@link DuckItem}
      */
-    public @Nonnull List<SlimefunItem> getAllSlimefunItems() {
-        return slimefunItems;
+    public @Nonnull List<DuckItem> getAllSlimefunItems() {
+        return duckItems;
     }
 
     /**
-     * This {@link List} contains every <strong>enabled</strong> {@link SlimefunItem}.
+     * This {@link List} contains every <strong>enabled</strong> {@link DuckItem}.
      *
-     * @return A {@link List} containing every enabled {@link SlimefunItem}
+     * @return A {@link List} containing every enabled {@link DuckItem}
      */
     @Nonnull
-    public List<SlimefunItem> getEnabledSlimefunItems() {
+    public List<DuckItem> getEnabledSlimefunItems() {
         return enabledItems;
     }
 
@@ -281,7 +281,7 @@ public final class SlimefunRegistry {
     }
 
     @Nonnull
-    public Set<SlimefunItem> getRadioactiveItems() {
+    public Set<DuckItem> getRadioactiveItems() {
         return radioactive;
     }
 
@@ -291,7 +291,7 @@ public final class SlimefunRegistry {
     }
 
     @Nonnull
-    public Map<String, SlimefunItem> getSlimefunItemIds() {
+    public Map<String, DuckItem> getSlimefunItemIds() {
         return slimefunIds;
     }
 

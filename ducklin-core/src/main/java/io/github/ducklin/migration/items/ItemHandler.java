@@ -4,10 +4,11 @@ import java.util.Optional;
 
 import javax.annotation.Nonnull;
 
+import io.github.ducklin.api.items.DuckItem;
 import io.github.ducklin.migration.exceptions.IncompatibleItemHandlerException;
 
 /**
- * An {@link ItemHandler} represents a certain action that a {@link SlimefunItem}
+ * An {@link ItemHandler} represents a certain action that a {@link DuckItem}
  * can perform.
  * 
  * @author TheBusyBiscuit
@@ -23,18 +24,18 @@ import io.github.ducklin.migration.exceptions.IncompatibleItemHandlerException;
 public interface ItemHandler {
 
     /**
-     * This method is used to check whether a given {@link SlimefunItem} is compatible
+     * This method is used to check whether a given {@link DuckItem} is compatible
      * with this {@link ItemHandler}, it will return an {@link IncompatibleItemHandlerException}
      * if the items are not compatible.
      * 
      * @param item
-     *            The {@link SlimefunItem} to validate
+     *            The {@link DuckItem} to validate
      * 
      * @return An {@link Optional} describing the result, it will contain an {@link IncompatibleItemHandlerException}
      *         should there be an issue
      */
     @Nonnull
-    default Optional<IncompatibleItemHandlerException> validate(@Nonnull SlimefunItem item) {
+    default Optional<IncompatibleItemHandlerException> validate(@Nonnull DuckItem item) {
         return Optional.empty();
     }
 

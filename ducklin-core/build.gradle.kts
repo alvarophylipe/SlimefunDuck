@@ -24,7 +24,6 @@ dependencies {
 
     implementation("com.github.Slimefun.dough:dough-api:cb22e71335")
     implementation("io.papermc:paperlib:1.0.8")
-    implementation("commons-lang:commons-lang:2.6")
 
     // coroutines
     implementation("com.github.shynixn.mccoroutine:mccoroutine-bukkit-api:2.22.0")

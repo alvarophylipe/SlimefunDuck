@@ -8,14 +8,6 @@ import org.bukkit.enchantments.Enchantment;
 
 import io.github.thebusybiscuit.slimefun4.core.attributes.DamageableItem;
 
-/**
- * This a enum evaluating and indicating a {@link DamageableItem} 's chance to be damaged
- * depending if it is a tool or an armor
- *
- * @author RobotHanzo
- * 
- * @see DamageableItem
- */
 public enum UnbreakingAlgorithm {
 
     /**

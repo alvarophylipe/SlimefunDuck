@@ -7,7 +7,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import io.github.ducklin.migration.items.ItemGroup;
-import io.github.ducklin.migration.items.SlimefunItem;
+import io.github.ducklin.api.items.DuckItem;
 import io.github.ducklin.migration.player.PlayerProfile;
 import org.apache.commons.lang.Validate;
 import org.bukkit.entity.Player;
@@ -97,12 +97,12 @@ public class GuideHistory {
     }
 
     /**
-     * This method stores the given {@link SlimefunItem} in this {@link GuideHistory}.
+     * This method stores the given {@link DuckItem} in this {@link GuideHistory}.
      * 
      * @param item
-     *            The {@link SlimefunItem} that should be added to this {@link GuideHistory}
+     *            The {@link DuckItem} that should be added to this {@link GuideHistory}
      */
-    public void add(@Nonnull SlimefunItem item) {
+    public void add(@Nonnull DuckItem item) {
         Validate.notNull(item, "Cannot add a non-existing SlimefunItem to the GuideHistory!");
         queue.add(new GuideEntry<>(item, 0));
     }
@@ -189,7 +189,7 @@ public class GuideHistory {
             guide.openMainMenu(profile, mainMenuPage);
         } else if (entry.getIndexedObject() instanceof ItemGroup group) {
             guide.openItemGroup(profile, group, entry.getPage());
-        } else if (entry.getIndexedObject() instanceof SlimefunItem item) {
+        } else if (entry.getIndexedObject() instanceof DuckItem item) {
             guide.displayItem(profile, item, false);
         } else if (entry.getIndexedObject() instanceof ItemStack stack) {
             guide.displayItem(profile, stack, entry.getPage(), false);

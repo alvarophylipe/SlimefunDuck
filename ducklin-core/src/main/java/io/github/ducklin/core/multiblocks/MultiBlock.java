@@ -8,14 +8,11 @@ import java.util.Set;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import io.github.ducklin.migration.items.SlimefunItem;
+import io.github.ducklin.api.items.DuckItem;
 import org.apache.commons.lang.Validate;
 import org.bukkit.Material;
 import org.bukkit.Tag;
-import org.bukkit.World;
 import org.bukkit.block.BlockFace;
-
-import io.github.ducklin.core.handlers.MultiBlockInteractionHandler;
 
 
 public class MultiBlock {
@@ -36,12 +33,12 @@ public class MultiBlock {
         return SUPPORTED_TAGS;
     }
 
-    private final SlimefunItem item;
+    private final DuckItem item;
     private final Material[] blocks;
     private final BlockFace trigger;
     private final boolean isSymmetric;
 
-    public MultiBlock(@Nonnull SlimefunItem item, Material[] build, @Nonnull BlockFace trigger) {
+    public MultiBlock(@Nonnull DuckItem item, Material[] build, @Nonnull BlockFace trigger) {
         Validate.notNull(item, "A MultiBlock requires a SlimefunItem!");
 
         if (build == null || build.length != 9) {
@@ -59,7 +56,7 @@ public class MultiBlock {
     }
 
     @Nonnull
-    public SlimefunItem getSlimefunItem() {
+    public DuckItem getSlimefunItem() {
         return item;
     }
 

@@ -4,7 +4,7 @@ import javax.annotation.Nonnull;
 
 import io.github.ducklin.migration.events.AutoDisenchantEvent;
 import io.github.ducklin.migration.events.BlockPlacerPlaceEvent;
-import io.github.ducklin.migration.items.SlimefunItem;
+import io.github.ducklin.api.items.DuckItem;
 import io.github.ducklin.core.Slimefun;
 import io.github.ducklin.implementation.items.VanillaItem;
 import org.bukkit.event.EventHandler;
@@ -65,7 +65,7 @@ class McMMOIntegration implements Listener {
 
     /**
      * This method checks if an {@link ItemStack} can be salvaged or not.
-     * We basically don't want players to salvage any {@link SlimefunItem} unless
+     * We basically don't want players to salvage any {@link DuckItem} unless
      * it is a {@link VanillaItem}.
      * 
      * @param item
@@ -74,7 +74,7 @@ class McMMOIntegration implements Listener {
      * @return Whether this item can be safely salvaged
      */
     private boolean isSalvageable(@Nonnull ItemStack item) {
-        SlimefunItem sfItem = SlimefunItem.getByItem(item);
+        DuckItem sfItem = DuckItem.getByItem(item);
         return sfItem == null || sfItem instanceof VanillaItem;
     }
 

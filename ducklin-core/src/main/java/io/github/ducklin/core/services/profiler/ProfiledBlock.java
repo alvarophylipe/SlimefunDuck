@@ -4,8 +4,8 @@ import java.util.Objects;
 
 import javax.annotation.Nonnull;
 
-import io.github.ducklin.migration.SlimefunAddon;
-import io.github.ducklin.migration.items.SlimefunItem;
+import io.github.ducklin.api.SlimefunAddon;
+import io.github.ducklin.api.items.DuckItem;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.block.Block;
@@ -33,20 +33,20 @@ final class ProfiledBlock {
     private final long position;
 
     /**
-     * The {@link SlimefunItem} whihc is located at this {@link Location}.
+     * The {@link DuckItem} whihc is located at this {@link Location}.
      */
-    private final SlimefunItem item;
+    private final DuckItem item;
 
     /**
      * This creates a new {@link ProfiledBlock} for the given {@link Location} and
-     * the {@link SlimefunItem} found at this {@link Location}.
+     * the {@link DuckItem} found at this {@link Location}.
      * 
      * @param l
      *            The {@link Location}
      * @param item
-     *            The {@link SlimefunItem} found at that {@link Location}
+     *            The {@link DuckItem} found at that {@link Location}
      */
-    ProfiledBlock(@Nonnull Location l, @Nonnull SlimefunItem item) {
+    ProfiledBlock(@Nonnull Location l, @Nonnull DuckItem item) {
         this.world = l.getWorld();
         this.position = getLocationAsLong((int) l.getX(), (int) l.getY(), (int) l.getZ());
         this.item = item;

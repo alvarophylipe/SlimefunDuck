@@ -2,11 +2,11 @@ package io.github.ducklin.migration.Objects.handlers;
 
 import java.util.Optional;
 
-import io.github.ducklin.core.Configuration.Config;
+import io.github.ducklin.api.Config;
 import io.github.ducklin.migration.attributes.NotPlaceable;
 import io.github.ducklin.migration.exceptions.IncompatibleItemHandlerException;
 import io.github.ducklin.migration.items.ItemHandler;
-import io.github.ducklin.migration.items.SlimefunItem;
+import io.github.ducklin.api.items.DuckItem;
 import org.bukkit.block.Block;
 
 
@@ -22,7 +22,7 @@ public abstract class BlockTicker implements ItemHandler {
     }
 
     @Override
-    public Optional<IncompatibleItemHandlerException> validate(SlimefunItem item) {
+    public Optional<IncompatibleItemHandlerException> validate(DuckItem item) {
         if (!item.getItem().getType().isBlock()) {
             return Optional.of(new IncompatibleItemHandlerException("Only Materials that are blocks can have a BlockTicker.", item, this));
         }
@@ -48,11 +48,11 @@ public abstract class BlockTicker implements ItemHandler {
      * @param b
      *            The {@link Block} that was ticked
      * @param item
-     *            The corresponding {@link SlimefunItem}
+     *            The corresponding {@link DuckItem}
      * @param data
      *            The data stored in this {@link Block}
      */
-    public abstract void tick(Block b, SlimefunItem item, Config data);
+    public abstract void tick(Block b, DuckItem item, Config data);
 
     /**
      * This method is called every tick but not per-block and only once.

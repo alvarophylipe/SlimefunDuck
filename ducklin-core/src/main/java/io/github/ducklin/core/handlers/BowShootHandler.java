@@ -4,7 +4,7 @@ import java.util.Optional;
 
 import io.github.ducklin.migration.exceptions.IncompatibleItemHandlerException;
 import io.github.ducklin.migration.items.ItemHandler;
-import io.github.ducklin.migration.items.SlimefunItem;
+import io.github.ducklin.api.items.DuckItem;
 import org.bukkit.Material;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
@@ -15,7 +15,7 @@ public interface BowShootHandler extends ItemHandler {
     void onHit(EntityDamageByEntityEvent e, LivingEntity n);
 
     @Override
-    default Optional<IncompatibleItemHandlerException> validate(SlimefunItem item) {
+    default Optional<IncompatibleItemHandlerException> validate(DuckItem item) {
         if (item.getItem().getType() != Material.BOW) {
             return Optional.of(new IncompatibleItemHandlerException("Only bows can have a BowShootHandler.", item, this));
         }

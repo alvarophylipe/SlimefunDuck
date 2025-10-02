@@ -5,13 +5,13 @@ import com.google.gson.JsonParser
 import com.google.gson.stream.JsonWriter
 import io.github.bakedlibs.dough.blocks.BlockPosition
 import io.github.bakedlibs.dough.common.CommonPatterns
-import io.github.ducklin.core.Configuration.Config
+import io.github.ducklin.api.Config
 import io.github.ducklin.core.Slimefun
 import io.github.ducklin.core.Slimefun.Companion.cfg
 import io.github.ducklin.menu.BlockMenu
 import io.github.ducklin.menu.BlockMenuPreset
 import io.github.ducklin.menu.UniversalBlockMenu
-import io.github.ducklin.migration.items.SlimefunItem
+import io.github.ducklin.api.items.DuckItem
 import io.github.ducklin.migration.utils.NumberUtils
 import org.bukkit.Bukkit
 import org.bukkit.Chunk
@@ -28,7 +28,6 @@ import java.nio.file.StandardCopyOption
 import java.util.concurrent.ConcurrentHashMap
 import java.util.logging.Level
 import kotlin.text.contains
-import kotlin.text.get
 
 class BlockStorage(private val world: World) {
 
@@ -284,7 +283,7 @@ class BlockStorage(private val world: World) {
         fun getRawStorage(world: World): MutableMap<Location, Config?>? = getStorage(world)?.rawStorage
 
         @JvmStatic
-        fun store(block: Block, item: ItemStack) = SlimefunItem.getByItem(item)?.let { addBlockInfo(block, "id", it.id, true) }
+        fun store(block: Block, item: ItemStack) = DuckItem.getByItem(item)?.let { addBlockInfo(block, "id", it.id, true) }
 
         @JvmStatic
         fun store(block: Block, item: String) = addBlockInfo(block, "id", item, true)
@@ -436,7 +435,7 @@ class BlockStorage(private val world: World) {
             cfg.setValue(serializeLocation(loc), value)
 
             if (updateTicker) {
-                val item = SlimefunItem.getById(key) ?: return
+                val item = DuckItem.getById(key) ?: return
                 if (value != null &&
                     loc.world != null &&
                     item.isTicking &&
@@ -509,15 +508,15 @@ class BlockStorage(private val world: World) {
 
 
         @JvmStatic
-        fun check(b: Block): SlimefunItem? {
+        fun check(b: Block): DuckItem? {
             val id: String? = checkID(b)
-            return if (id == null) null else SlimefunItem.getById(id)
+            return if (id == null) null else DuckItem.getById(id)
         }
 
         @JvmStatic
-        fun check(l: Location): SlimefunItem? {
+        fun check(l: Location): DuckItem? {
             val id: String? = checkID(l)
-            return if (id == null) null else SlimefunItem.getById(id)
+            return if (id == null) null else DuckItem.getById(id)
         }
 
         @JvmStatic

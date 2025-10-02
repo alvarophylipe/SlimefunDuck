@@ -5,9 +5,9 @@ import java.util.Optional;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import io.github.ducklin.api.items.DuckItem;
 import io.github.ducklin.implementation.items.armor.SlimefunArmorPiece;
 import org.bukkit.Material;
-import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.Damageable;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -29,14 +29,14 @@ public final class HashedArmorpiece {
 
     /**
      * This will update this {@link HashedArmorpiece} with the given {@link ItemStack}
-     * and the corresponding {@link SlimefunItem}
+     * and the corresponding {@link DuckItem}
      * 
      * @param stack
      *            The new armorpiece to be stored in this {@link HashedArmorpiece}
      * @param item
-     *            The {@link SlimefunItem} corresponding to the provided {@link ItemStack}, may be null
+     *            The {@link DuckItem} corresponding to the provided {@link ItemStack}, may be null
      */
-    public void update(@Nullable ItemStack stack, @Nullable SlimefunItem item) {
+    public void update(@Nullable ItemStack stack, @Nullable DuckItem item) {
         if (stack == null || stack.getType() == Material.AIR) {
             this.hash = 0;
         } else {
@@ -86,7 +86,7 @@ public final class HashedArmorpiece {
 
     @Override
     public String toString() {
-        return "HashedArmorpiece {hash=" + hash + ",item=" + item.map(SlimefunItem::getId).orElse("null") + '}';
+        return "HashedArmorpiece {hash=" + hash + ",item=" + item.map(DuckItem::getId).orElse("null") + '}';
     }
 
 }

@@ -5,7 +5,7 @@ import java.util.Optional;
 import javax.annotation.Nonnull;
 
 import io.github.ducklin.migration.BlockStorage;
-import io.github.ducklin.migration.items.SlimefunItem;
+import io.github.ducklin.api.items.DuckItem;
 import org.apache.commons.lang.Validate;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -24,9 +24,9 @@ import io.github.bakedlibs.dough.data.TriStateOptional;
 /**
  * The {@link PlayerRightClickEvent} is our custom version of the {@link PlayerInteractEvent}.
  * But it is only triggered on right click.
- * The main and (almost) sole purpose of this {@link Event} is to cache the {@link SlimefunItem}
+ * The main and (almost) sole purpose of this {@link Event} is to cache the {@link DuckItem}
  * of the {@link ItemStack} and/or {@link Block} involved.
- * This allows us (and addons) to efficiently check the used {@link SlimefunItem} without the need
+ * This allows us (and addons) to efficiently check the used {@link DuckItem} without the need
  * to do a heavy lookup or item comparison.
  * 
  * @author TheBusyBiscuit
@@ -47,8 +47,8 @@ public class PlayerRightClickEvent extends PlayerEvent {
     private final EquipmentSlot hand;
     private final BlockFace face;
 
-    private TriStateOptional<SlimefunItem> slimefunItem = TriStateOptional.createNew();
-    private TriStateOptional<SlimefunItem> slimefunBlock = TriStateOptional.createNew();
+    private TriStateOptional<DuckItem> slimefunItem = TriStateOptional.createNew();
+    private TriStateOptional<DuckItem> slimefunBlock = TriStateOptional.createNew();
 
     private Result itemResult;
     private Result blockResult;
@@ -123,10 +123,10 @@ public class PlayerRightClickEvent extends PlayerEvent {
     }
 
     @Nonnull
-    public Optional<SlimefunItem> getSlimefunItem() {
+    public Optional<DuckItem> getSlimefunItem() {
         if (!slimefunItem.isComputed()) {
             if (itemStack.isPresent()) {
-                slimefunItem.compute(SlimefunItem.getByItem(itemStack.get()));
+                slimefunItem.compute(DuckItem.getByItem(itemStack.get()));
             } else {
                 slimefunItem = TriStateOptional.empty();
             }
@@ -136,7 +136,7 @@ public class PlayerRightClickEvent extends PlayerEvent {
     }
 
     @Nonnull
-    public Optional<SlimefunItem> getSlimefunBlock() {
+    public Optional<DuckItem> getSlimefunBlock() {
         if (!slimefunBlock.isComputed()) {
             if (clickedBlock.isPresent()) {
                 slimefunBlock.compute(BlockStorage.check(clickedBlock.get()));

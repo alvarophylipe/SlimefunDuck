@@ -3,7 +3,7 @@ package io.github.ducklin.migration.items.settings;
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
-import io.github.ducklin.migration.items.SlimefunItem;
+import io.github.ducklin.api.items.DuckItem;
 import org.apache.commons.lang.Validate;
 
 import io.github.ducklin.migration.items.ItemSetting;
@@ -24,7 +24,7 @@ public class IntRangeSetting extends ItemSetting<Integer> {
     private final int max;
 
     @ParametersAreNonnullByDefault
-    public IntRangeSetting(SlimefunItem item, String key, int min, int defaultValue, int max) {
+    public IntRangeSetting(DuckItem item, String key, int min, int defaultValue, int max) {
         super(item, key, defaultValue);
         Validate.isTrue(defaultValue >= min && defaultValue <= max, "The default value is not in range.");
 

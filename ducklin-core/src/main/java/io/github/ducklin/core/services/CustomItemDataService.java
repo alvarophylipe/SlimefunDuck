@@ -35,15 +35,6 @@ public class CustomItemDataService implements Keyed {
      */
     private final NamespacedKey namespacedKey;
 
-    /**
-     * This creates a new {@link CustomItemDataService} for the given {@link Plugin} and the
-     * provided data key.
-     * 
-     * @param plugin
-     *            The {@link Plugin} for this service to use
-     * @param key
-     *            The key under which to store data
-     */
     public CustomItemDataService(@Nonnull Plugin plugin, @Nonnull String key) {
         // Null-Validation is performed in the NamespacedKey constructor
         namespacedKey = new NamespacedKey(plugin, key);
@@ -54,15 +45,6 @@ public class CustomItemDataService implements Keyed {
         return namespacedKey;
     }
 
-    /**
-     * This method stores the given id on the provided {@link ItemStack} via
-     * persistent data.
-     * 
-     * @param item
-     *            The {@link ItemStack} to store data on
-     * @param id
-     *            The id to store on the {@link ItemStack}
-     */
     public void setItemData(@Nonnull ItemStack item, @Nonnull String id) {
         Validate.notNull(item, "The Item cannot be null!");
         Validate.notNull(id, "Cannot store null on an Item!");
@@ -72,15 +54,6 @@ public class CustomItemDataService implements Keyed {
         item.setItemMeta(im);
     }
 
-    /**
-     * This method stores the given id on the provided {@link ItemMeta} via
-     * persistent data.
-     * 
-     * @param meta
-     *            The {@link ItemMeta} to store data on
-     * @param id
-     *            The id to store on the {@link ItemMeta}
-     */
     public void setItemData(@Nonnull ItemMeta meta, @Nonnull String id) {
         Validate.notNull(meta, "The ItemMeta cannot be null!");
         Validate.notNull(id, "Cannot store null on an ItemMeta!");

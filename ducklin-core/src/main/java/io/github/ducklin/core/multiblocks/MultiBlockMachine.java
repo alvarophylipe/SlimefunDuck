@@ -12,10 +12,10 @@ import javax.annotation.ParametersAreNonnullByDefault;
 import com.google.common.base.Preconditions;
 
 import io.github.ducklin.core.Slimefun;
-import io.github.ducklin.migration.SlimefunAddon;
+import io.github.ducklin.api.SlimefunAddon;
 import io.github.ducklin.migration.items.ItemGroup;
-import io.github.ducklin.migration.items.SlimefunItem;
-import io.github.ducklin.migration.items.SlimefunItemStack;
+import io.github.ducklin.api.items.DuckItem;
+import io.github.ducklin.api.items.DucklinItemStack;
 import io.github.ducklin.migration.recipes.RecipeType;
 import org.apache.commons.lang.Validate;
 
@@ -36,7 +36,7 @@ import io.github.ducklin.migration.attributes.RecipeDisplayItem;
 import io.github.ducklin.core.handlers.MultiBlockInteractionHandler;
 
 /**
- * A {@link MultiBlockMachine} is a {@link SlimefunItem} that is built in the {@link World}.
+ * A {@link MultiBlockMachine} is a {@link DuckItem} that is built in the {@link World}.
  * It holds recipes and a {@link MultiBlock} object which represents its structure.
  * 
  * @author TheBusyBiscuit
@@ -44,14 +44,14 @@ import io.github.ducklin.core.handlers.MultiBlockInteractionHandler;
  * @see MultiBlock
  *
  */
-public abstract class MultiBlockMachine extends SlimefunItem implements NotPlaceable, RecipeDisplayItem {
+public abstract class MultiBlockMachine extends DuckItem implements NotPlaceable, RecipeDisplayItem {
 
     protected final List<ItemStack[]> recipes;
     protected final List<ItemStack> displayRecipes;
     protected final MultiBlock multiBlock;
 
     @ParametersAreNonnullByDefault
-    protected MultiBlockMachine(ItemGroup itemGroup, SlimefunItemStack item, ItemStack[] recipe, ItemStack[] machineRecipes, BlockFace trigger) {
+    protected MultiBlockMachine(ItemGroup itemGroup, DucklinItemStack item, ItemStack[] recipe, ItemStack[] machineRecipes, BlockFace trigger) {
         super(itemGroup, item, RecipeType.MULTIBLOCK, recipe);
         this.recipes = new ArrayList<>();
         this.displayRecipes = new ArrayList<>();
@@ -62,7 +62,7 @@ public abstract class MultiBlockMachine extends SlimefunItem implements NotPlace
     }
 
     @ParametersAreNonnullByDefault
-    protected MultiBlockMachine(ItemGroup itemGroup, SlimefunItemStack item, ItemStack[] recipe, BlockFace trigger) {
+    protected MultiBlockMachine(ItemGroup itemGroup, DucklinItemStack item, ItemStack[] recipe, BlockFace trigger) {
         this(itemGroup, item, recipe, new ItemStack[0], trigger);
     }
 
@@ -114,8 +114,8 @@ public abstract class MultiBlockMachine extends SlimefunItem implements NotPlace
                 outputStack = displayRecipes.get(i + 1);
             }
 
-            SlimefunItem inputItem = SlimefunItem.getByItem(inputStack);
-            SlimefunItem outputItem = SlimefunItem.getByItem(outputStack);
+            DuckItem inputItem = DuckItem.getByItem(inputStack);
+            DuckItem outputItem = DuckItem.getByItem(outputStack);
             // If the input/output is not a Slimefun item or it's not disabled then it's valid.
             if ((inputItem == null || !inputItem.isDisabled()) && (outputItem == null || !outputItem.isDisabled())) {
                 recipes.add(new ItemStack[] { inputStack });

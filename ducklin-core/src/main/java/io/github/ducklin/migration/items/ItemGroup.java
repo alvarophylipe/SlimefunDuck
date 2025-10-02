@@ -11,7 +11,6 @@ import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 import io.github.ducklin.core.Slimefun;
-import io.github.ducklin.migration.SlimefunAddon;
 import org.apache.commons.lang.Validate;
 import org.bukkit.ChatColor;
 import org.bukkit.Keyed;
@@ -22,7 +21,6 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import io.github.bakedlibs.dough.items.CustomItemStack;
-import io.github.ducklin.migration.items.groups.LockedItemGroup;
 import io.github.ducklin.migration.items.groups.SeasonalItemGroup;
 import io.github.ducklin.migration.utils.compatibility.VersionedItemFlag;
 
@@ -31,7 +29,7 @@ public class ItemGroup implements Keyed {
 
     private SlimefunAddon addon;
 
-    protected final List<SlimefunItem> items = new ArrayList<>();
+    protected final List<DuckItem> items = new ArrayList<>();
     protected final NamespacedKey key;
     protected final ItemStack item;
     protected int tier;
@@ -78,7 +76,7 @@ public class ItemGroup implements Keyed {
      * Registers this {@link ItemGroup}.
      * <p>
      * By default, an {@link ItemGroup} is automatically registered when
-     * a {@link SlimefunItem} was added to it.
+     * a {@link DuckItem} was added to it.
      *
      * @param addon
      *            The {@link SlimefunAddon} that wants to register this {@link ItemGroup}
@@ -140,12 +138,12 @@ public class ItemGroup implements Keyed {
     }
 
     /**
-     * Adds the given {@link SlimefunItem} to this {@link ItemGroup}.
+     * Adds the given {@link DuckItem} to this {@link ItemGroup}.
      *
      * @param item
-     *            the {@link SlimefunItem} that should be added to this {@link ItemGroup}
+     *            the {@link DuckItem} that should be added to this {@link ItemGroup}
      */
-    public void add(@Nonnull SlimefunItem item) {
+    public void add(@Nonnull DuckItem item) {
         Validate.notNull(item, "Cannot add null Items to an ItemGroup!");
 
         if (items.contains(item)) {
@@ -161,12 +159,12 @@ public class ItemGroup implements Keyed {
     }
 
     /**
-     * Removes the given {@link SlimefunItem} from this {@link ItemGroup}.
+     * Removes the given {@link DuckItem} from this {@link ItemGroup}.
      *
      * @param item
-     *            the {@link SlimefunItem} that should be removed from this {@link ItemGroup}
+     *            the {@link DuckItem} that should be removed from this {@link ItemGroup}
      */
-    public void remove(@Nonnull SlimefunItem item) {
+    public void remove(@Nonnull DuckItem item) {
         Validate.notNull(item, "Cannot remove null from an ItemGroup!");
         items.remove(item);
     }
@@ -228,23 +226,23 @@ public class ItemGroup implements Keyed {
     }
 
     /**
-     * Returns all instances of {@link SlimefunItem} bound to this {@link ItemGroup}.
+     * Returns all instances of {@link DuckItem} bound to this {@link ItemGroup}.
      *
      * @return the list of SlimefunItems bound to this {@link ItemGroup}
      */
-    public @Nonnull List<SlimefunItem> getItems() {
+    public @Nonnull List<DuckItem> getItems() {
         return items;
     }
 
     /**
-     * This method returns whether a given {@link SlimefunItem} exists in this {@link ItemGroup}.
+     * This method returns whether a given {@link DuckItem} exists in this {@link ItemGroup}.
      *
      * @param item
-     *            The {@link SlimefunItem} to find
+     *            The {@link DuckItem} to find
      *
-     * @return Whether the given {@link SlimefunItem} was found in this {@link ItemGroup}
+     * @return Whether the given {@link DuckItem} was found in this {@link ItemGroup}
      */
-    public boolean contains(@Nullable SlimefunItem item) {
+    public boolean contains(@Nullable DuckItem item) {
         return item != null && items.contains(item);
     }
 
@@ -255,7 +253,7 @@ public class ItemGroup implements Keyed {
     /**
      * This method returns whether this {@link ItemGroup} can be viewed
      * by the given {@link Player}. Empty {@link ItemGroup ItemGroups} will not
-     * be visible. This includes {@link ItemGroup ItemGroups} where every {@link SlimefunItem}
+     * be visible. This includes {@link ItemGroup ItemGroups} where every {@link DuckItem}
      * is disabled. If an {@link ItemGroup} is not accessible by the {@link Player},
      * see {@link #isAccessible(Player)}, this method will also return false.
      *
@@ -269,13 +267,13 @@ public class ItemGroup implements Keyed {
             return false;
         }
 
-        for (SlimefunItem slimefunItem : getItems()) {
+        for (DuckItem duckItem : getItems()) {
             /*
              * If any item for this item group is visible,
              * the item group itself is also visible.
              * Empty item groups are not displayed.
              */
-            if (!slimefunItem.isHidden() && !slimefunItem.isDisabledIn(p.getWorld())) {
+            if (!duckItem.isHidden() && !duckItem.isDisabledIn(p.getWorld())) {
                 return true;
             }
         }
@@ -295,7 +293,7 @@ public class ItemGroup implements Keyed {
 
     /**
      * This method will set if this {@link ItemGroup} will
-     * allow {@link SlimefunItem}s from other addons to
+     * allow {@link DuckItem}s from other addons to
      * be added, without a warning, into the group. False by default.
      * If set to true, Slimefun will not warn about items being added.
      *

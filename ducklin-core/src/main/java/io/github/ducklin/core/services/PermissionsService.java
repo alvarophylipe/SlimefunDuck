@@ -9,7 +9,7 @@ import java.util.Optional;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import io.github.ducklin.migration.items.SlimefunItem;
+import io.github.ducklin.api.items.DuckItem;
 import io.github.ducklin.core.Slimefun;
 import org.apache.commons.lang.Validate;
 import org.bukkit.entity.Player;
@@ -40,16 +40,16 @@ public class PermissionsService {
     }
 
     /**
-     * This method registers the given {@link Iterable} of {@link SlimefunItem}s
+     * This method registers the given {@link Iterable} of {@link DuckItem}s
      * for use with this {@link PermissionsService}.
      * 
      * @param items
-     *            An {@link Iterable} of {@link SlimefunItem}s to register
+     *            An {@link Iterable} of {@link DuckItem}s to register
      * @param save
      *            Whether to save the default values to our permissions file
      */
-    public void register(@Nonnull Iterable<SlimefunItem> items, boolean save) {
-        for (SlimefunItem item : items) {
+    public void register(@Nonnull Iterable<DuckItem> items, boolean save) {
+        for (DuckItem item : items) {
             if (item != null) {
                 String path = item.getId() + ".permission";
 
@@ -67,16 +67,16 @@ public class PermissionsService {
 
     /**
      * This method checks whether the given {@link Permissible} has the {@link Permission}
-     * to access the given {@link SlimefunItem}.
+     * to access the given {@link DuckItem}.
      * 
      * @param p
      *            The {@link Permissible} to check
      * @param item
-     *            The {@link SlimefunItem} in question
+     *            The {@link DuckItem} in question
      * 
      * @return Whether the {@link Permissible} has the required {@link Permission}
      */
-    public boolean hasPermission(Permissible p, SlimefunItem item) {
+    public boolean hasPermission(Permissible p, DuckItem item) {
         if (item == null) {
             // Failsafe
             return true;
@@ -87,17 +87,17 @@ public class PermissionsService {
     }
 
     /**
-     * This returns the associated {@link Permission} with the given {@link SlimefunItem}.
+     * This returns the associated {@link Permission} with the given {@link DuckItem}.
      * It actually returns an {@link Optional}, {@link Optional#empty()} means that there was no
-     * {@link Permission} set for the given {@link SlimefunItem}
+     * {@link Permission} set for the given {@link DuckItem}
      * 
      * @param item
-     *            The {@link SlimefunItem} to retrieve the {@link Permission} for.
+     *            The {@link DuckItem} to retrieve the {@link Permission} for.
      * 
      * @return An {@link Optional} holding the {@link Permission} as a {@link String} or an empty {@link Optional}
      */
     @Nonnull
-    public Optional<String> getPermission(@Nonnull SlimefunItem item) {
+    public Optional<String> getPermission(@Nonnull DuckItem item) {
         Validate.notNull(item, "Cannot get permissions for null");
         String permission = permissions.get(item.getId());
 
@@ -109,14 +109,14 @@ public class PermissionsService {
     }
 
     /**
-     * This method sets the {@link Permission} for a given {@link SlimefunItem}.
+     * This method sets the {@link Permission} for a given {@link DuckItem}.
      * 
      * @param item
-     *            The {@link SlimefunItem} to modify
+     *            The {@link DuckItem} to modify
      * @param permission
      *            The {@link Permission} to set
      */
-    public void setPermission(@Nonnull SlimefunItem item, @Nullable String permission) {
+    public void setPermission(@Nonnull DuckItem item, @Nullable String permission) {
         Validate.notNull(item, "You cannot set the permission for null");
         permissions.put(item.getId(), permission != null ? permission : "none");
     }
@@ -133,15 +133,15 @@ public class PermissionsService {
     }
 
     /**
-     * This returns the lore to display for a given {@link SlimefunItem} when a {@link Player}
+     * This returns the lore to display for a given {@link DuckItem} when a {@link Player}
      * does not have the required permission node.
      * 
      * @param item
-     *            The {@link SlimefunItem}
+     *            The {@link DuckItem}
      * 
      * @return The configured lore to display
      */
-    public @Nonnull List<String> getLore(@Nonnull SlimefunItem item) {
+    public @Nonnull List<String> getLore(@Nonnull DuckItem item) {
         return config.getStringList(item.getId() + ".lore");
     }
 

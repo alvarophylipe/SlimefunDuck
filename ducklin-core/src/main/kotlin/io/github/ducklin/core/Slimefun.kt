@@ -3,8 +3,8 @@ package io.github.ducklin.core
 import io.github.bakedlibs.dough.common.Validate
 import io.github.bakedlibs.dough.config.Config
 import io.github.bakedlibs.dough.protection.ProtectionManager
-import io.github.ducklin.migration.MinecraftVersion
-import io.github.ducklin.migration.SlimefunAddon
+import io.github.ducklin.api.MinecraftVersion
+import io.github.ducklin.api.SlimefunAddon
 import io.github.ducklin.migration.gps.GPSNetwork
 import io.github.ducklin.migration.utils.tags.SlimefunTag
 import io.github.ducklin.core.commands.SlimefunCommand
@@ -26,68 +26,12 @@ import io.github.ducklin.core.services.github.GitHubService
 import io.github.ducklin.core.services.holograms.HologramsService
 import io.github.ducklin.core.services.profiler.SlimefunProfiler
 import io.github.ducklin.core.services.sounds.SoundService
-import io.github.ducklin.implementation.SlimefunItems
-import io.github.ducklin.implementation.items.altar.AncientAltar
-import io.github.ducklin.implementation.items.altar.AncientPedestal
-import io.github.ducklin.implementation.items.backpacks.Cooler
-import io.github.ducklin.implementation.items.magical.BeeWings
-import io.github.ducklin.implementation.items.tools.GrapplingHook
-import io.github.ducklin.implementation.items.weapons.SeismicAxe
-import io.github.ducklin.implementation.listeners.AncientAltarListener
-import io.github.ducklin.implementation.listeners.AutoCrafterListener
 import io.github.ducklin.implementation.listeners.BackpackListener
-import io.github.ducklin.implementation.listeners.BeeWingsListener
-import io.github.ducklin.implementation.listeners.BlockListener
-import io.github.ducklin.implementation.listeners.BlockPhysicsListener
-import io.github.ducklin.implementation.listeners.ButcherAndroidListener
-import io.github.ducklin.implementation.listeners.CargoNodeListener
-import io.github.ducklin.implementation.listeners.CoolerListener
-import io.github.ducklin.implementation.listeners.DeathpointListener
-import io.github.ducklin.implementation.listeners.DebugFishListener
-import io.github.ducklin.implementation.listeners.DispenserListener
-import io.github.ducklin.implementation.listeners.ElytraImpactListener
-import io.github.ducklin.implementation.listeners.EnhancedFurnaceListener
-import io.github.ducklin.implementation.listeners.ExplosionsListener
-import io.github.ducklin.implementation.listeners.GadgetsListener
 import io.github.ducklin.implementation.listeners.GrapplingHookListener
-import io.github.ducklin.implementation.listeners.HopperListener
-import io.github.ducklin.implementation.listeners.ItemDropListener
-import io.github.ducklin.implementation.listeners.ItemPickupListener
-import io.github.ducklin.implementation.listeners.JoinListener
-import io.github.ducklin.implementation.listeners.MiddleClickListener
-import io.github.ducklin.implementation.listeners.MiningAndroidListener
-import io.github.ducklin.implementation.listeners.MultiBlockListener
-import io.github.ducklin.implementation.listeners.NetworkListener
-import io.github.ducklin.implementation.listeners.PlayerProfileListener
-import io.github.ducklin.implementation.listeners.RadioactivityListener
-import io.github.ducklin.implementation.listeners.SeismicAxeListener
-import io.github.ducklin.implementation.listeners.SlimefunBootsListener
 import io.github.ducklin.implementation.listeners.SlimefunBowListener
-import io.github.ducklin.implementation.listeners.SlimefunGuideListener
-import io.github.ducklin.implementation.listeners.SlimefunItemConsumeListener
-import io.github.ducklin.implementation.listeners.SlimefunItemHitListener
-import io.github.ducklin.implementation.listeners.SlimefunItemInteractListener
-import io.github.ducklin.implementation.listeners.SoulboundListener
-import io.github.ducklin.implementation.listeners.TalismanListener
-import io.github.ducklin.implementation.listeners.VillagerTradingListener
-import io.github.ducklin.implementation.listeners.crafting.AnvilListener
-import io.github.ducklin.implementation.listeners.crafting.BrewingStandListener
-import io.github.ducklin.implementation.listeners.crafting.CartographyTableListener
-import io.github.ducklin.implementation.listeners.crafting.CauldronListener
-import io.github.ducklin.implementation.listeners.crafting.CraftingTableListener
-import io.github.ducklin.implementation.listeners.crafting.GrindstoneListener
-import io.github.ducklin.implementation.listeners.crafting.SmithingTableListener
-import io.github.ducklin.implementation.listeners.entity.BeeListener
-import io.github.ducklin.implementation.listeners.entity.EntityInteractionListener
-import io.github.ducklin.implementation.listeners.entity.FireworksListener
-import io.github.ducklin.implementation.listeners.entity.IronGolemListener
-import io.github.ducklin.implementation.listeners.entity.MobDropListener
-import io.github.ducklin.implementation.listeners.entity.PiglinListener
-import io.github.ducklin.implementation.listeners.entity.WitherListener
 import io.github.ducklin.implementation.resources.GEOResourcesSetup
 import io.github.ducklin.implementation.setup.PostSetup
 import io.github.ducklin.implementation.setup.ResearchSetup
-import io.github.ducklin.implementation.setup.SlimefunItemSetup
 import io.github.ducklin.migration.tasks.SlimefunStartupTask
 import io.github.ducklin.migration.tasks.TickerTask
 import io.github.ducklin.migration.tasks.armor.RadiationTask
@@ -95,7 +39,6 @@ import io.github.ducklin.migration.tasks.armor.RainbowArmorTask
 import io.github.ducklin.migration.tasks.armor.SlimefunArmorTask
 import io.github.ducklin.migration.tasks.armor.SolarHelmetTask
 import io.github.ducklin.integrations.IntegrationsManager
-import io.github.ducklin.menu.MenuListener
 import io.github.ducklin.migration.StartupWarnings
 import io.github.ducklin.migration.exceptions.TagMisconfigurationException
 import io.github.ducklin.migration.player.PlayerProfile
@@ -913,7 +856,7 @@ class Slimefun : SlimefunAddon() {
         /**
          * This method returns out world settings service.
          * That service is responsible for managing item settings per
-         * [org.bukkit.World], such as disabling a [io.github.ducklin.migration.items.SlimefunItem] in a
+         * [org.bukkit.World], such as disabling a [io.github.ducklin.api.items.DuckItem] in a
          * specific [org.bukkit.World].
          *
          * @return Our instance of [io.github.ducklin.core.services.PerWorldSettingsService]

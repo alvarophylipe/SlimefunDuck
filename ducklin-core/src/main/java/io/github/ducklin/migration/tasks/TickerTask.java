@@ -15,12 +15,12 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 import io.github.bakedlibs.dough.blocks.BlockPosition;
 import io.github.bakedlibs.dough.blocks.ChunkPosition;
-import io.github.ducklin.core.Configuration.Config;
+import io.github.ducklin.api.Config;
 import io.github.ducklin.core.Slimefun;
 import io.github.ducklin.migration.BlockStorage;
 import io.github.ducklin.migration.ErrorReport;
 import io.github.ducklin.migration.Objects.handlers.BlockTicker;
-import io.github.ducklin.migration.items.SlimefunItem;
+import io.github.ducklin.api.items.DuckItem;
 import org.apache.commons.lang3.Validate;
 import org.bukkit.Bukkit;
 import org.bukkit.Chunk;
@@ -147,7 +147,7 @@ public class TickerTask implements Runnable {
 
     private void tickLocation(@Nonnull Set<BlockTicker> tickers, @Nonnull Location l) {
         Config data = BlockStorage.getLocationInfo(l);
-        SlimefunItem item = SlimefunItem.getById(data.getString("id"));
+        DuckItem item = DuckItem.getById(data.getString("id"));
 
         if (item != null && item.getBlockTicker() != null) {
             try {
@@ -178,7 +178,7 @@ public class TickerTask implements Runnable {
     }
 
     @ParametersAreNonnullByDefault
-    private void tickBlock(Location l, Block b, SlimefunItem item, Config data, long timestamp) {
+    private void tickBlock(Location l, Block b, DuckItem item, Config data, long timestamp) {
         try {
             item.getBlockTicker().tick(b, item, data);
         } catch (Exception | LinkageError x) {
@@ -189,7 +189,7 @@ public class TickerTask implements Runnable {
     }
 
     @ParametersAreNonnullByDefault
-    private void reportErrors(Location l, SlimefunItem item, Throwable x) {
+    private void reportErrors(Location l, DuckItem item, Throwable x) {
         BlockPosition position = new BlockPosition(l);
         int errors = bugs.getOrDefault(position, 0) + 1;
 

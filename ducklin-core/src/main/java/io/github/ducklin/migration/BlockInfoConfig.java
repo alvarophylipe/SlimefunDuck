@@ -7,7 +7,7 @@ import java.util.Set;
 
 import javax.annotation.Nonnull;
 
-import io.github.ducklin.core.Configuration.Config;
+import io.github.ducklin.api.Config;
 import org.bukkit.Location;
 import org.bukkit.configuration.file.FileConfiguration;
 

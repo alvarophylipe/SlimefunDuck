@@ -3,7 +3,7 @@ package io.github.ducklin.migration.events;
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
-import io.github.ducklin.migration.items.SlimefunItem;
+import io.github.ducklin.api.items.DuckItem;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Cancellable;
@@ -13,7 +13,7 @@ import org.bukkit.inventory.ItemStack;
 
 
 /**
- * This {@link Event} is fired whenever a {@link SlimefunItem} is placed as a {@link Block} in the world.
+ * This {@link Event} is fired whenever a {@link DuckItem} is placed as a {@link Block} in the world.
  * 
  * @author J3fftw1
  */
@@ -22,7 +22,7 @@ public class SlimefunBlockPlaceEvent extends Event implements Cancellable {
     private static final HandlerList handlers = new HandlerList();
 
     private final Block blockPlaced;
-    private final SlimefunItem slimefunItem;
+    private final DuckItem duckItem;
     private final ItemStack placedItem;
     private final Player player;
 
@@ -30,22 +30,22 @@ public class SlimefunBlockPlaceEvent extends Event implements Cancellable {
 
     /**
      * @param player
-     *        The {@link Player} who placed this {@link SlimefunItem}
+     *        The {@link Player} who placed this {@link DuckItem}
      * @param placedItem
      *        The {@link ItemStack} held by the {@link Player}
      * @param blockPlaced
      *        The {@link Block} placed by the {@link Player}
-     * @param slimefunItem
-     *        The {@link SlimefunItem} within the {@link ItemStack}
+     * @param duckItem
+     *        The {@link DuckItem} within the {@link ItemStack}
      */
     @ParametersAreNonnullByDefault
-    public SlimefunBlockPlaceEvent(Player player, ItemStack placedItem, Block blockPlaced, SlimefunItem slimefunItem) {
+    public SlimefunBlockPlaceEvent(Player player, ItemStack placedItem, Block blockPlaced, DuckItem duckItem) {
         super();
 
         this.player = player;
         this.placedItem = placedItem;
         this.blockPlaced = blockPlaced;
-        this.slimefunItem = slimefunItem;
+        this.duckItem = duckItem;
     }
 
     /**
@@ -58,12 +58,12 @@ public class SlimefunBlockPlaceEvent extends Event implements Cancellable {
     }
 
     /**
-     * This gets the {@link SlimefunItem} being placed
+     * This gets the {@link DuckItem} being placed
      *
-     * @return The {@link SlimefunItem} being placed
+     * @return The {@link DuckItem} being placed
      */
-    public @Nonnull SlimefunItem getSlimefunItem() {
-        return slimefunItem;
+    public @Nonnull DuckItem getSlimefunItem() {
+        return duckItem;
     }
 
     /**

@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 import io.github.ducklin.core.Slimefun;
-import io.github.ducklin.migration.MinecraftVersion;
+import io.github.ducklin.api.MinecraftVersion;
 import io.github.ducklin.migration.SlimefunBranch;
 import io.github.ducklin.migration.recipes.RecipeType;
 import org.apache.commons.lang.Validate;
@@ -57,83 +57,31 @@ public abstract class SlimefunLocalization implements Keyed {
         return defaultConfig;
     }
 
-    /**
-     * Saves this Localization to its File
-     */
     protected void save() {
         defaultConfig.save();
     }
 
-    /**
-     * This returns the chat prefix for our messages.
-     * Every message (unless explicitly omitted) will have this
-     * prefix prepended.
-     *
-     * @return The chat prefix
-     */
+
     public @Nonnull String getChatPrefix() {
         return getMessage("prefix");
     }
 
-    /**
-     * This method attempts to return the {@link Language} with the given
-     * language code.
-     *
-     * @param id
-     *            The language code
-     *
-     * @return A {@link Language} with the given id or null
-     */
+
 
     public abstract @Nullable Language getLanguage(@Nonnull String id);
 
-    /**
-     * This method returns the currently selected {@link Language} of a {@link Player}.
-     *
-     * @param p
-     *            The {@link Player} to query
-     *
-     * @return The {@link Language} that was selected by the given {@link Player}
-     */
 
     public abstract @Nullable Language getLanguage(@Nonnull Player p);
 
-    /**
-     * This method returns the default {@link Language} of this {@link Server}
-     *
-     * @return The default {@link Language}
-     */
 
     public abstract @Nullable Language getDefaultLanguage();
 
-    /**
-     * This returns whether a {@link Language} with the given id exists within
-     * the project resources.
-     *
-     * @param id
-     *            The {@link Language} id
-     *
-     * @return Whether the project contains a {@link Language} with that id
-     */
+
     protected abstract boolean hasLanguage(@Nonnull String id);
 
-    /**
-     * This method returns a full {@link Collection} of every {@link Language} that was
-     * found.
-     *
-     * @return A {@link Collection} that contains every installed {@link Language}
-     */
 
     public abstract @Nonnull Collection<Language> getLanguages();
 
-    /**
-     * This method adds a new {@link Language} with the given id and texture.
-     *
-     * @param id
-     *            The {@link Language} id
-     * @param texture
-     *            The texture of how this {@link Language} should be displayed
-     */
     protected abstract void addLanguage(@Nonnull String id, @Nonnull String texture);
 
     /**

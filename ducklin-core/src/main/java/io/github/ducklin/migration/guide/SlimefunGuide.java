@@ -8,7 +8,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 import io.github.ducklin.core.Slimefun;
 import io.github.ducklin.migration.items.ItemGroup;
-import io.github.ducklin.migration.items.SlimefunItem;
+import io.github.ducklin.api.items.DuckItem;
 import io.github.ducklin.migration.player.PlayerProfile;
 import io.github.ducklin.migration.utils.SlimefunUtils;
 import org.bukkit.Material;
@@ -88,7 +88,7 @@ public final class SlimefunGuide {
     }
 
     @ParametersAreNonnullByDefault
-    public static void displayItem(PlayerProfile profile, SlimefunItem item, boolean addToHistory) {
+    public static void displayItem(PlayerProfile profile, DuckItem item, boolean addToHistory) {
         Slimefun.getRegistry().getSlimefunGuide(SlimefunGuideMode.SURVIVAL_MODE).displayItem(profile, item, addToHistory);
     }
 

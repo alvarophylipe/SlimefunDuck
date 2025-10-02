@@ -3,7 +3,7 @@ package io.github.ducklin.migration.events;
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
-import io.github.ducklin.migration.items.SlimefunItem;
+import io.github.ducklin.api.items.DuckItem;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Cancellable;
@@ -12,7 +12,7 @@ import org.bukkit.event.HandlerList;
 import org.bukkit.inventory.ItemStack;
 
 /**
- * This {@link Event} is fired whenever a {@link SlimefunItem} placed as a {@link Block} in the world is broken.
+ * This {@link Event} is fired whenever a {@link DuckItem} placed as a {@link Block} in the world is broken.
  * 
  * @author J3fftw1
  */
@@ -21,7 +21,7 @@ public class SlimefunBlockBreakEvent extends Event implements Cancellable {
     private static final HandlerList handlers = new HandlerList();
 
     private final Block blockBroken;
-    private final SlimefunItem slimefunItem;
+    private final DuckItem duckItem;
     private final ItemStack heldItem;
     private final Player player;
 
@@ -29,22 +29,22 @@ public class SlimefunBlockBreakEvent extends Event implements Cancellable {
 
     /**
      * @param player
-     *        The {@link Player} who broke this {@link SlimefunItem}
+     *        The {@link Player} who broke this {@link DuckItem}
      * @param heldItem
      *        The {@link ItemStack} held by the {@link Player}
      * @param blockBroken
      *        The {@link Block} broken by the {@link Player}
-     * @param slimefunItem
-     *        The {@link SlimefunItem} within the {@link ItemStack}
+     * @param duckItem
+     *        The {@link DuckItem} within the {@link ItemStack}
      */
     @ParametersAreNonnullByDefault
-    public SlimefunBlockBreakEvent(Player player, ItemStack heldItem, Block blockBroken, SlimefunItem slimefunItem) {
+    public SlimefunBlockBreakEvent(Player player, ItemStack heldItem, Block blockBroken, DuckItem duckItem) {
         super();
         
         this.player = player;
         this.heldItem = heldItem;
         this.blockBroken = blockBroken;
-        this.slimefunItem = slimefunItem;
+        this.duckItem = duckItem;
     }
 
     /**
@@ -57,12 +57,12 @@ public class SlimefunBlockBreakEvent extends Event implements Cancellable {
     }
 
     /**
-     * This gets the {@link SlimefunItem} being broken
+     * This gets the {@link DuckItem} being broken
      * 
-     * @return The {@link SlimefunItem} being broken
+     * @return The {@link DuckItem} being broken
      */
-    public @Nonnull SlimefunItem getSlimefunItem() {
-        return slimefunItem;
+    public @Nonnull DuckItem getSlimefunItem() {
+        return duckItem;
     }
 
     /**

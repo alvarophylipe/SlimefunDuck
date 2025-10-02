@@ -16,7 +16,7 @@ import java.util.logging.Level;
 import javax.annotation.Nonnull;
 
 import io.github.ducklin.core.Slimefun;
-import io.github.ducklin.migration.items.SlimefunItem;
+import io.github.ducklin.api.items.DuckItem;
 import io.github.ducklin.migration.utils.NumberUtils;
 import org.apache.commons.lang.Validate;
 import org.bukkit.Chunk;
@@ -99,7 +99,7 @@ public class SlimefunProfiler {
     /**
      * This method starts a new profiler entry.
      * 
-     * @return A timestamp, best fed back into {@link #closeEntry(Location, SlimefunItem, long)}
+     * @return A timestamp, best fed back into {@link #closeEntry(Location, DuckItem, long)}
      */
     public long newEntry() {
         if (!isProfiling) {
@@ -112,7 +112,7 @@ public class SlimefunProfiler {
 
     /**
      * This method schedules a given amount of entries for the future.
-     * Be careful to {@link #closeEntry(Location, SlimefunItem, long)} all of them again!
+     * Be careful to {@link #closeEntry(Location, DuckItem, long)} all of them again!
      * No {@link PerformanceSummary} will be sent until all entries were closed.
      * 
      * If the specified amount is negative, scheduled entries will be removed
@@ -133,13 +133,13 @@ public class SlimefunProfiler {
      * @param l
      *            The {@link Location} of our {@link Block}
      * @param item
-     *            The {@link SlimefunItem} at this {@link Location}
+     *            The {@link DuckItem} at this {@link Location}
      * @param timestamp
      *            The timestamp marking the start of this entry, you can retrieve it using {@link #newEntry()}
      *
      * @return The total timings of this entry
      */
-    public long closeEntry(@Nonnull Location l, @Nonnull SlimefunItem item, long timestamp) {
+    public long closeEntry(@Nonnull Location l, @Nonnull DuckItem item, long timestamp) {
         Validate.notNull(l, "Location must not be null!");
         Validate.notNull(item, "You need to specify a SlimefunItem!");
 
@@ -390,7 +390,7 @@ public class SlimefunProfiler {
         return NumberUtils.getAsMillis(time);
     }
 
-    public String getTime(@Nonnull SlimefunItem item) {
+    public String getTime(@Nonnull DuckItem item) {
         Validate.notNull(item, "Cannot get timings for a null SlimefunItem");
 
         long time = getByItem().getOrDefault(item.getId(), 0L);

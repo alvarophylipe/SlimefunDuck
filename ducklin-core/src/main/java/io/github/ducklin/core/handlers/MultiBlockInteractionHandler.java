@@ -4,7 +4,7 @@ import java.util.Optional;
 
 import io.github.ducklin.migration.exceptions.IncompatibleItemHandlerException;
 import io.github.ducklin.migration.items.ItemHandler;
-import io.github.ducklin.migration.items.SlimefunItem;
+import io.github.ducklin.api.items.DuckItem;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 
@@ -30,7 +30,7 @@ public interface MultiBlockInteractionHandler extends ItemHandler {
     boolean onInteract(Player p, MultiBlock mb, Block b);
 
     @Override
-    default Optional<IncompatibleItemHandlerException> validate(SlimefunItem item) {
+    default Optional<IncompatibleItemHandlerException> validate(DuckItem item) {
         if (!(item instanceof MultiBlockMachine)) {
             return Optional.of(new IncompatibleItemHandlerException("Only classes inheriting 'MultiBlockMachine' can have a MultiBlockInteractionHandler", item, this));
         }

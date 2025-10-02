@@ -11,7 +11,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import io.github.ducklin.core.Slimefun;
-import io.github.ducklin.migration.items.SlimefunItem;
+import io.github.ducklin.api.items.DuckItem;
 import org.apache.commons.lang.Validate;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -41,33 +41,20 @@ public class CustomTextureService {
      */
     private boolean modified = false;
 
-    /**
-     * This creates a new {@link CustomTextureService} for the provided {@link Config}
-     * 
-     * @param config
-     *            The {@link Config} to read custom model data from
-     */
+
     public CustomTextureService(@Nonnull Config config) {
         this.config = config;
         config.getConfiguration().options().header("This file is used to assign items from Slimefun or any of its addons\n" + "the 'CustomModelData' NBT tag. This can be used in conjunction with a custom resource pack\n" + "to give items custom textures.\n0 means there is no data assigned to that item.\n\n" + "There is no official Slimefun resource pack at the moment.");
         config.getConfiguration().options().copyHeader(true);
     }
 
-    /**
-     * This method registers the given {@link SlimefunItem SlimefunItems} to this {@link CustomTextureService}.
-     * If saving is enabled, it will save them to the {@link Config} file.
-     * 
-     * @param items
-     *            The {@link SlimefunItem SlimefunItems} to register
-     * @param save
-     *            Whether to save this file
-     */
-    public void register(@Nonnull Collection<SlimefunItem> items, boolean save) {
+
+    public void register(@Nonnull Collection<DuckItem> items, boolean save) {
         Validate.notEmpty(items, "items must neither be null or empty.");
 
         loadDefaultValues();
 
-        for (SlimefunItem item : items) {
+        for (DuckItem item : items) {
             if (item != null) {
                 config.setDefaultValue(item.getId(), 0);
 

@@ -6,13 +6,14 @@ import java.util.Objects;
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
+import io.github.ducklin.api.items.DuckItem;
 import io.github.ducklin.core.Slimefun;
 import org.apache.commons.lang.Validate;
 
 import io.github.bakedlibs.dough.config.Config;
 
 /**
- * This class represents a Setting for a {@link SlimefunItem} that can be modified via
+ * This class represents a Setting for a {@link DuckItem} that can be modified via
  * the {@code Items.yml} {@link Config} file.
  * 
  * @author TheBusyBiscuit
@@ -22,7 +23,7 @@ import io.github.bakedlibs.dough.config.Config;
  */
 public class ItemSetting<T> {
 
-    private final SlimefunItem item;
+    private final DuckItem item;
 
     private final String key;
     private final T defaultValue;
@@ -33,14 +34,14 @@ public class ItemSetting<T> {
      * This creates a new {@link ItemSetting} with the given key and default value
      * 
      * @param item
-     *            The {@link SlimefunItem} this {@link ItemSetting} belongs to
+     *            The {@link DuckItem} this {@link ItemSetting} belongs to
      * @param key
-     *            The key under which this setting will be stored (relative to the {@link SlimefunItem})
+     *            The key under which this setting will be stored (relative to the {@link DuckItem})
      * @param defaultValue
      *            The default value for this {@link ItemSetting}
      */
     @ParametersAreNonnullByDefault
-    public ItemSetting(SlimefunItem item, String key, T defaultValue) {
+    public ItemSetting(DuckItem item, String key, T defaultValue) {
         Validate.notNull(item, "The provided SlimefunItem must not be null!");
         Validate.notNull(key, "The key of an ItemSetting is not allowed to be null!");
         Validate.notNull(defaultValue, "The default value of an ItemSetting is not allowed to be null!");
@@ -84,18 +85,18 @@ public class ItemSetting<T> {
     /**
      * This returns the key of this {@link ItemSetting}.
      * 
-     * @return The key under which this setting is stored (relative to the {@link SlimefunItem})
+     * @return The key under which this setting is stored (relative to the {@link DuckItem})
      */
     public @Nonnull String getKey() {
         return key;
     }
 
     /**
-     * This returns the associated {@link SlimefunItem} for this {@link ItemSetting}.
+     * This returns the associated {@link DuckItem} for this {@link ItemSetting}.
      * 
-     * @return The associated {@link SlimefunItem}
+     * @return The associated {@link DuckItem}
      */
-    protected @Nonnull SlimefunItem getItem() {
+    protected @Nonnull DuckItem getItem() {
         return item;
     }
 
@@ -158,7 +159,7 @@ public class ItemSetting<T> {
     }
 
     /**
-     * This method is called by a {@link SlimefunItem} which wants to load its {@link ItemSetting}
+     * This method is called by a {@link DuckItem} which wants to load its {@link ItemSetting}
      * from the {@link Config} file.
      * 
      */

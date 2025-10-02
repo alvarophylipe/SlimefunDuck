@@ -4,7 +4,7 @@ import java.util.Optional;
 
 import io.github.ducklin.migration.exceptions.IncompatibleItemHandlerException;
 import io.github.ducklin.migration.items.ItemHandler;
-import io.github.ducklin.migration.items.SlimefunItem;
+import io.github.ducklin.api.items.DuckItem;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.Dispenser;
@@ -18,7 +18,7 @@ import io.github.ducklin.migration.attributes.NotPlaceable;
 public interface BlockDispenseHandler extends ItemHandler {
 
     @Override
-    default Optional<IncompatibleItemHandlerException> validate(SlimefunItem item) {
+    default Optional<IncompatibleItemHandlerException> validate(DuckItem item) {
         if (item instanceof NotPlaceable || item.getItem().getType() != Material.DISPENSER) {
             return Optional.of(new IncompatibleItemHandlerException("Only dispensers that are not marked as 'NotPlaceable' can have a BlockDispenseHandler.", item, this));
         }
@@ -26,7 +26,7 @@ public interface BlockDispenseHandler extends ItemHandler {
         return Optional.empty();
     }
 
-    void onBlockDispense(BlockDispenseEvent e, Dispenser dispenser, Block facedBlock, SlimefunItem machine);
+    void onBlockDispense(BlockDispenseEvent e, Dispenser dispenser, Block facedBlock, DuckItem machine);
 
     @Override
     default Class<? extends ItemHandler> getIdentifier() {

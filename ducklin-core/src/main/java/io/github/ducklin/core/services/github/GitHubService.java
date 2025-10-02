@@ -15,7 +15,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import io.github.ducklin.core.Slimefun;
-import io.github.ducklin.migration.utils.HeadTexture;
+import io.github.ducklin.api.helpers.HeadTexture;
 import org.apache.commons.lang.Validate;
 
 import io.github.bakedlibs.dough.config.Config;

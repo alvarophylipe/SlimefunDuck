@@ -1,8 +1,9 @@
 package io.github.ducklin.migration
 
+import io.github.ducklin.api.SlimefunAddon
 import io.github.ducklin.core.Slimefun
 import io.github.ducklin.migration.attributes.EnergyNetProvider
-import io.github.ducklin.migration.items.SlimefunItem
+import io.github.ducklin.api.items.DuckItem
 import io.papermc.lib.PaperLib
 import org.bukkit.Bukkit
 import org.bukkit.Location
@@ -20,7 +21,6 @@ import java.util.stream.IntStream
 import javax.annotation.Nonnull
 import javax.annotation.ParametersAreNonnullByDefault
 import kotlin.jvm.javaClass
-import kotlin.text.contains
 
 /**
  * This class represents an [ErrorReport].
@@ -71,7 +71,7 @@ class ErrorReport<T : Throwable?> @JvmOverloads constructor(
      * The [io.github.ducklin.implementation.items.SlimefunItem] responsible.
      */
     @ParametersAreNonnullByDefault
-    constructor(throwable: T, l: Location, item: SlimefunItem) : this(
+    constructor(throwable: T, l: Location, item: DuckItem) : this(
         throwable,
         item.addon!!,
         Consumer { stream: PrintStream? ->
@@ -117,7 +117,7 @@ class ErrorReport<T : Throwable?> @JvmOverloads constructor(
     @ParametersAreNonnullByDefault
     constructor(
         throwable: T,
-        item: SlimefunItem
+        item: DuckItem
     ) : this(throwable, item.addon!!, Consumer { stream: PrintStream? ->
         stream!!.println("SlimefunItem:")
         stream.println("  ID: " + item.id)

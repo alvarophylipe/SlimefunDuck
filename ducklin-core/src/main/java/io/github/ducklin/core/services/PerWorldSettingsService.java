@@ -13,9 +13,9 @@ import java.util.UUID;
 
 import javax.annotation.Nonnull;
 
-import io.github.ducklin.migration.MinecraftVersion;
-import io.github.ducklin.migration.SlimefunAddon;
-import io.github.ducklin.migration.items.SlimefunItem;
+import io.github.ducklin.api.MinecraftVersion;
+import io.github.ducklin.api.SlimefunAddon;
+import io.github.ducklin.api.items.DuckItem;
 import io.github.ducklin.core.Slimefun;
 import org.apache.commons.lang.Validate;
 import org.bukkit.Server;
@@ -25,7 +25,7 @@ import io.github.bakedlibs.dough.collections.OptionalMap;
 import io.github.bakedlibs.dough.config.Config;
 
 /**
- * This Service is responsible for disabling a {@link SlimefunItem} in a certain {@link World}.
+ * This Service is responsible for disabling a {@link DuckItem} in a certain {@link World}.
  * 
  * @author TheBusyBiscuit
  *
@@ -66,16 +66,16 @@ public class PerWorldSettingsService {
     }
 
     /**
-     * This method checks whether the given {@link SlimefunItem} is enabled in the given {@link World}.
+     * This method checks whether the given {@link DuckItem} is enabled in the given {@link World}.
      * 
      * @param world
      *            The {@link World} to check
      * @param item
-     *            The {@link SlimefunItem} that should be checked
+     *            The {@link DuckItem} that should be checked
      * 
-     * @return Whether the given {@link SlimefunItem} is enabled in that {@link World}
+     * @return Whether the given {@link DuckItem} is enabled in that {@link World}
      */
-    public boolean isEnabled(@Nonnull World world, @Nonnull SlimefunItem item) {
+    public boolean isEnabled(@Nonnull World world, @Nonnull DuckItem item) {
         Validate.notNull(world, "The world cannot be null");
         Validate.notNull(item, "The SlimefunItem cannot be null");
 
@@ -89,16 +89,16 @@ public class PerWorldSettingsService {
     }
 
     /**
-     * This method enables or disables the given {@link SlimefunItem} in the specified {@link World}.
+     * This method enables or disables the given {@link DuckItem} in the specified {@link World}.
      * 
      * @param world
-     *            The {@link World} in which to disable or enable the given {@link SlimefunItem}
+     *            The {@link World} in which to disable or enable the given {@link DuckItem}
      * @param item
-     *            The {@link SlimefunItem} to enable or disable
+     *            The {@link DuckItem} to enable or disable
      * @param enabled
-     *            Whether the given {@link SlimefunItem} should be enabled in that world
+     *            Whether the given {@link DuckItem} should be enabled in that world
      */
-    public void setEnabled(@Nonnull World world, @Nonnull SlimefunItem item, boolean enabled) {
+    public void setEnabled(@Nonnull World world, @Nonnull DuckItem item, boolean enabled) {
         Validate.notNull(world, "The world cannot be null");
         Validate.notNull(item, "The SlimefunItem cannot be null");
 
@@ -175,7 +175,7 @@ public class PerWorldSettingsService {
 
         Config config = getConfig(world);
 
-        for (SlimefunItem item : Slimefun.getRegistry().getEnabledSlimefunItems()) {
+        for (DuckItem item : Slimefun.getRegistry().getEnabledSlimefunItems()) {
             if (item != null) {
                 String addon = item.addon.getJavaPlugin().getName().toLowerCase(Locale.ROOT);
                 config.setValue(addon + '.' + item.getId(), !items.contains(item.getId()));
@@ -218,7 +218,7 @@ public class PerWorldSettingsService {
     }
 
     private void loadItemsFromWorldConfig(@Nonnull String worldName, @Nonnull Config config, @Nonnull Set<String> items) {
-        for (SlimefunItem item : Slimefun.getRegistry().getEnabledSlimefunItems()) {
+        for (DuckItem item : Slimefun.getRegistry().getEnabledSlimefunItems()) {
             if (item != null) {
                 String addon = item.addon.getJavaPlugin().getName().toLowerCase(Locale.ROOT);
                 config.setDefaultValue(addon + ".enabled", true);
